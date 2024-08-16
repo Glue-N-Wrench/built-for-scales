@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=3 format=3 uid="uid://6ae31m7rrcxr"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/base_house.tscn" id="1_khujv"]
+[ext_resource type="PackedScene" uid="uid://cgrbos8ue4ldh" path="res://UI/BuldingMenu/bulding_menu.tscn" id="2_847qv"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BaseHouse" parent="." instance=ExtResource("1_khujv")]
+position = Vector2(240, -230)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BuldingMenu" parent="Camera2D" instance=ExtResource("2_847qv")]
+offset_right = 200.0
