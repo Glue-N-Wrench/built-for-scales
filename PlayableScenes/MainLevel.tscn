@@ -8,6 +8,7 @@
 [node name="BaseHouse" parent="." instance=ExtResource("1_khujv")]
 position = Vector2(240, -230)
 
-[node name="BuldingMenu" parent="." instance=ExtResource("2_847qv")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BuldingMenu" parent="Camera2D" instance=ExtResource("2_847qv")]
+offset_right = 200.0
