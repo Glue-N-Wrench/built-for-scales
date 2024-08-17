@@ -1,4 +1,7 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://3loe8ypgoaqn"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://3loe8ypgoaqn"]
+
+[sub_resource type="AudioEffectPanner" id="AudioEffectPanner_8f577"]
+resource_name = "Panner"
 
 [resource]
 bus/0/volume_db = -5.93075
@@ -26,3 +29,17 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"SFX"
+bus/5/name = &"Ambience"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -4.50411
+bus/5/send = &"SFX"
+bus/6/name = &"Sub_ambience"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = -4.50411
+bus/6/send = &"Master"
+bus/6/effect/0/effect = SubResource("AudioEffectPanner_8f577")
+bus/6/effect/0/enabled = true

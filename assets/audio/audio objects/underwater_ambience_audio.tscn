@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci6vgipqbbjro"]
+
+[ext_resource type="Script" path="res://assets/audio/audio objects/underwater_ambience_audio.gd" id="1_5a6kf"]
+[ext_resource type="AudioStream" uid="uid://d08qafs5huid1" path="res://assets/audio/sfx/wata/underwater ambi.wav" id="2_c86k0"]
+[ext_resource type="AudioStream" uid="uid://xfrq566nn74l" path="res://assets/audio/sfx/wata/underwater ambi one shot-001.wav" id="3_yq40x"]
+[ext_resource type="AudioStream" uid="uid://l4esbs7runst" path="res://assets/audio/sfx/wata/underwater ambi one shot-002.wav" id="4_6ncn3"]
+[ext_resource type="AudioStream" uid="uid://cvy3a5dfcs4vo" path="res://assets/audio/sfx/wata/underwater ambi one shot-003.wav" id="5_islp7"]
+[ext_resource type="AudioStream" uid="uid://dyihjawkfbxml" path="res://assets/audio/sfx/wata/underwater ambi one shot-004.wav" id="6_stoj8"]
+[ext_resource type="AudioStream" uid="uid://d3sgs7jfvul2i" path="res://assets/audio/sfx/wata/underwater ambi one shot.wav" id="7_o4uxi"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ffsm"]
+streams_count = 5
+stream_0/stream = ExtResource("3_yq40x")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_6ncn3")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_islp7")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_stoj8")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_o4uxi")
+stream_4/weight = 1.0
+
+[node name="UnderwaterAmbienceAudio" type="Node2D"]
+script = ExtResource("1_5a6kf")
+
+[node name="base_underwater_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c86k0")
+autoplay = true
+bus = &"Ambience"
+
+[node name="audio one shots" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_3ffsm")
+bus = &"Sub_ambience"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.294
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
