@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccv23synovtw6"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/base_house.tscn" id="1_kud8j"]
+[ext_resource type="Texture2D" uid="uid://bjqtcrfaw0ymf" path="res://Objects/Houses/rocktest.png" id="2_jgpmv"]
+[ext_resource type="Shape2D" uid="uid://bvaj2m4ho7oqo" path="res://Objects/Houses/shapes/2x2square.tres" id="3_urss4"]
+
+[node name="BaseHouse" instance=ExtResource("1_kud8j")]
+destructable = false
+cost = 0
+fish_capacity = 0
+max_fish_size = 0
+shape = ExtResource("3_urss4")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(1, 1, 1, 0.364706)
+texture = ExtResource("2_jgpmv")
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
