@@ -20,9 +20,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	modulate = Color.BLUE #DEBUGGING
+	#modulate = Color.BLUE #DEBUGGING
 	if homeless:
-		modulate = Color.RED #DEBUGGING
+		#modulate = Color.RED #DEBUGGING
 		wanderClock -= delta
 		if wanderClock < 0:
 			#TODO: when map-range is determined change this \/ X to be the width of the map

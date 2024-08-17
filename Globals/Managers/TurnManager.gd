@@ -5,7 +5,7 @@ extends Node
 	0: preload("res://Objects/Fish/fish.tscn")
 	}
 
-var roundTime = 2 #seconds in a round
+var roundTime = 10 #seconds in a round
 var roundTimer = 0
 var weekTime = 7 #rounds in a week
 var weekTimer = 0

@@ -31,7 +31,7 @@ func spawnFish(type:int):
 			newFish.position = Vector2(-800, offset)
 	newFish.go_to_location(Vector2(0,0))
 	add_child(newFish)
-	homelessFish[type].append(newFish)
+	homelessFish[type].push_front(newFish)
 
 func addHouse(house:Node2D):
 	activeHouses.append(house)
