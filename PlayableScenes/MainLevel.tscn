@@ -1,17 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=5 format=3 uid="uid://6ae31m7rrcxr"]
 
-[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/base_house.tscn" id="1_khujv"]
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="PackedScene" uid="uid://ccv23synovtw6" path="res://Objects/Houses/Junk/rock.tscn" id="3_1jkw4"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://bqhhvgdm83qaa" path="res://UI/left_ui.tscn" id="3_ev5cs"]
-[ext_resource type="PackedScene" uid="uid://bkij0finue12o" path="res://Objects/Fish/fish.tscn" id="4_tnhlq"]
 
 [node name="MainLevel" type="Node2D"]
 texture_filter = 1
-
-[node name="BaseHouse" parent="." instance=ExtResource("1_khujv")]
-position = Vector2(240, -230)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_i6qqw")
@@ -20,14 +15,12 @@ script = ExtResource("2_i6qqw")
 
 [node name="BaseHouse2" parent="." instance=ExtResource("3_1jkw4")]
 position = Vector2(-123, 139)
+max_fish_size = 1
 
 [node name="BaseHouse3" parent="." instance=ExtResource("3_1jkw4")]
 position = Vector2(288, 120)
-
-[node name="FishMaster" type="Node" parent="."]
-
-[node name="Fish" parent="FishMaster" instance=ExtResource("4_tnhlq")]
-position = Vector2(-372, -142)
+max_fish_size = 1
 
 [node name="PlacementController" type="Node2D" parent="."]
+z_index = 1
 script = ExtResource("3_c281c")

@@ -24,6 +24,7 @@ func _unhandled_input(event):
 				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d().get_global_mouse_position()
 				selectedObject.modulate = Color.WHITE
+				FishManager.addHouse(selectedObject)
 				selectedObject = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

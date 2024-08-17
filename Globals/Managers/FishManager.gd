@@ -6,16 +6,18 @@ signal fishUpdated #should be signaled when homelessFish gets changed
 	0: preload("res://Objects/Fish/fish.tscn")
 }
 
-var homelessFish = {
+var homelessFish:Dictionary = {
 	0:[]
 } #array of homeless fish counts sorted by type
 
-	
+var activeHouses:Array = [] #all the houses that get run when fish need to be changed
+
 func makeNewFishBatch(points:int):
 	#TODO: make this more intresting
 	for i in points:
 		spawnFish(0)
 	fishUpdated.emit()
+	CheckHouses()
 
 func spawnFish(type:int):
 	#create a new homeless fish of [type] off screen
@@ -27,6 +29,57 @@ func spawnFish(type:int):
 			newFish.position = Vector2(800, offset)
 		1:
 			newFish.position = Vector2(-800, offset)
-	newFish.target_location  = Vector2(0,0)
+	newFish.go_to_location(Vector2(0,0))
 	add_child(newFish)
 	homelessFish[type].append(newFish)
+
+func addHouse(house:Node2D):
+	activeHouses.append(house)
+	CheckHouses()
+
+func CheckHouses():
+	#when a house is built or destroyed, or new fish are created
+	var startingHomelessFish = homelessFish.duplicate(true)
+	var fish_left = 0 #fish left to allocate
+	for size in homelessFish:
+		fish_left += homelessFish[size].size()
+	for house:House in activeHouses:
+		#free rooms 
+		for size in house.current_fish:
+			homelessFish[size].append_array(house.current_fish[size])
+			fish_left += house.current_fish[size].size()
+			house.current_fish[size] = []
+			for fish:Fish in house.current_fish[size]:
+				fish.homeless=true
+		var free_rooms = house.fish_capacity
+		# put best fish in each room
+		for i in range(house.max_fish_size,-1,-1):#count down from biggest in house to smallest
+			if homelessFish[i].size() < free_rooms:
+				#put all homeless fish of this size in this house
+				free_rooms -= homelessFish[i].size()
+				fish_left -= homelessFish[i].size()
+				for fish:Fish in homelessFish[i]:
+					fish.go_to_location(house.position)
+					fish.homeless = false
+				house.current_fish[i] = homelessFish[i]
+				homelessFish[i] = []
+				continue #next fish size
+			else:
+				#fill the house with homeless fish of this size
+				#free_rooms = 0 #step implied for symmetry, but isn't nessasry b/c of the break
+				fish_left -= free_rooms
+				var movedObjects = homelessFish[i].slice(-free_rooms)
+				for fish:Fish in movedObjects:
+					fish.go_to_location(house.position)
+					fish.homeless = false
+				#move [free_rooms] items from homelessfish to house
+				homelessFish[i] = homelessFish[i].slice(0,-free_rooms)
+				house.current_fish[i] = movedObjects
+				break #next house
+		if fish_left <= 0: #less than 0 shouldn't be possible but I dont want to get stuck
+			break # no fish left - done with houses
+	#go again if needed
+	if (startingHomelessFish != homelessFish):
+		fishUpdated.emit()
+		if fish_left > 0:
+			CheckHouses() #if there was any change AND there are fish left - recurse
