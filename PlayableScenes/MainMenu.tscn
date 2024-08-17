@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm5phgnfsckve"]
+[gd_scene load_steps=9 format=3 uid="uid://dm5phgnfsckve"]
 
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ofdq6"]
 [ext_resource type="LabelSettings" uid="uid://dfsuictd67ek8" path="res://UI/home_label_settings.tres" id="2_d8e3l"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
 [ext_resource type="AudioStream" uid="uid://dpx4tdhafnjs1" path="res://assets/audio/msuic/test music.wav" id="6_u4gp0"]
+[ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/ui sound 1.wav" id="7_1vx5o"]
+[ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/ui sound 2.wav" id="7_k3v3v"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -105,11 +107,23 @@ grow_vertical = 0
 text = "back"
 script = ExtResource("4_2d5hg")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="audio" type="Node" parent="."]
+
+[node name="main menu music" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource("6_u4gp0")
 volume_db = -0.001
 autoplay = true
 bus = &"Music"
+
+[node name="ui1" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("7_1vx5o")
+volume_db = -0.001
+bus = &"UI"
+
+[node name="ui2" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("7_k3v3v")
+volume_db = -0.001
+bus = &"UI"
 
 [connection signal="pressed" from="VBoxContainer/Start Btn" to="VBoxContainer/Start Btn" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits Btn" to="VBoxContainer/Credits Btn" method="_on_pressed"]
