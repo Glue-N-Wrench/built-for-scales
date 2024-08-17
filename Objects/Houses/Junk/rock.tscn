@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjqtcrfaw0ymf" path="res://Objects/Houses/rocktest.png" id="2_jgpmv"]
 [ext_resource type="Shape2D" uid="uid://bvaj2m4ho7oqo" path="res://Objects/Houses/shapes/2x2square.tres" id="3_urss4"]
 
-[node name="BaseHouse" instance=ExtResource("1_kud8j")]
+[node name="BaseHouse2" instance=ExtResource("1_kud8j")]
 destructable = false
 cost = 0
 fish_capacity = 0
