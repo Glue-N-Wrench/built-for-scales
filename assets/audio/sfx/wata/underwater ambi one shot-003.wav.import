@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvy3a5dfcs4vo"
+path="res://.godot/imported/underwater ambi one shot-003.wav-ab41526092e765c1646f1c285bb7021b.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wata/underwater ambi one shot-003.wav"
+dest_files=["res://.godot/imported/underwater ambi one shot-003.wav-ab41526092e765c1646f1c285bb7021b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
