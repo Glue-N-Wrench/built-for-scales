@@ -1,20 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkij0finue12o"]
+[gd_scene load_steps=12 format=3 uid="uid://bkij0finue12o"]
 
-[ext_resource type="Texture2D" uid="uid://bjqtcrfaw0ymf" path="res://Objects/Houses/rocktest.png" id="1_3gfu5"]
+[ext_resource type="Texture2D" uid="uid://b624syfuys1cu" path="res://Objects/Fish/fishanim_anchovy_strip8.png" id="1_ek2vy"]
 [ext_resource type="Script" path="res://Objects/Fish/Fish.gd" id="2_mf5g3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7d5w"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nr1o"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae8h7"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(125, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kmc4"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(175, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs7n3"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(225, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axn3b"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(275, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ny6q"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(325, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gdh7"]
+atlas = ExtResource("1_ek2vy")
+region = Rect2(375, 0, 25, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rv5dp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3gfu5")
+"texture": SubResource("AtlasTexture_p7d5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nr1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae8h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kmc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs7n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axn3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ny6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gdh7")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Fish" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rv5dp")
+autoplay = "default"
+frame_progress = 0.0948922
 script = ExtResource("2_mf5g3")
-speed = null

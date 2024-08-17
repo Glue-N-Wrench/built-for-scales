@@ -39,6 +39,3 @@ func _process(delta):
 		else:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
-	
-func _draw():
-	draw_circle(Vector2.ZERO, 36, Color(0,1,0,0.5))
