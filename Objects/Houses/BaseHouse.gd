@@ -7,8 +7,11 @@ class_name House
 @export var refund:int = 1
 @export var fish_capacity: int = 1;
 @export var max_fish_size: int = 0;
+@export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 var current_fish = {
-	0:[]
+	0:[],
+	1:[],
+	2:[],
 };
 @export var shape:Shape2D
 

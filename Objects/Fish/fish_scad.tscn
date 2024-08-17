@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://ck4bcbrrvwtix"]
+
+[ext_resource type="PackedScene" uid="uid://bkij0finue12o" path="res://Objects/Fish/fish.tscn" id="1_2l8rv"]
+[ext_resource type="Texture2D" uid="uid://du8en807t4q7e" path="res://Objects/Fish/fishanim_scad_strip8.png" id="2_j6i8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1oxg"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(16, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ghvv"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(66, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qm6i"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(116, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hhka"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(166, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_580i3"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(216, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqwxg"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(266, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v0fp"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(316, 0, 33, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sox06"]
+atlas = ExtResource("2_j6i8n")
+region = Rect2(366, 0, 33, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ipcy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1oxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ghvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qm6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hhka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_580i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqwxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v0fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sox06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Fish" instance=ExtResource("1_2l8rv")]
+sprite_frames = SubResource("SpriteFrames_ipcy2")
+frame_progress = 0.361092
+speed = 150

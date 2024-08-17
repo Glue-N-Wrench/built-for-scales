@@ -3,12 +3,16 @@ extends Node
 signal fishUpdated #should be signaled when homelessFish gets changed
 
 @onready var fishObjects = {
-	0: preload("res://Objects/Fish/fish.tscn")
+	0: preload("res://Objects/Fish/fish.tscn"),
+	1: preload("res://Objects/Fish/fish_scad.tscn"),
+	2: preload("res://Objects/Fish/fish_catfish.tscn"),
 }
 
 var homelessFish:Dictionary = {
-	0:[]
-} #array of homeless fish counts sorted by type
+	0:[],
+	1:[],
+	2:[],
+} #dict of homeless fish nodes sorted by type
 
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
 

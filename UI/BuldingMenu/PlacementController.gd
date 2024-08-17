@@ -1,6 +1,6 @@
 extends Node2D
 
-var selectedObject:Node = null
+var selectedObject:House = null
 var validPlace:bool = false
 
 @onready var Houses = {
@@ -33,6 +33,11 @@ func _process(delta):
 	if selectedObject != null:
 		position = get_global_mouse_position()
 		#TODO: restrict position to grid
+		print(global_position.y)
+		if global_position.y+selectedObject.distToGround > 300:
+			selectedObject.modulate = Color(1,0,0,0.5)#red
+			validPlace = false
+			return
 		var overlaps = selectedObject.get_node('Area2D').get_overlapping_areas()
 		if overlaps.size() == 0:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue

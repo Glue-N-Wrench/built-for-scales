@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://4cx7t6gi48b6"]
+
+[ext_resource type="PackedScene" uid="uid://bkij0finue12o" path="res://Objects/Fish/fish.tscn" id="1_mr40s"]
+[ext_resource type="Texture2D" uid="uid://dp54xnu1f02lj" path="res://Objects/Fish/fishanim_catfish_strip8.png" id="2_6qjj8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvcr7"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(4, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jow65"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(54, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa600"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(104, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uor7b"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(154, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlt26"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(204, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ooic"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(254, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8ala"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(304, 0, 46, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ut2"]
+atlas = ExtResource("2_6qjj8")
+region = Rect2(354, 0, 46, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux4vx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvcr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jow65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uor7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlt26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ooic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8ala")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ut2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 3.0
+}]
+
+[node name="Fish" instance=ExtResource("1_mr40s")]
+sprite_frames = SubResource("SpriteFrames_ux4vx")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.10324
+speed = 100
