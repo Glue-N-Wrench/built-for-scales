@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm41yw626266q"
+path="res://.godot/imported/place house sfx.wav-82e052cbf29cc442ad87160a9a2f9971.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/house build/place house sfx.wav"
+dest_files=["res://.godot/imported/place house sfx.wav-82e052cbf29cc442ad87160a9a2f9971.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

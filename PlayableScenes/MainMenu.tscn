@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
 [ext_resource type="AudioStream" uid="uid://dpx4tdhafnjs1" path="res://assets/audio/msuic/test music.wav" id="6_u4gp0"]
-[ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/ui sound 1.wav" id="7_1vx5o"]
-[ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/ui sound 2.wav" id="7_k3v3v"]
+[ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/sfx/ui sfx/ui sound 1.wav" id="7_1vx5o"]
+[ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/sfx/ui sfx/ui sound 2.wav" id="7_k3v3v"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

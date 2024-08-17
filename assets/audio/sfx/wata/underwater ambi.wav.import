@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d08qafs5huid1"
+path="res://.godot/imported/underwater ambi.wav-6d7cfe55ef7bb89458f95ce27bf29ee9.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wata/underwater ambi.wav"
+dest_files=["res://.godot/imported/underwater ambi.wav-6d7cfe55ef7bb89458f95ce27bf29ee9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
