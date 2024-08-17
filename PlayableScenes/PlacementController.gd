@@ -14,7 +14,7 @@ func makeSelection(selection:int):
 	selectedObject = Houses[selection].instantiate()
 	add_child(selectedObject)
 
-func _input(event):
+func _unhandled_input(event):
 	# Mouse in viewport coordinates.
 	if selectedObject != null:
 		if event is InputEventMouseButton and validPlace == true:
