@@ -9,5 +9,5 @@ func _ready():
 
 func _on_timer_timeout():
 	audio_one_shots.play()
-	print("playing one shopt")
+	print("playing one shot")
 	pass # Replace with function body.

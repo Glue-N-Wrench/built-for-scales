@@ -2,26 +2,35 @@
 extends Node2D
 class_name House
 
-@export var destructable:bool = true
+@export var junk:bool = false
 @export var cost:int = 1
 @export var refund:int = 1
 @export var fish_capacity: int = 1;
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 var current_fish = {
-	0:[],
-	1:[],
-	2:[],
+	0:[]
 };
 @export var shape:Shape2D
 
 func _ready():
 	$Area2D/CollisionPolygon2D.polygon = shape.points
+	FishManager.fishUpdated.connect(_on_fish_updated)
+	$FishDetails.extraText = "max: "+str(fish_capacity)
+	for i in range(max_fish_size+1):
+		current_fish[i] = []
+	_on_fish_updated()
+
+func _on_fish_updated():
+	var newDict = {}
+	for size in current_fish:
+		newDict[size] = current_fish[size].size()
+	$FishDetails.fishData = newDict
 
 
-func place():#gets called by the builder object when the house first gets placed
-	pass
+func _on_area_2d_mouse_entered():
+	if !junk:
+		$FishDetails.visible = true
 
-func destroy():#gets called when the house gets "removed"
-	pass
-
+func _on_area_2d_mouse_exited():
+	$FishDetails.visible = false
