@@ -8,7 +8,6 @@
 destructable = false
 cost = 0
 fish_capacity = 0
-distToGround = null
 shape = ExtResource("3_urss4")
 
 [node name="Sprite2D" parent="." index="0"]
