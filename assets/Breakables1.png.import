@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://51n81em480v0"
-path="res://.godot/imported/Tileset v2.png-1355dbfca33f03949548c8866b4d5958.ctex"
+uid="uid://bj8bbmkb7wdqc"
+path="res://.godot/imported/Breakables1.png-3b20c093da8a85ed989fa91d708de263.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tileset v2.png"
-dest_files=["res://.godot/imported/Tileset v2.png-1355dbfca33f03949548c8866b4d5958.ctex"]
+source_file="res://assets/Breakables1.png"
+dest_files=["res://.godot/imported/Breakables1.png-3b20c093da8a85ed989fa91d708de263.ctex"]
 
 [params]
 
