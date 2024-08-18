@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvlsnxcaagq3r"]
+
+[ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="2_7kis6"]
+[ext_resource type="Texture2D" uid="uid://dumvjuhjtl14i" path="res://Objects/Houses/Textures/house_2x2_a.png" id="2_in0fl"]
+
+[node name="HouseCard" type="VBoxContainer"]
+offset_right = 128.0
+offset_bottom = 153.0
+script = ExtResource("2_7kis6")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("2_in0fl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Small 3 Room"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

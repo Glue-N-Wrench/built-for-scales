@@ -13,13 +13,21 @@ var homelessFish:Dictionary = {
 	1:[],
 	2:[],
 } #dict of homeless fish nodes sorted by type
-
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
+const maxHomeless = 5
+
+func getTotalHomeless():
+		var sum = 0
+		for size in homelessFish:
+			sum += homelessFish[size].size()
+		return sum
 
 func makeNewFishBatch(points:int):
 	#TODO: make this more intresting
-	for i in points:
-		spawnFish(0)
+	while points>0:
+		var purchase = randi_range(1,min(points, 3))
+		spawnFish(purchase-1)
+		points -= purchase
 	fishUpdated.emit()
 	CheckHouses()
 
@@ -27,7 +35,7 @@ func spawnFish(type:int):
 	#create a new homeless fish of [type] off screen
 	var newFish = fishObjects[type].instantiate()
 	var direction = randi_range(0,1)
-	var offset = randf_range(-500,500)
+	var offset = randf_range(-400,300)
 	match direction:
 		0:
 			newFish.position = Vector2(800, offset)
