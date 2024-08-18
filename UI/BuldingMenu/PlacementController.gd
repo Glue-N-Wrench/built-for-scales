@@ -27,7 +27,8 @@ func _unhandled_input(event):
 				remove_child(selectedObject)
 				get_tree().root.add_child(selectedObject)
 				selectedObject.set_process(true)
-				selectedObject.position = get_viewport().get_camera_2d().get_global_mouse_position()
+				selectedObject.position = get_viewport().get_camera_2d()\
+					.get_global_mouse_position().snapped(ViewManager.gridSize)
 				selectedObject.modulate = Color.WHITE
 				FishManager.addHouse(selectedObject)
 				selectedObject = null
@@ -41,7 +42,7 @@ func _process(delta):
 		#== restrict placement to bounds ==
 		if global_position.y+selectedObject.distToGround > ViewManager.floor \
 			or absf(global_position.x) > ViewManager.gridLimitSides \
-			or global_position.y < ViewManager.floor-ViewManager.gridLimitTop:
+			or global_position.y < ViewManager.gridLimitTop:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
 			return

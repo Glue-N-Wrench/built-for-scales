@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 OptionsMan="*res://Globals/Managers/OptionsManager.gd"
 MainAudio="*res://assets/audio/audio objects/MainAudio.tscn"
 UnderwaterAmbienceAudio="*res://assets/audio/audio objects/underwater_ambience_audio.tscn"
+ViewManager="*res://Globals/Managers/ViewManager.gd"
 TurnManager="*res://Globals/Managers/TurnManager.gd"
 FishManager="*res://Globals/Managers/FishManager.gd"
-ViewManager="*res://Globals/Managers/ViewManager.gd"
 
 [input]
 
