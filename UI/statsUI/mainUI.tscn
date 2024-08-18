@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=9 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="1_2cogl"]
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_4lg4b"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="PackedScene" uid="uid://t82iw71wy3k8" path="res://UI/fish_details.tscn" id="3_ksol5"]
+[ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
+[ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(0, 0, 113, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwgeq"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(320, 26, 42, 42)
 
 [node name="MainUI" type="CanvasLayer"]
 
@@ -50,6 +60,38 @@ text = "Homeless Fish: 0"
 [node name="FishDetails" parent="StatsUi/HomelessFish" instance=ExtResource("3_ksol5")]
 visible = false
 layout_mode = 1
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 131.0
+offset_bottom = 84.0
+scale = Vector2(2, 2)
+
+[node name="DayIndicator" type="TextureRect" parent="TopLeftContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_67823")
+script = ExtResource("6_fk8a3")
+
+[node name="Sun" type="TextureRect" parent="TopLeftContainer/DayIndicator"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -20.5
+offset_right = -0.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 21)
+texture = SubResource("AtlasTexture_fwgeq")
 
 [connection signal="pressed" from="BuldingMenu/House 2" to="BuldingMenu/House 2" method="_on_pressed"]
 [connection signal="pressed" from="BuldingMenu/House 1" to="BuldingMenu/House 1" method="_on_pressed"]

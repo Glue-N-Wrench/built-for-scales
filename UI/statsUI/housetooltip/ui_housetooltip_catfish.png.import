@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccbpd3gl68bji"
-path="res://.godot/imported/ui_housetooltip_jelly.png-31c72cd6deb9c16125cc3ed8dd9de2ef.ctex"
+uid="uid://tw4nj38u1g06"
+path="res://.godot/imported/ui_housetooltip_catfish.png-00bfe3b67ae4708ed37eda4c7f340cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/statsUI/ui_housetooltip_jelly.png"
-dest_files=["res://.godot/imported/ui_housetooltip_jelly.png-31c72cd6deb9c16125cc3ed8dd9de2ef.ctex"]
+source_file="res://UI/statsUI/housetooltip/ui_housetooltip_catfish.png"
+dest_files=["res://.godot/imported/ui_housetooltip_catfish.png-00bfe3b67ae4708ed37eda4c7f340cd1.ctex"]
 
 [params]
 

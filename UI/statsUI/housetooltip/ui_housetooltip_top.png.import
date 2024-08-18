@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7ks1d4vf46g3"
-path="res://.godot/imported/ui_housetooltip_top.png-1cbe46cad213232c38480a24485e83a4.ctex"
+path="res://.godot/imported/ui_housetooltip_top.png-829f562e277744f7d40da96b6ef92900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/statsUI/ui_housetooltip_top.png"
-dest_files=["res://.godot/imported/ui_housetooltip_top.png-1cbe46cad213232c38480a24485e83a4.ctex"]
+source_file="res://UI/statsUI/housetooltip/ui_housetooltip_top.png"
+dest_files=["res://.godot/imported/ui_housetooltip_top.png-829f562e277744f7d40da96b6ef92900.ctex"]
 
 [params]
 

@@ -12,7 +12,7 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_i6qqw")
 
-[node name="LeftUI" parent="Camera2D" instance=ExtResource("3_ev5cs")]
+[node name="MainUI" parent="Camera2D" instance=ExtResource("3_ev5cs")]
 
 [node name="BaseHouse2" parent="." instance=ExtResource("3_1jkw4")]
 texture_filter = 0

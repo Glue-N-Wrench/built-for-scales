@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://451nytbm3kis"
-path="res://.godot/imported/ui_housetooltip_bottom.png-40873996659d81a96926dae6c79bc08b.ctex"
+uid="uid://bop2umuhppyg3"
+path="res://.godot/imported/ui_housetooltip_anchovi.png-29c724a2f2fa455f1a39613efa5beba4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/statsUI/ui_housetooltip_bottom.png"
-dest_files=["res://.godot/imported/ui_housetooltip_bottom.png-40873996659d81a96926dae6c79bc08b.ctex"]
+source_file="res://UI/statsUI/housetooltip/ui_housetooltip_anchovi.png"
+dest_files=["res://.godot/imported/ui_housetooltip_anchovi.png-29c724a2f2fa455f1a39613efa5beba4.ctex"]
 
 [params]
 

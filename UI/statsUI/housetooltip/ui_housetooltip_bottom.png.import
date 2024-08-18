@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxlo8f5cw547v"
-path="res://.godot/imported/ui_housetooltip_blank.png-2eb5be565571190d1de70c78798810f7.ctex"
+uid="uid://451nytbm3kis"
+path="res://.godot/imported/ui_housetooltip_bottom.png-2bec73ec8fdfa4aa891cd597c2c0c115.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/statsUI/ui_housetooltip_blank.png"
-dest_files=["res://.godot/imported/ui_housetooltip_blank.png-2eb5be565571190d1de70c78798810f7.ctex"]
+source_file="res://UI/statsUI/housetooltip/ui_housetooltip_bottom.png"
+dest_files=["res://.godot/imported/ui_housetooltip_bottom.png-2bec73ec8fdfa4aa891cd597c2c0c115.ctex"]
 
 [params]
 

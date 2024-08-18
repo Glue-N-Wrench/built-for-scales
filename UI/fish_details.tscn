@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://t82iw71wy3k8"]
 
 [ext_resource type="Script" path="res://UI/statsUI/FishDetails.gd" id="1_axflx"]
-[ext_resource type="Texture2D" uid="uid://c7ks1d4vf46g3" path="res://UI/statsUI/ui_housetooltip_top.png" id="2_0e1kg"]
-[ext_resource type="Texture2D" uid="uid://cxlo8f5cw547v" path="res://UI/statsUI/ui_housetooltip_blank.png" id="3_1l663"]
-[ext_resource type="Texture2D" uid="uid://bop2umuhppyg3" path="res://UI/statsUI/ui_housetooltip_anchovi.png" id="4_0kprx"]
-[ext_resource type="Texture2D" uid="uid://b1o0pdwgfhaoq" path="res://UI/statsUI/ui_housetooltip_scad.png" id="5_oku0c"]
-[ext_resource type="Texture2D" uid="uid://tw4nj38u1g06" path="res://UI/statsUI/ui_housetooltip_catfish.png" id="6_kgwjw"]
-[ext_resource type="Texture2D" uid="uid://ccbpd3gl68bji" path="res://UI/statsUI/ui_housetooltip_jelly.png" id="7_187jh"]
-[ext_resource type="Texture2D" uid="uid://451nytbm3kis" path="res://UI/statsUI/ui_housetooltip_bottom.png" id="8_jf7vy"]
+[ext_resource type="Texture2D" uid="uid://c7ks1d4vf46g3" path="res://UI/statsUI/housetooltip/ui_housetooltip_top.png" id="2_0e1kg"]
+[ext_resource type="Texture2D" uid="uid://cxlo8f5cw547v" path="res://UI/statsUI/housetooltip/ui_housetooltip_blank.png" id="3_1l663"]
+[ext_resource type="Texture2D" uid="uid://bop2umuhppyg3" path="res://UI/statsUI/housetooltip/ui_housetooltip_anchovi.png" id="4_0kprx"]
+[ext_resource type="Texture2D" uid="uid://b1o0pdwgfhaoq" path="res://UI/statsUI/housetooltip/ui_housetooltip_scad.png" id="5_oku0c"]
+[ext_resource type="Texture2D" uid="uid://tw4nj38u1g06" path="res://UI/statsUI/housetooltip/ui_housetooltip_catfish.png" id="6_kgwjw"]
+[ext_resource type="Texture2D" uid="uid://ccbpd3gl68bji" path="res://UI/statsUI/housetooltip/ui_housetooltip_jelly.png" id="7_187jh"]
+[ext_resource type="Texture2D" uid="uid://451nytbm3kis" path="res://UI/statsUI/housetooltip/ui_housetooltip_bottom.png" id="8_jf7vy"]
 
 [node name="FishDetails" type="Control"]
 layout_mode = 3
