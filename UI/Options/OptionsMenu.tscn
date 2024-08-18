@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://sfsnkv77s25d"]
+
+[ext_resource type="Script" path="res://UI/Options/OptionsMenu.gd" id="1"]
+
+[node name="OptionsMenu" type="Window"]
+title = "Options"
+initial_position = 1
+size = Vector2i(400, 300)
+script = ExtResource("1")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SoundSettings" type="HBoxContainer" parent="TabContainer"]
+layout_mode = 2
+
+[node name="ApplyBut" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Apply"
+
+[node name="CloseBut" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 50.0
+grow_vertical = 0
+text = "Cancel"
+
+[connection signal="pressed" from="ApplyBut" to="." method="_on_apply_but_pressed"]
+[connection signal="pressed" from="CloseBut" to="." method="_on_close_but_pressed"]

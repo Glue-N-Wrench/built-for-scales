@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm5phgnfsckve"]
+[gd_scene load_steps=7 format=3 uid="uid://dm5phgnfsckve"]
 
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ofdq6"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
 [ext_resource type="Script" path="res://UI/MainMenu/Start_Btn.gd" id="3_f3764"]
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
-[ext_resource type="AudioStream" uid="uid://dpx4tdhafnjs1" path="res://assets/audio/msuic/test music.wav" id="6_u4gp0"]
-[ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/sfx/ui sfx/ui sound 1.wav" id="7_1vx5o"]
-[ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/sfx/ui sfx/ui sound 2.wav" id="7_k3v3v"]
+[ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="6_00yg5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -62,9 +60,11 @@ text = "Credits
 script = ExtResource("4_qiav6")
 
 [node name="Popup" type="Window" parent="VBoxContainer/Credits Btn"]
+mode = 1
 title = "Credits!"
 initial_position = 2
 size = Vector2i(600, 400)
+visible = false
 transient = true
 unresizable = true
 content_scale_size = Vector2i(2, 2)
@@ -107,24 +107,17 @@ grow_vertical = 0
 text = "back"
 script = ExtResource("4_2d5hg")
 
-[node name="audio" type="Node" parent="."]
+[node name="OptionBtn" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
 
-[node name="main menu music" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource("6_u4gp0")
-volume_db = -0.001
-autoplay = true
-bus = &"Music"
-
-[node name="ui1" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource("7_1vx5o")
-volume_db = -0.001
-bus = &"UI"
-
-[node name="ui2" type="AudioStreamPlayer" parent="audio"]
-stream = ExtResource("7_k3v3v")
-volume_db = -0.001
-bus = &"UI"
+[node name="OptionsMenu" parent="VBoxContainer/OptionBtn" instance=ExtResource("6_00yg5")]
+mode = 1
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/Start Btn" to="VBoxContainer/Start Btn" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits Btn" to="VBoxContainer/Credits Btn" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits Btn/Popup/BackBtn" to="VBoxContainer/Credits Btn/Popup/BackBtn" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionBtn" to="VBoxContainer/OptionBtn/OptionsMenu" method="_on_option_btn_pressed"]

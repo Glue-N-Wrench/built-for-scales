@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh8xf72fdxpkr"]
+
+[ext_resource type="AudioStream" uid="uid://dpx4tdhafnjs1" path="res://assets/audio/msuic/test music.wav" id="1_l144u"]
+[ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/sfx/ui sfx/ui sound 1.wav" id="2_4rw8b"]
+[ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/sfx/ui sfx/ui sound 2.wav" id="3_6w5wv"]
+
+[node name="Audio" type="Node"]
+
+[node name="main menu music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_l144u")
+volume_db = -0.001
+autoplay = true
+bus = &"Music"
+
+[node name="ui1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4rw8b")
+volume_db = -0.001
+bus = &"UI"
+
+[node name="ui2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6w5wv")
+volume_db = -2.332
+bus = &"UI"

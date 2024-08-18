@@ -15,8 +15,11 @@ var weekTimer = 0
 signal updateGameOverTimer
 var gameOverCount = 10#seconds till game over
 var gameOverTimer = 0
+var running = false #to be set true when the game begins
 
 func _process(delta):
+	if running == false:
+		return
 	#==manage the day==
 	roundTimer -= delta
 	if roundTimer < 0:
