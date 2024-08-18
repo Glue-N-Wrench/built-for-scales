@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxm7ow53fscsb"
-path="res://.godot/imported/floor_loop.png-3e4f252b9f153e749bade96e4cced7c1.ctex"
+uid="uid://fudqpquhkky1"
+path="res://.godot/imported/Breakables2Finish.png-213eb94ef740a27c1579fca831d667bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_loop.png"
-dest_files=["res://.godot/imported/floor_loop.png-3e4f252b9f153e749bade96e4cced7c1.ctex"]
+source_file="res://assets/Breakables2Finish.png"
+dest_files=["res://.godot/imported/Breakables2Finish.png-213eb94ef740a27c1579fca831d667bd.ctex"]
 
 [params]
 
