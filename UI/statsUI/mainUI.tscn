@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="PackedScene" uid="uid://t82iw71wy3k8" path="res://UI/fish_details.tscn" id="3_ksol5"]
 
-[node name="LeftUI" type="CanvasLayer"]
+[node name="MainUI" type="CanvasLayer"]
 
 [node name="BuldingMenu" type="VBoxContainer" parent="."]
 texture_filter = 1
