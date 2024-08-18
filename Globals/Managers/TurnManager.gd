@@ -17,7 +17,7 @@ var gameOverCount = 10#seconds till game over
 var gameOverTimer = 0
 
 func _process(delta):
-	if get_tree().get_current_scene().name != 'MainLevel':
+	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
 	#==manage the day==
 	roundTimer -= delta
