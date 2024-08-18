@@ -17,6 +17,9 @@ func _ready():
 	$Area2D/CollisionPolygon2D.polygon = shape.points
 	FishManager.fishUpdated.connect(_on_fish_updated)
 	$FishDetails.extraText = "max: "+str(fish_capacity)
+	for i in range(max_fish_size):
+		current_fish[i] = []
+	_on_fish_updated()
 
 func _on_fish_updated():
 	var newDict = {}
