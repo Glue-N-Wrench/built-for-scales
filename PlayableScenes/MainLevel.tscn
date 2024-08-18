@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="PackedScene" uid="uid://ccv23synovtw6" path="res://Objects/Houses/Junk/rock.tscn" id="3_1jkw4"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
-[ext_resource type="PackedScene" uid="uid://bqhhvgdm83qaa" path="res://UI/left_ui.tscn" id="3_ev5cs"]
+[ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_ev5cs"]
 [ext_resource type="Texture2D" uid="uid://dxm7ow53fscsb" path="res://assets/floor_loop.png" id="5_eimxi"]
 
 [node name="MainLevel" type="Node2D"]
@@ -12,17 +12,15 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_i6qqw")
 
-[node name="LeftUI" parent="Camera2D" instance=ExtResource("3_ev5cs")]
+[node name="MainUI" parent="Camera2D" instance=ExtResource("3_ev5cs")]
 
 [node name="BaseHouse2" parent="." instance=ExtResource("3_1jkw4")]
+texture_filter = 0
 position = Vector2(-330, 212)
-max_fish_size = 1
-distToGround = 64
 
 [node name="BaseHouse3" parent="." instance=ExtResource("3_1jkw4")]
+texture_filter = 0
 position = Vector2(304, 212)
-max_fish_size = 1
-distToGround = 64
 
 [node name="PlacementController" type="Node2D" parent="."]
 z_index = 1

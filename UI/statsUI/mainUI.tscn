@@ -1,0 +1,219 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0krhlmapyjp3"]
+
+[ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="1_2cogl"]
+[ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_4lg4b"]
+[ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
+[ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
+[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
+[ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
+[ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(0, 0, 113, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwgeq"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(320, 26, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtyms"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(22, 71, 31, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhna"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(20, 133, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08qw7"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(64, 136, 352, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cmyw"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(64, 104, 352, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6ouy"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(418, 125, 26, 35)
+
+[node name="MainUI" type="CanvasLayer"]
+
+[node name="BuldingMenu" type="VBoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -98.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="House 2" type="TextureButton" parent="BuldingMenu"]
+layout_mode = 2
+texture_normal = ExtResource("1_4lg4b")
+script = ExtResource("1_2cogl")
+houseNumb = 1
+
+[node name="House 1" type="TextureButton" parent="BuldingMenu"]
+layout_mode = 2
+texture_normal = ExtResource("1_4lg4b")
+script = ExtResource("1_2cogl")
+
+[node name="TopLeftContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 131.0
+offset_bottom = 84.0
+scale = Vector2(2.5, 2.5)
+
+[node name="DayIndicator" type="TextureRect" parent="TopLeftContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_67823")
+script = ExtResource("6_fk8a3")
+
+[node name="Sun" type="TextureRect" parent="TopLeftContainer/DayIndicator"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -20.5
+offset_right = -0.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 21)
+texture = SubResource("AtlasTexture_fwgeq")
+
+[node name="Label" type="Label" parent="TopLeftContainer/DayIndicator"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 67.0
+scale = Vector2(0.75, 0.75)
+text = "Day
+1"
+label_settings = ExtResource("5_qkcwe")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="TopLeftContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="HomelessFish" type="VBoxContainer" parent="TopLeftContainer/Control"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+script = ExtResource("2_g15dv")
+
+[node name="MainLabel" type="HBoxContainer" parent="TopLeftContainer/Control/HomelessFish"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TopLeftContainer/Control/HomelessFish/MainLabel"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_gtyms")
+
+[node name="Label" type="Label" parent="TopLeftContainer/Control/HomelessFish/MainLabel"]
+layout_mode = 2
+text = "1/2"
+label_settings = ExtResource("5_qkcwe")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TopLeftContainer/Control/HomelessFish"]
+layout_mode = 2
+texture = ExtResource("6_v2m0y")
+
+[node name="FishNumbers" type="Control" parent="TopLeftContainer/Control/HomelessFish"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="fishLabel0" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 13.6
+offset_right = 21.6
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel1" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 44.8
+offset_right = 52.8
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel2" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 74.4
+offset_right = 82.4
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel3" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 107.2
+offset_right = 115.2
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="BottomContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -70.0
+offset_right = 1.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+size_flags_vertical = 8
+
+[node name="TextureRect" type="TextureRect" parent="BottomContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dlhna")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="BottomContainer"]
+custom_minimum_size = Vector2(355, 0)
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="BottomContainer/Control"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 352.0
+offset_bottom = 8.0
+grow_vertical = 2
+size_flags_horizontal = 4
+value = 100.0
+texture_over = SubResource("AtlasTexture_08qw7")
+texture_progress = SubResource("AtlasTexture_6cmyw")
+texture_progress_offset = Vector2(1, 0)
+
+[node name="TextureRect2" type="TextureRect" parent="BottomContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_y6ouy")
+
+[connection signal="pressed" from="BuldingMenu/House 2" to="BuldingMenu/House 2" method="_on_pressed"]
+[connection signal="pressed" from="BuldingMenu/House 1" to="BuldingMenu/House 1" method="_on_pressed"]
