@@ -9,6 +9,7 @@ var validPlace:bool = false
 static var Houses = {
 	0: preload("res://Objects/Houses/base_house.tscn"),
 	1: preload("res://Objects/Houses/house_b.tscn"),
+	2: preload("res://Objects/Houses/big_house_a.tscn"),
 	}
 
 # Called when the node enters the scene tree for the first time.

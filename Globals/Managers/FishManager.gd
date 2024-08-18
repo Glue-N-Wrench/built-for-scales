@@ -24,8 +24,10 @@ func getTotalHomeless():
 
 func makeNewFishBatch(points:int):
 	#TODO: make this more intresting
-	for i in points:
-		spawnFish(0)
+	while points>0:
+		var purchase = randi_range(1,min(points, 3))
+		spawnFish(purchase-1)
+		points -= purchase
 	fishUpdated.emit()
 	CheckHouses()
 
@@ -33,7 +35,7 @@ func spawnFish(type:int):
 	#create a new homeless fish of [type] off screen
 	var newFish = fishObjects[type].instantiate()
 	var direction = randi_range(0,1)
-	var offset = randf_range(-500,500)
+	var offset = randf_range(-400,300)
 	match direction:
 		0:
 			newFish.position = Vector2(800, offset)

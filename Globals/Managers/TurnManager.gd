@@ -7,7 +7,7 @@ extends Node
 
 var dayCount = 0
 signal updateDay # a signal for the UI
-const roundTime = 10 #seconds in a round
+const roundTime = 20 #seconds in a round
 var roundTimer = 0
 const weekTime = 7 #rounds in a week
 var weekTimer = 0
@@ -17,5 +17,5 @@ func _process(delta):
 	if roundTimer < 0:
 		roundTimer = roundTime
 		dayCount += 1
-		FishManager.makeNewFishBatch(2)
+		FishManager.makeNewFishBatch(4)
 		updateDay.emit()

@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=14 format=3 uid="uid://b0krhlmapyjp3"]
 
-[ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="1_2cogl"]
-[ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_4lg4b"]
+[ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
 [ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
@@ -48,16 +47,16 @@ offset_left = -98.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="House 2" type="TextureButton" parent="BuldingMenu"]
+[node name="HouseCard" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
-texture_normal = ExtResource("1_4lg4b")
-script = ExtResource("1_2cogl")
+
+[node name="HouseCard2" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
 houseNumb = 1
 
-[node name="House 1" type="TextureButton" parent="BuldingMenu"]
+[node name="HouseCard3" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
-texture_normal = ExtResource("1_4lg4b")
-script = ExtResource("1_2cogl")
+houseNumb = 2
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -214,6 +213,3 @@ texture_progress_offset = Vector2(1, 0)
 [node name="TextureRect2" type="TextureRect" parent="BottomContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_y6ouy")
-
-[connection signal="pressed" from="BuldingMenu/House 2" to="BuldingMenu/House 2" method="_on_pressed"]
-[connection signal="pressed" from="BuldingMenu/House 1" to="BuldingMenu/House 1" method="_on_pressed"]
