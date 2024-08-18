@@ -1,5 +1,5 @@
 # Godot 4+ specific ignores
-.godot/
+.godot/*
 
 # Godot-specific ignores
 .import/
@@ -16,3 +16,4 @@ mono_crash.*.json
 
 # Custom ignores
 *.tmp
+!.godot/global_script_class_cache.cfg
