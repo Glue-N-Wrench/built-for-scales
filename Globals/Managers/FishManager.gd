@@ -14,8 +14,13 @@ var homelessFish:Dictionary = {
 	2:[],
 } #dict of homeless fish nodes sorted by type
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
-
 const maxHomeless = 5
+
+func getTotalHomeless():
+		var sum = 0
+		for size in homelessFish:
+			sum += homelessFish[size].size()
+		return sum
 
 func makeNewFishBatch(points:int):
 	#TODO: make this more intresting
