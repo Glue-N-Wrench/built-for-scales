@@ -2,14 +2,9 @@
 extends Control
 class_name Fish_Dialog
 
-@export var fishData =  {
-	0:0,
-	1:0,
-	2:0,
-	}:
+@export var fishData =  {}:
 	set(x):#set using the housing/homeless dict
-		for key in x:
-			fishData[key] = x[key].size()
+		fishData = x
 		on_data_change()
 		queue_redraw()
 @export var extraText:String = "":

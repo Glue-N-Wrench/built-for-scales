@@ -9,7 +9,10 @@ func _ready():
 func _on_fish_updated():
 	$HomelessFish.text = \
 		"HomelessFish: "+str(FishManager.homelessFish[0].size())+"/"+str(FishManager.maxHomeless)
-	$HomelessFish/FishDetails.fishData = FishManager.homelessFish
+	var newDict = {}
+	for size in FishManager.homelessFish:
+		newDict[size] = FishManager.homelessFish[size].size()
+	$HomelessFish/FishDetails.fishData = newDict
 
 
 func _on_homeless_fish_pressed():

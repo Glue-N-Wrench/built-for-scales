@@ -31,9 +31,9 @@ func _unhandled_input(event):
 func _process(delta):
 	#position = get_viewport().get_mouse_position()+get_viewport().get_camera_2d().position
 	if selectedObject != null:
+		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
 		position = get_global_mouse_position()
 		#TODO: restrict position to grid
-		print(global_position.y)
 		if global_position.y+selectedObject.distToGround > 300:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false

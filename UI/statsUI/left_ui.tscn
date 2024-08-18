@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4f5s60ntf8j8"]
+[gd_scene load_steps=4 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="1_2cogl"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
-[ext_resource type="PackedScene" uid="uid://d16osiligt8pw" path="res://UI/fish_details.tscn" id="3_ksol5"]
+[ext_resource type="PackedScene" uid="uid://t82iw71wy3k8" path="res://UI/fish_details.tscn" id="3_ksol5"]
 
 [node name="LeftUI" type="CanvasLayer"]
 
