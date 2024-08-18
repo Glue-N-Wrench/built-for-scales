@@ -8,6 +8,7 @@
 [node name="BaseHouse" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_kh4vs")
+fish_capacity = 3
 shape = ExtResource("2_04yey")
 
 [node name="FishDetails" parent="." instance=ExtResource("2_eh5nu")]

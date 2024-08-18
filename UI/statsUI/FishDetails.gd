@@ -1,6 +1,5 @@
 @tool
 extends Control
-class_name Fish_Dialog
 
 @export var fishData =  {}:
 	set(x):#set using the housing/homeless dict

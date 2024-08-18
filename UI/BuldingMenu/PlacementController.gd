@@ -1,10 +1,14 @@
 extends Node2D
+class_name PlacementController 
+#this class manages the spawning and placement of all the blocks
+#keep an eye out for the staic variables to call from other places
 
 var selectedObject:House = null
 var validPlace:bool = false
 
-@onready var Houses = {
-	0: preload("res://Objects/Houses/base_house.tscn")
+static var Houses = {
+	0: preload("res://Objects/Houses/base_house.tscn"),
+	1: preload("res://Objects/Houses/house_b.tscn"),
 	}
 
 # Called when the node enters the scene tree for the first time.

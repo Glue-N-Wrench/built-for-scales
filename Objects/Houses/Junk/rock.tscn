@@ -19,6 +19,3 @@ fishData = {
 [node name="Sprite2D" parent="." index="1"]
 modulate = Color(1, 1, 1, 0.364706)
 texture = ExtResource("2_jgpmv")
-
-[node name="CollisionPolygon2D" parent="Area2D" index="0"]
-polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
