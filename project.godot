@@ -22,6 +22,7 @@ MainAudio="*res://assets/audio/audio objects/MainAudio.tscn"
 UnderwaterAmbienceAudio="*res://assets/audio/audio objects/underwater_ambience_audio.tscn"
 TurnManager="*res://Globals/Managers/TurnManager.gd"
 FishManager="*res://Globals/Managers/FishManager.gd"
+ViewManager="*res://Globals/Managers/ViewManager.gd"
 
 [input]
 

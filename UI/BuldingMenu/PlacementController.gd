@@ -37,12 +37,15 @@ func _process(delta):
 	#position = get_viewport().get_mouse_position()+get_viewport().get_camera_2d().position
 	if selectedObject != null:
 		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
-		position = get_global_mouse_position()
-		#TODO: restrict position to grid
-		if global_position.y+selectedObject.distToGround > 300:
+		position = get_global_mouse_position().snapped(ViewManager.gridSize)
+		#== restrict placement to bounds ==
+		if global_position.y+selectedObject.distToGround > ViewManager.floor \
+			or absf(global_position.x) > ViewManager.gridLimitSides \
+			or global_position.y < ViewManager.floor-ViewManager.gridLimitTop:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
 			return
+		# == prevent collision overlaps
 		var overlaps = selectedObject.get_node('Area2D').get_overlapping_areas()
 		if overlaps.size() == 0:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
