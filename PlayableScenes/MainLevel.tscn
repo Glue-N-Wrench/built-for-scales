@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=7 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="PackedScene" uid="uid://ccv23synovtw6" path="res://Objects/Houses/Junk/rock.tscn" id="3_1jkw4"]
+[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_ev5cs"]
 [ext_resource type="Texture2D" uid="uid://dxm7ow53fscsb" path="res://assets/floor_loop.png" id="5_eimxi"]
@@ -13,6 +14,20 @@ texture_filter = 1
 script = ExtResource("2_i6qqw")
 
 [node name="MainUI" parent="Camera2D" instance=ExtResource("3_ev5cs")]
+
+[node name="GameOverScreen" type="CanvasLayer" parent="Camera2D"]
+visible = false
+
+[node name="Label" type="Label" parent="Camera2D/GameOverScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = ExtResource("3_5jy7u")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BaseHouse2" parent="." instance=ExtResource("3_1jkw4")]
 texture_filter = 0

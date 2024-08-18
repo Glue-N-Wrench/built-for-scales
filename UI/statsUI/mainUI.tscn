@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=15 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
@@ -6,6 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
+[ext_resource type="Script" path="res://UI/statsUI/gameOverDisplay.gd" id="7_smfhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -184,6 +185,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
 size_flags_vertical = 8
+script = ExtResource("7_smfhu")
 
 [node name="TextureRect" type="TextureRect" parent="BottomContainer"]
 layout_mode = 2
@@ -194,7 +196,7 @@ stretch_mode = 3
 custom_minimum_size = Vector2(355, 0)
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="BottomContainer/Control"]
+[node name="gameOverBar" type="TextureProgressBar" parent="BottomContainer/Control"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 1
 anchors_preset = 4
@@ -205,11 +207,11 @@ offset_right = 352.0
 offset_bottom = 8.0
 grow_vertical = 2
 size_flags_horizontal = 4
-value = 100.0
 texture_over = SubResource("AtlasTexture_08qw7")
 texture_progress = SubResource("AtlasTexture_6cmyw")
 texture_progress_offset = Vector2(1, 0)
 
-[node name="TextureRect2" type="TextureRect" parent="BottomContainer"]
+[node name="warningIcon" type="TextureRect" parent="BottomContainer"]
+visible = false
 layout_mode = 2
 texture = SubResource("AtlasTexture_y6ouy")
