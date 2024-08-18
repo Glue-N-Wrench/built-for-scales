@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=17 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
 [ext_resource type="Script" path="res://UI/statsUI/gameOverDisplay.gd" id="7_smfhu"]
+[ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="8_s3b0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -36,28 +37,11 @@ region = Rect2(64, 104, 352, 16)
 atlas = ExtResource("5_6uqes")
 region = Rect2(418, 125, 26, 35)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x20ui"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(129, 0, 31, 30)
+
 [node name="MainUI" type="CanvasLayer"]
-
-[node name="BuldingMenu" type="VBoxContainer" parent="."]
-texture_filter = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -98.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="HouseCard" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-
-[node name="HouseCard2" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-houseNumb = 1
-
-[node name="HouseCard3" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-houseNumb = 2
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -215,3 +199,41 @@ texture_progress_offset = Vector2(1, 0)
 visible = false
 layout_mode = 2
 texture = SubResource("AtlasTexture_y6ouy")
+
+[node name="TopRightContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_right = -33.0
+offset_bottom = 30.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+
+[node name="SettingsBtn" type="TextureButton" parent="TopRightContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_x20ui")
+
+[node name="BuldingMenu" type="VBoxContainer" parent="."]
+texture_filter = 1
+offset_left = 1078.0
+offset_top = 91.0
+offset_right = 1183.0
+offset_bottom = 372.0
+
+[node name="HouseCard" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+
+[node name="HouseCard2" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+houseNumb = 1
+
+[node name="HouseCard3" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+houseNumb = 2
+
+[node name="OptionsMenu" parent="." instance=ExtResource("8_s3b0f")]
+visible = false
+
+[connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]

@@ -57,3 +57,6 @@ func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
 
+func _on_close_requested():
+	resetOptions()
+	hide()
