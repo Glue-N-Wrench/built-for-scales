@@ -28,7 +28,7 @@ func _process(delta):
 		updateDay.emit()
 	#==mange the week rewards==
 	if dayCount % weekTime == 0:
-		$"/root/MainLevel/Camera2D/WeeklyRewards".displayWeeklyRewards()
+		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
 		
 	#==manage the game over
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
