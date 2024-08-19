@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3qy7042o1prb"
+path="res://.godot/imported/fog horn.wav-8d60a61e58f88b35702b29c398241807.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/fog horn.wav"
+dest_files=["res://.godot/imported/fog horn.wav-8d60a61e58f88b35702b29c398241807.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

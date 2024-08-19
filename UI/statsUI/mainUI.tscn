@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=20 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bciwpbtvrkl44" path="res://assets/bomb.png" id="7_vdsd5"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/BuildingTray.gd" id="8_r84q3"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="8_s3b0f"]
+[ext_resource type="AudioStream" uid="uid://3qy7042o1prb" path="res://assets/audio/sfx/fog horn.wav" id="11_jwsg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -291,6 +292,10 @@ offset_right = 1.0
 offset_bottom = 28.5
 grow_vertical = 2
 text = ">"
+
+[node name="new day sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_jwsg6")
+bus = &"UI"
 
 [connection signal="toggled" from="TopLeftContainer/Control/HomelessFish/BOmb/Button" to="TopLeftContainer/Control/HomelessFish/BOmb" method="_on_button_toggled"]
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]
