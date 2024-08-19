@@ -28,7 +28,7 @@ func _unhandled_input(event):
 				get_tree().root.add_child(selectedObject)
 				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d()\
-					.get_global_mouse_position().snapped(ViewManager.gridSize)
+					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
 				FishManager.addHouse(selectedObject)
 				selectedObject = null
@@ -47,8 +47,10 @@ func _process(delta):
 			validPlace = false
 			return
 		# == prevent collision overlaps
-		var overlaps = selectedObject.get_node('Area2D').get_overlapping_areas()
-		if overlaps.size() == 0:
+		var overlaps = \
+			selectedObject.get_node('Area2D').has_overlapping_areas() or \
+			selectedObject.get_node('Area2D').has_overlapping_bodies()
+		if overlaps == false:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
 			validPlace = true
 		else:

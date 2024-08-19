@@ -15,7 +15,7 @@ const weekTime = 2 #rounds in a week
 
 signal updateGameOverTimer
 var gameOverCount = 10#seconds till game over
-var gameOverTimer = 0
+var gameOverTimer = 10
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
@@ -33,14 +33,11 @@ func _process(delta):
 		
 	#==manage the game over
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
-		gameOverTimer += delta
-		updateGameOverTimer.emit()
-		if gameOverTimer > gameOverCount:
-			$"/root/MainLevel/Camera2D/GameOverScreen".visible=true
-			get_tree().paused = true
-	elif gameOverTimer > 0:
 		gameOverTimer -= delta
 		updateGameOverTimer.emit()
-
-
-	
+		if gameOverTimer < 0:
+			$"/root/MainLevel/Camera2D/GameOverScreen".visible=true
+			get_tree().paused = true
+	elif gameOverTimer < gameOverCount:
+		gameOverTimer += delta
+		updateGameOverTimer.emit()

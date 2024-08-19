@@ -10,6 +10,7 @@ script = ExtResource("2_7kis6")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
+action_mode = 0
 texture_normal = ExtResource("2_in0fl")
 
 [node name="Label" type="Label" parent="."]
