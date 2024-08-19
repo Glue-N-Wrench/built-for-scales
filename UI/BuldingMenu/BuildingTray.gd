@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 var open = true
 const speed = 12
@@ -19,10 +19,8 @@ func _process(delta):
 func _on_tray_button_pressed():
 	if open:
 		open = false
-		$TrayButton.text = '<'
 	else:
 		open = true
-		$TrayButton.text = '>'
 
 func _on_inventory_update():
 	#removing every child every time is def. the least efficent way to update inventory
