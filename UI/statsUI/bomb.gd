@@ -4,6 +4,7 @@ var bomb = preload("res://Objects/bomb.tscn")
 @onready var tilemap: TileMap = $"/root/MainLevel/Tilemaps/Breakables"
 var distToGround:int = 64
 var offset:Vector2 = Vector2(0,0)
+@onready var bomb_sfx = $"bomb sfx"
 
 func Explode():
 	$AffectedArea.visible = false
@@ -15,6 +16,7 @@ func onPlace():
 
 func _on_bomb_animator_frame_changed():
 	if $BombAnimator.frame == 6 and $BombAnimator.animation == "Explode":
+		bomb_sfx.play()
 		var TL = tilemap.local_to_map(position - Vector2(80,80))
 		var BR = tilemap.local_to_map(position + Vector2(96,96))
 		var destroyedCells = []

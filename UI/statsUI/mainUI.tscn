@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=31 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://UI/BuldingMenu/BuildingTray.gd" id="8_r84q3"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="8_s3b0f"]
 [ext_resource type="Texture2D" uid="uid://b5vorj4yp26ok" path="res://assets/UI/More_UI_Stuff.png" id="11_nkv7f"]
+[ext_resource type="AudioStream" uid="uid://3qy7042o1prb" path="res://assets/audio/sfx/fog horn.wav" id="12_eqpne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -395,6 +396,11 @@ grow_vertical = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_d0uca")
 texture_pressed = SubResource("AtlasTexture_na7g3")
+
+[node name="foghorn sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_eqpne")
+volume_db = -10.306
+bus = &"Gameplay"
 
 [connection signal="toggled" from="TopLeftContainer/Control/HomelessFish/BOmb/Button" to="TopLeftContainer/Control/HomelessFish/BOmb" method="_on_button_toggled"]
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]

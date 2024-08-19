@@ -15,9 +15,13 @@ var current_fish = {
 };
 @export var shape:Shape2D
 
+@onready var house_placement_sfx = $house_placement_sfx
+
+
 func onPlace():
 	#todo: trigger placement affects
 	FishManager.addHouse(self)
+	house_placement_sfx.play()
 
 func _ready():
 	$Area2D/CollisionPolygon2D.polygon = shape.points
