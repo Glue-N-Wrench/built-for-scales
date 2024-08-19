@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_wnieg"]
 [ext_resource type="PackedScene" uid="uid://lmwhdldyoeea" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
-[ext_resource type="PackedScene" uid="uid://dqm5wh2ht0h2h" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
+[ext_resource type="PackedScene" uid="uid://dbshv6ukvash5" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
 [ext_resource type="Texture2D" uid="uid://fudqpquhkky1" path="res://assets/Breakables2Finish.png" id="5_v5tm4"]
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/Breakables1.png" id="6_qrlcs"]
 [ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvlsnxcaagq3r"]
 
 [ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="2_7kis6"]
-[ext_resource type="Texture2D" uid="uid://bn28ioyvhqocl" path="res://assets/allHouses/house_1x1_a.png" id="2_jb7up"]
+[ext_resource type="Texture2D" uid="uid://bn28ioyvhqocl" path="res://assets/Houses/house_1x1_a.png" id="2_jb7up"]
 [ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="2_s1gra"]
 
 [node name="HouseCard" type="Button"]
