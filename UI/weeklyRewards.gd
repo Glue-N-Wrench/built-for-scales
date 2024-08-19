@@ -16,8 +16,7 @@ var rewardArray = [["Bombs", 3, bombPngTest] , ["Small Homes", 3, smallHomeTextu
 @export var options = [[]]
 
 func _ready():
-	displayWeeklyRewards()
-	#visible = false
+	visible = false
 
 func displayWeeklyRewards():
 	get_tree().paused = true
@@ -27,7 +26,7 @@ func displayWeeklyRewards():
 func generateWeeklyOptions():
 	#This SHOULD display 3 bombs for all three options & store the bomb node in the options array
 	for x in 3:
-		var reward = rng.randi_range(0,22)
+		var reward = rng.randi_range(0,9)
 		#TODO REPLACE PLACEHOLDER FIRST INDEX [0]s WITH reward
 		get_node(options[x][0]).text = str(rewardArray[reward][1]) + " " + rewardArray[reward][0] + "   "
 		get_node(options[x][0]).icon = rewardArray[reward][2]

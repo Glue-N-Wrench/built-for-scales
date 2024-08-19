@@ -9,7 +9,8 @@ var dayCount = 0
 signal updateDay # a signal for the UI
 const roundTime = 20 #seconds in a round
 var roundTimer = 0
-const weekTime = 7 #rounds in a week
+#TODO change this back to 7
+const weekTime = 2 #rounds in a week
 #var weekTimer = 0 not needed we can just use the amount of days and modulus it by weektime
 
 signal updateGameOverTimer
