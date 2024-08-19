@@ -14,12 +14,14 @@ const weekTime = 2 #rounds in a 'week'
 signal updateGameOverTimer
 var gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
-
+signal gameStarted
 #==mange the week rewards==
 func weekCheck():
 	if dayCount % weekTime == 0:
 		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
 
+func _ready():
+	gameStarted.emit()
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
