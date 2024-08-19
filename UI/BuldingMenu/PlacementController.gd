@@ -3,12 +3,14 @@ extends Node2D
 #keep an eye out for the staic variables to call from other places
 
 var selectedObject:House = null
+var selectedObjectID:int = 0
 var validPlace:bool = false
 
 # Called when a button is pressed
 func makeSelection(selection:int):
 	if selectedObject != null:
 			selectedObject.queue_free()
+	selectedObjectID = selection
 	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
 	add_child(selectedObject)
 
@@ -23,7 +25,12 @@ func _unhandled_input(event):
 				selectedObject.position = get_viewport().get_camera_2d()\
 					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
-				FishManager.addHouse(selectedObject)
+				selectedObject.onPlace()
+				selectedObject = null
+				InventoryManager.decrementItem(selectedObjectID)
+			elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+				#cancel placement
+				selectedObject.queue_free()
 				selectedObject = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

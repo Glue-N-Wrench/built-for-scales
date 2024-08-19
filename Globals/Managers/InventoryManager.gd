@@ -32,10 +32,19 @@ var Buildings:Array[HouseInfo] = [
 	),
 ]
 
-signal inventoryUpdated
+signal inventoryUpdated # a new item, or an item was removed
+signal inventoryCountUpdated # a change in count without a change in inventory items
 var inventory = {
 	#buildingID: count
 	0:3,
 	1:2,
 	2:1,
 }
+
+func decrementItem(key):
+	inventory[key] -= 1
+	if inventory[key] == 0:
+		inventory.erase(key)
+		inventoryUpdated.emit()
+	else:
+		inventoryCountUpdated.emit()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Objects/Houses/BaseHouse.gd" id="1_kh4vs"]
 [ext_resource type="Shape2D" uid="uid://bvaj2m4ho7oqo" path="res://Objects/Houses/shapes/2x2square.tres" id="2_04yey"]
-[ext_resource type="PackedScene" path="res://UI/fish_details.tscn" id="2_eh5nu"]
+[ext_resource type="PackedScene" uid="uid://t82iw71wy3k8" path="res://UI/fish_details.tscn" id="2_eh5nu"]
 [ext_resource type="Texture2D" uid="uid://dumvjuhjtl14i" path="res://Objects/Houses/Textures/house_2x2_a.png" id="4_r1yb7"]
 
 [node name="BaseHouse" type="Node2D"]

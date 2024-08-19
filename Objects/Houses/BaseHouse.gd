@@ -9,11 +9,15 @@ class_name House
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 @export var offset:Vector2 = Vector2(0,0) #in pixels
-# ^ to help prevent odd-width buildings takeing up half squares
+# ^ offset is to help prevent odd-width buildings takeing up half squares
 var current_fish = {
 	0:[]
 };
 @export var shape:Shape2D
+
+func onPlace():
+	#todo: trigger placement affects
+	FishManager.addHouse(self)
 
 func _ready():
 	$Area2D/CollisionPolygon2D.polygon = shape.points
@@ -28,7 +32,6 @@ func _on_fish_updated():
 	for size in current_fish:
 		newDict[size] = current_fish[size].size()
 	$FishDetails.fishData = newDict
-
 
 func _on_area_2d_mouse_entered():
 	if !junk:
