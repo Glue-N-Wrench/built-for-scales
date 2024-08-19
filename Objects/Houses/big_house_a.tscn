@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dewg46kh45iqc"]
 
 [ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/base_house.tscn" id="1_v8scn"]
-[ext_resource type="Shape2D" uid="uid://b8f7dre6w01r8" path="res://Objects/Houses/shapes/3x2square.tres" id="2_ls76s"]
+[ext_resource type="Shape2D" uid="uid://dkvo64x5snhlv" path="res://Objects/Houses/shapes/3x2square.tres" id="2_ls76s"]
 [ext_resource type="Texture2D" uid="uid://8mfxl3n4hquu" path="res://Objects/Houses/Textures/house_3x2_a.png" id="3_wnmwx"]
 
 [node name="BaseHouse2" instance=ExtResource("1_v8scn")]

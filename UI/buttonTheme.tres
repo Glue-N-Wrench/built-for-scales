@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://10uajxx7wms8"]
+
+[ext_resource type="Texture2D" uid="uid://b5vorj4yp26ok" path="res://assets/UI/More_UI_Stuff.png" id="1_swmou"]
+
+[sub_resource type="FontVariation" id="FontVariation_0ou14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at1un"]
+atlas = ExtResource("1_swmou")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqqt7"]
+texture = SubResource("AtlasTexture_at1un")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = SubResource("FontVariation_0ou14")
+Button/styles/normal = SubResource("StyleBoxTexture_gqqt7")
