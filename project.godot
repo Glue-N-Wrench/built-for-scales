@@ -23,6 +23,7 @@ UnderwaterAmbienceAudio="*res://assets/audio/audio objects/underwater_ambience_a
 ViewManager="*res://Globals/Managers/ViewManager.gd"
 TurnManager="*res://Globals/Managers/TurnManager.gd"
 FishManager="*res://Globals/Managers/FishManager.gd"
+InventoryManager="*res://Globals/Managers/InventoryManager.gd"
 
 [display]
 

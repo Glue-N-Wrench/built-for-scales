@@ -23,7 +23,7 @@ var rewardArray = [
 	["Tall Homes", 2, tallHomeTextures[rewardRng.randi_range(0, 1)]],
 	["Widest Home", 1, widestHomeTextures[rewardRng.randi_range(0, 1)]],
 	["Tallest Home", 1, tallestHomeTextures[randi_range(0, 1)]]]
-@export var options = [[]]
+@export var options = [[]] #the 3 reward cards to choose from
 
 func _ready():
 	visible = false

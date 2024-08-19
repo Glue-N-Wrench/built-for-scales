@@ -264,11 +264,9 @@ layout_mode = 2
 
 [node name="HouseCard2" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
-houseNumb = 1
 
 [node name="HouseCard3" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
-houseNumb = 2
 
 [node name="TrayButton" type="Button" parent="Control/BuildingTray"]
 layout_mode = 1
