@@ -2,7 +2,7 @@ extends Node2D
 #this class manages the spawning and placement of all the blocks
 #keep an eye out for the staic variables to call from other places
 
-var selectedObject:House = null
+var selectedObject:Node2D = null
 var selectedObjectID:int = 0
 var validPlace:bool = false
 @onready var select_house_sfx = $"../select_house_sfx"

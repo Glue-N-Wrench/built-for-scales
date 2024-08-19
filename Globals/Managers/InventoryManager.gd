@@ -2,13 +2,14 @@ extends Node
 
 var Buildings:Array[HouseInfo] = [
 	#the index in this array will be the building's ID
-	#HouseInfo.new(
-		#"Bomb",
-		#"this destroys rocks"
-		#3,
-		#preload(),
-		#preload("res://Objects/Houses/base_house.tscn"),
-	#),
+	HouseInfo.new(
+		"Bomb",
+		"this destroys rocks",
+		1,
+		preload("res://assets/bomb.png"),
+		preload("res://Objects/bomb.tscn"),
+		3,
+	),
 	HouseInfo.new(
 		"Alpha House",
 		"2x2 house for tiny anchovies",
