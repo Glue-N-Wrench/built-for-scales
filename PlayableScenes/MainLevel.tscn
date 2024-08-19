@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
-[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
+[ext_resource type="LabelSettings" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_wnieg"]
-[ext_resource type="PackedScene" uid="uid://lb5433s3sj1c" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
+[ext_resource type="PackedScene" uid="uid://lmwhdldyoeea" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
 [ext_resource type="Texture2D" uid="uid://fudqpquhkky1" path="res://assets/Breakables2Finish.png" id="5_v5tm4"]
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/Breakables1.png" id="6_qrlcs"]
 [ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]

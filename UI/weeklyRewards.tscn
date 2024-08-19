@@ -86,3 +86,7 @@ alignment = 2
 [node name="Spacer Right" type="HSeparator" parent="HBoxContainer"]
 custom_minimum_size = Vector2(216.5, 0)
 layout_mode = 2
+
+[connection signal="button_down" from="HBoxContainer/Option 1" to="." method="choseOption" binds= [0]]
+[connection signal="button_down" from="HBoxContainer/Option 2" to="." method="choseOption" binds= [1]]
+[connection signal="button_down" from="HBoxContainer/Option 3" to="." method="choseOption" binds= [2]]
