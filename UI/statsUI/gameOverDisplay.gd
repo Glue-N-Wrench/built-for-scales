@@ -5,7 +5,7 @@ func _ready():
 	TurnManager.updateGameOverTimer.connect(_on_timer_update)
 
 func _on_timer_update():
-	if TurnManager.gameOverTimer > 0:
+	if TurnManager.gameOverTimer < TurnManager.gameOverCount:
 		$warningIcon.visible = true
 	else:
 		$warningIcon.visible = false
