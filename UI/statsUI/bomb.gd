@@ -15,6 +15,7 @@ func onPlace():
 
 func _on_bomb_animator_frame_changed():
 	if $BombAnimator.frame == 6 and $BombAnimator.animation == "Explode":
+		print("we exploding now")
 		var TL = tilemap.local_to_map(position - Vector2(80,80))
 		var BR = tilemap.local_to_map(position + Vector2(80,80))
 		var destroyedCells = []
