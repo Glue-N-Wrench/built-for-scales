@@ -28,7 +28,7 @@ func _unhandled_input(event):
 				get_tree().root.add_child(selectedObject)
 				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d()\
-					.get_global_mouse_position().snapped(ViewManager.gridSize)
+					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
 				FishManager.addHouse(selectedObject)
 				selectedObject = null

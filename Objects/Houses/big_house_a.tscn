@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://8mfxl3n4hquu" path="res://Objects/Houses/Textures/house_3x2_a.png" id="3_wnmwx"]
 
 [node name="BaseHouse" instance=ExtResource("1_v8scn")]
+position = Vector2(32, 0)
 fish_capacity = 1
 max_fish_size = 2
+offset = Vector2(32, 0)
 shape = ExtResource("2_ls76s")
 
 [node name="Sprite2D" parent="." index="1"]
