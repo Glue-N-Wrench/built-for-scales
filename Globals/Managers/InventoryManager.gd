@@ -12,9 +12,10 @@ var Buildings:Array[HouseInfo] = [
 	HouseInfo.new(
 		"Alpha House",
 		"2x2 house for tiny anchovies",
-		1,
+		2,
 		preload("res://Objects/Houses/Textures/house_2x2_a.png"),
 		preload("res://Objects/Houses/base_house.tscn"),
+		2,
 	),
 	HouseInfo.new(
 		"Beta House",
@@ -22,6 +23,7 @@ var Buildings:Array[HouseInfo] = [
 		1,
 		preload("res://Objects/Houses/Textures/house_2x2_b.png"),
 		preload("res://Objects/Houses/house_b.tscn"),
+		2,
 	),
 	HouseInfo.new(
 		"3x2 Charley House",
@@ -29,6 +31,7 @@ var Buildings:Array[HouseInfo] = [
 		1,
 		preload("res://Objects/Houses/Textures/house_3x2_a.png"),
 		preload("res://Objects/Houses/big_house_a.tscn"),
+		1,
 	),
 ]
 
@@ -40,6 +43,14 @@ var inventory = {
 	1:2,
 	2:1,
 }
+
+func addItems(key, amount):
+	if key in inventory:
+		inventory[key] += amount
+		inventoryCountUpdated.emit()
+	else:
+		inventory[key] = amount
+		inventoryUpdated.emit()
 
 func decrementItem(key):
 	inventory[key] -= 1

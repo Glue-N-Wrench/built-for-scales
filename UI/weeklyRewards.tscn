@@ -19,7 +19,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lseds")
-options = [[NodePath("Reward Options Display/Option 1"), ""], [NodePath("Reward Options Display/Option 2"), ""], [NodePath("Reward Options Display/Option 3"), ""]]
 
 [node name="Text Display" type="VBoxContainer" parent="WeeklyRewardsUI"]
 custom_minimum_size = Vector2(0, 350)
@@ -59,9 +58,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Option 1"
+text = "Option 1
+A small house for small fish"
 icon = ExtResource("1_ue2f4")
-alignment = 2
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="Spacer 1-2" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
 custom_minimum_size = Vector2(282.5, 0)
@@ -71,9 +73,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Option 2"
+text = "Option 1
+A small house for small fish"
 icon = ExtResource("1_ue2f4")
-alignment = 2
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="Spacer 2-3" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
 custom_minimum_size = Vector2(282.5, 0)
@@ -83,9 +88,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Option 3"
+text = "Option 1
+A small house for small fish"
 icon = ExtResource("1_ue2f4")
-alignment = 2
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="Spacer Right" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
 custom_minimum_size = Vector2(216.5, 0)
