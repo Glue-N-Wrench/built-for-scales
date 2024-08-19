@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbshv6ukvash5"]
+[gd_scene load_steps=4 format=3 uid="uid://dqm5wh2ht0h2h"]
 
 [ext_resource type="Script" path="res://UI/weeklyRewards.gd" id="1_lseds"]
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ue2f4"]

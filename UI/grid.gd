@@ -10,7 +10,7 @@ func _draw():
 		draw_line(Vector2(xPos,ViewManager.floor),Vector2(xPos, ViewManager.gridLimitTop),lineColor,2)
 	var startOffsetY = ViewManager.gridLimitTop % ViewManager.gridSize.y
 	for yPos in range(ViewManager.gridLimitTop-startOffsetY,ViewManager.floor,ViewManager.gridSize.y):
-		draw_line(Vector2(-ViewManager.gridLimitSides,yPos),Vector2(ViewManager.gridLimitSides,yPos),lineColor,1)
+		draw_line(Vector2(-ViewManager.gridLimitSides,yPos),Vector2(ViewManager.gridLimitSides,yPos),lineColor,2)
 	draw_line(Vector2(-ViewManager.gridLimitSides,ViewManager.floor), Vector2(-ViewManager.gridLimitSides,ViewManager.gridLimitTop), borderColor,2)#right
 	draw_line(Vector2(ViewManager.gridLimitSides,ViewManager.floor), Vector2(ViewManager.gridLimitSides,ViewManager.gridLimitTop), borderColor,2)#left
 	draw_line(Vector2(ViewManager.gridLimitSides,ViewManager.floor), Vector2(-ViewManager.gridLimitSides,ViewManager.floor), borderColor,2)	#bottom

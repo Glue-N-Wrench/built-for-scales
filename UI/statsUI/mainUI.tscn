@@ -1,9 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://b0krhlmapyjp3"]
 
-[ext_resource type="PackedScene" path="res://UI/house_card.tscn" id="1_xtr25"]
+[ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
-[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
+[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
 [ext_resource type="Script" path="res://UI/statsUI/gameOverDisplay.gd" id="7_smfhu"]
