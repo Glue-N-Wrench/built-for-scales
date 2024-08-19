@@ -62,6 +62,7 @@ func CheckHouses():
 			fish_left += house.current_fish[size].size()
 			house.current_fish[size] = []
 			for fish:Fish in house.current_fish[size]:
+				fish.go_to_location(house.position)
 				fish.homeless=true
 		var free_rooms = house.fish_capacity
 		# put best fish in each room
