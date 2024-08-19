@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://lb5433s3sj1c"]
+[gd_scene load_steps=3 format=3 uid="uid://lmwhdldyoeea"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu.gd" id="1_kr6wj"]
-[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="2_pgcmc"]
+[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="2_pgcmc"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
