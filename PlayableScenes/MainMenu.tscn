@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm5phgnfsckve"]
+[gd_scene load_steps=9 format=3 uid="uid://dm5phgnfsckve"]
 
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ofdq6"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
 [ext_resource type="Script" path="res://UI/MainMenu/Start_Btn.gd" id="3_f3764"]
+[ext_resource type="Theme" uid="uid://10uajxx7wms8" path="res://UI/buttonTheme.tres" id="3_gio3r"]
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="6_00yg5"]
@@ -40,15 +41,18 @@ offset_bottom = 629.4
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "GMTK 2024"
 label_settings = ExtResource("2_d8e3l")
 horizontal_alignment = 1
 
 [node name="Start Btn" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_gio3r")
 text = "Start"
 script = ExtResource("3_f3764")
 
@@ -56,6 +60,7 @@ script = ExtResource("3_f3764")
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_gio3r")
 text = "Credits
 "
 script = ExtResource("4_qiav6")
@@ -106,6 +111,7 @@ offset_top = -31.0
 offset_right = 22.5
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_gio3r")
 text = "back"
 script = ExtResource("4_2d5hg")
 
@@ -113,6 +119,7 @@ script = ExtResource("4_2d5hg")
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_gio3r")
 text = "Options"
 
 [node name="OptionsMenu" parent="VBoxContainer/OptionBtn" instance=ExtResource("6_00yg5")]
@@ -123,6 +130,7 @@ visible = false
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_gio3r")
 text = "Quit
 "
 script = ExtResource("7_w7uhq")
