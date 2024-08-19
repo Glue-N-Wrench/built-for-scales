@@ -36,7 +36,7 @@ func giveReward(choice):
 	#TODO MAKE LOGIC FOR EACH REWARD
 	match choice:
 		"Bombs":
-			
+			pass
 			#TODO GIVE PLAYER BOMBS HERE
 
 func choseOption(optionNumber: int):
