@@ -17,6 +17,11 @@ signal updateGameOverTimer
 var gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
 
+#==mange the week rewards==
+func weekCheck():
+	if dayCount % weekTime == 0:
+		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
+
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
@@ -25,12 +30,9 @@ func _process(delta):
 	if roundTimer < 0:
 		roundTimer = roundTime
 		dayCount += 1
+		weekCheck()
 		FishManager.makeNewFishBatch(4)
 		updateDay.emit()
-	#==mange the week rewards==
-	if dayCount % weekTime == 0:
-		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
-		
 	#==manage the game over
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
 		gameOverTimer -= delta
