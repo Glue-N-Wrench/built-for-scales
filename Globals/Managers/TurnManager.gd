@@ -10,7 +10,7 @@ signal updateDay # a signal for the UI
 const roundTime = 20 #seconds in a round
 var roundTimer = 0
 const weekTime = 7 #rounds in a week
-var weekTimer = 0
+#var weekTimer = 0 not needed we can just use the amount of days and modulus it by weektime
 
 signal updateGameOverTimer
 var gameOverCount = 10#seconds till game over
@@ -26,6 +26,10 @@ func _process(delta):
 		dayCount += 1
 		FishManager.makeNewFishBatch(4)
 		updateDay.emit()
+	#==mange the week rewards==
+	if dayCount % weekTime == 0:
+		$"/root/MainLevel/Camera2D/WeeklyRewards".displayWeeklyRewards()
+		
 	#==manage the game over
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
 		gameOverTimer += delta
@@ -36,3 +40,6 @@ func _process(delta):
 	elif gameOverTimer > 0:
 		gameOverTimer -= delta
 		updateGameOverTimer.emit()
+
+
+	
