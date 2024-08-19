@@ -22,6 +22,7 @@ func weekCheck():
 	if dayCount % weekTime == 0:
 		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
 
+
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
@@ -33,7 +34,7 @@ func _process(delta):
 		weekCheck()
 		FishManager.makeNewFishBatch(4)
 		updateDay.emit()
-	#==manage the game over
+	#==manage the game over==
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
 		gameOverTimer -= delta
 		updateGameOverTimer.emit()
