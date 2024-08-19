@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyluvxqav1tcr"
+path="res://.godot/imported/Fishy City V1.wav-2846d04481e05e44bed144c18de31953.sample"
+
+[deps]
+
+source_file="res://assets/audio/msuic/Fishy City V1.wav"
+dest_files=["res://.godot/imported/Fishy City V1.wav-2846d04481e05e44bed144c18de31953.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

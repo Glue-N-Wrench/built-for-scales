@@ -5,6 +5,7 @@ extends Node2D
 var selectedObject:House = null
 var selectedObjectID:int = 0
 var validPlace:bool = false
+@onready var select_house_sfx = $"../select_house_sfx"
 
 # Called when a button is pressed
 func makeSelection(selection:int):
@@ -13,6 +14,7 @@ func makeSelection(selection:int):
 	selectedObjectID = selection
 	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
 	add_child(selectedObject)
+	select_house_sfx.play()
 
 func _unhandled_input(event):
 	# Mouse in viewport coordinates.
