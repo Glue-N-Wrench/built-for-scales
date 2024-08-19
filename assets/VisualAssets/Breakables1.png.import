@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fudqpquhkky1"
-path="res://.godot/imported/Breakables2Finish.png-213eb94ef740a27c1579fca831d667bd.ctex"
+uid="uid://bj8bbmkb7wdqc"
+path="res://.godot/imported/Breakables1.png-67844051c6584a31972b91224900423b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Breakables2Finish.png"
-dest_files=["res://.godot/imported/Breakables2Finish.png-213eb94ef740a27c1579fca831d667bd.ctex"]
+source_file="res://assets/VisualAssets/Breakables1.png"
+dest_files=["res://.godot/imported/Breakables1.png-67844051c6584a31972b91224900423b.ctex"]
 
 [params]
 

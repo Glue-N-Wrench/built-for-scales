@@ -19,6 +19,7 @@ func makeSelection(selection:int):
 	selectedObject = Houses[selection].instantiate()
 	add_child(selectedObject)
 
+# This function handles placement of house
 func _unhandled_input(event):
 	# Mouse in viewport coordinates.
 	if selectedObject != null:
@@ -31,6 +32,9 @@ func _unhandled_input(event):
 					.get_global_mouse_position().snapped(ViewManager.gridSize)
 				selectedObject.modulate = Color.WHITE
 				FishManager.addHouse(selectedObject)
+				
+				#call particle effects then set to null
+				$"Bubble&DustEffect".EmitParticles()
 				selectedObject = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
