@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t82iw71wy3k8"]
+[gd_scene load_steps=9 format=3 uid="uid://cj61i7mas8eas"]
 
 [ext_resource type="Script" path="res://UI/statsUI/FishDetails.gd" id="1_axflx"]
 [ext_resource type="Texture2D" uid="uid://c7ks1d4vf46g3" path="res://UI/statsUI/housetooltip/ui_housetooltip_top.png" id="2_0e1kg"]
