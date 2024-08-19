@@ -47,8 +47,10 @@ func _process(delta):
 			validPlace = false
 			return
 		# == prevent collision overlaps
-		var overlaps = selectedObject.get_node('Area2D').get_overlapping_areas()
-		if overlaps.size() == 0:
+		var overlaps = \
+			selectedObject.get_node('Area2D').has_overlapping_areas() or \
+			selectedObject.get_node('Area2D').has_overlapping_bodies()
+		if overlaps == false:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
 			validPlace = true
 		else:
