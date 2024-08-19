@@ -3,6 +3,8 @@ class_name Fish
 # The fish object is a visual indicator for the change in fish
 # They are purley cosmetic
 # See fishMaster for the behavior of these fish
+@onready var fish_enter_sfx = $"fish enter sfx"
+
 
 @export var speed:int = 200 #pixels per second
 var homeless:bool = true
@@ -31,6 +33,7 @@ func _process(delta):
 			wanderClock = wanderTime
 	var difference = target_location - position
 	if difference.length() < 10 and not homeless:
+		fish_enter_sfx.play()
 		visible = false
 		set_process(false);#pause fish when they're not thinking
 	position += difference.limit_length(speed*delta)
