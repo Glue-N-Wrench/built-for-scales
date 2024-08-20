@@ -9,6 +9,7 @@ var maxChoice = 0 #built from InvtoryManager on _ready()
 var shownOptions = [0,0,0] #the 3 reward cards to choose from
 
 func _ready():
+	rewardRng.randomize()
 	visible = false
 	for i in InventoryManager.Buildings.size():
 		maxChoice += InventoryManager.Buildings[i].chance

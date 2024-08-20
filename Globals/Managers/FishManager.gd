@@ -1,6 +1,9 @@
 extends Node
 
+static var fishRNG = RandomNumberGenerator.new()
+
 signal fishUpdated #should be signaled when homelessFish gets changed
+# ^ handles the fish/building allocation
 
 @onready var fishObjects = {
 	0: preload("res://Objects/Fish/fish.tscn"),
@@ -16,25 +19,47 @@ var homelessFish:Dictionary = {
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
 const maxHomeless = 5
 
+const fixedFishWaves = [
+		[0,0,0],
+		[0,0,1,0],
+		[0,0,1,1],
+		[0,0,0,0,0],
+	]
+
+func _ready():
+	fishRNG.randomize()
+
 func getTotalHomeless():
 		var sum = 0
 		for size in homelessFish:
 			sum += homelessFish[size].size()
 		return sum
 
+var previousWavehasCatfish = false
 func makeNewFishBatch(points:int):
 	#TODO: make this more intresting
-	while points>0:
-		var purchase = randi_range(1,min(points, 3))
-		spawnFish(purchase-1)
-		points -= purchase
+	var currentWaveHasCatfish = false
+	if (TurnManager.dayCount-1) < fixedFishWaves.size():
+		for fishID in fixedFishWaves[TurnManager.dayCount-1]:
+			spawnFish(fishID)
+	else:
+		while points>0:
+			var purchase = fishRNG.randi_range(1,min(points, 3))
+			if purchase == 3:
+				if previousWavehasCatfish:
+					purchase = 2
+				else:
+					currentWaveHasCatfish = true
+			spawnFish(purchase-1)
+			points -= purchase
+	currentWaveHasCatfish
 	fishUpdated.emit()
 	CheckHouses()
 
 func spawnFish(type:int):
-	#create a new homeless fish of [type] off screen
+	#create a new homeless fish of [type] off screen		
 	var newFish = fishObjects[type].instantiate()
-	var direction = randi_range(0,1)
+	var direction = fishRNG.randi_range(0,1)
 	var offset = randf_range(-400,300)
 	match direction:
 		0:
