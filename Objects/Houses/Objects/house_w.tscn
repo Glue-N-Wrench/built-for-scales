@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://br4rdecavtqc3"]
+[gd_scene load_steps=3 format=3 uid="uid://qywknkw13uvp"]
 
 [ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_fp3pe"]
 [ext_resource type="Texture2D" uid="uid://byq5b68oy17ev" path="res://assets/Houses/house_3x3_a.png" id="2_mt75v"]
@@ -6,7 +6,7 @@
 [node name="BaseHouse2" instance=ExtResource("1_fp3pe")]
 fish_capacity = 2
 max_fish_size = 2
-offset = Vector2(0, 32)
+offset = Vector2(32, 32)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_mt75v")

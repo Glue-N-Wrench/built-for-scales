@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="6_00yg5"]
 [ext_resource type="Script" path="res://UI/MainMenu/QuitBtn.gd" id="7_w7uhq"]
+[ext_resource type="AudioStream" uid="uid://bsosg58f3ay5j" path="res://assets/audio/sfx/ui sfx/upgrade sfx.wav" id="9_weujb"]
 [ext_resource type="AudioStream" uid="uid://bk7hwfawkwjjf" path="res://assets/audio/sfx/ui sfx/switch tab 2.wav" id="10_mv0kt"]
 
 [node name="MainMenu" type="Control"]
