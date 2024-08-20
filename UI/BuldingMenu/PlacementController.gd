@@ -14,7 +14,6 @@ func makeSelection(selection:int):
 			selectedObject.queue_free()
 	selectedObjectID = selection
 	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
-	selectedObject.position = selectedObject.offset
 	add_child(selectedObject)
 	select_house_sfx.play()
 
@@ -44,7 +43,7 @@ func _process(delta):
 	#position = get_viewport().get_mouse_position()+get_viewport().get_camera_2d().position
 	if selectedObject != null:
 		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
-		position = get_global_mouse_position().snapped(ViewManager.gridSize)
+		position = get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 		#== restrict placement to bounds ==
 		if global_position.y+selectedObject.distToGround > ViewManager.floor \
 			or absf(global_position.x) > ViewManager.gridLimitSides \

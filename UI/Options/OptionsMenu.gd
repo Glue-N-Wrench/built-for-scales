@@ -5,6 +5,9 @@ var selectedSoundOptions = OptionsMan.soundSettings.duplicate(true)
 const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
+@onready var open_panel_sfx = $"../../../open panel sfx"
+
+@onready var open_panel_sfx____options = $"open panel sfx  - options"
 
 func _ready():
 	#==build sound options ==
@@ -52,10 +55,12 @@ func _on_apply_but_pressed():
 func _on_close_but_pressed():
 	resetOptions()
 	hide()
+	open_panel_sfx____options.play()
 
 func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
+	open_panel_sfx.play()
 
 func _on_close_requested():
 	resetOptions()
