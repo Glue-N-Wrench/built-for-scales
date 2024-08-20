@@ -1,9 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqt6ih5d4bpgo"]
+[gd_scene load_steps=27 format=3 uid="uid://10rurbl4ph3l"]
+
 
 [ext_resource type="Script" path="res://UI/statsUI/bomb.gd" id="1_rshjt"]
 [ext_resource type="Texture2D" uid="uid://b1nylp3krxvdt" path="res://assets/bombSpriteSheet.png" id="1_w3odj"]
 [ext_resource type="Texture2D" uid="uid://1sus830kuthk" path="res://assets/bomb_aoe.png" id="2_df243"]
 [ext_resource type="AudioStream" uid="uid://cqj3fu6chy6j2" path="res://assets/audio/sfx/bomb.wav" id="4_rnh0q"]
+[ext_resource type="PackedScene" uid="uid://yg5kfoqqmfan" path="res://Objects/rock_particle_emitter.tscn" id="5_2as2o"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gipkh"]
 
@@ -198,6 +200,8 @@ offset_bottom = 40.0
 stream = ExtResource("4_rnh0q")
 bus = &"Gameplay"
 
+[node name="Rock Particle Emitter" parent="." instance=ExtResource("5_2as2o")]
 [connection signal="body_entered" from="Area2D" to="." method="colliderIn"]
 [connection signal="body_exited" from="Area2D" to="." method="colliderOut"]
+
 [connection signal="frame_changed" from="BombAnimator" to="." method="_on_bomb_animator_frame_changed"]

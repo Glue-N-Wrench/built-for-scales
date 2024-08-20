@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://jq4hlq5hqbv5"]
+
+[ext_resource type="Texture2D" uid="uid://bih8elgxqxvwg" path="res://assets/VisualAssets/BubbleSpriteSheet.png" id="1_b8yy5"]
+[ext_resource type="Script" path="res://assets/VFX/bubble&dust_effect.gd" id="1_mnj45"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3oc4x"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mn5g7"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 80.0
+emission_ring_inner_radius = 60.0
+radial_velocity_min = 20.0
+radial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 40.0
+radial_accel_max = 40.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k6u1o"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 70.0
+emission_ring_inner_radius = 50.0
+orbit_velocity_min = 0.051
+orbit_velocity_max = 0.051
+radial_velocity_min = 20.0
+radial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 40.0
+radial_accel_max = 40.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_whafp"]
+load_path = "res://.godot/imported/Dust.png-147b6c4ca37b5b616ea6a85284ad29dc.ctex"
+
+[node name="Bubble&DustEffect" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_mnj45")
+
+[node name="BubbleParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_3oc4x")
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_mn5g7")
+texture = ExtResource("1_b8yy5")
+lifetime = 0.8
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.22
+randomness = 0.3
+
+[node name="DustParticle" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_k6u1o")
+texture = SubResource("CompressedTexture2D_whafp")
+lifetime = 0.8
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.5
+randomness = 0.3

@@ -18,6 +18,7 @@ func makeSelection(selection:int):
 	add_child(selectedObject)
 	select_house_sfx.play()
 
+# This function handles placement of house
 func _unhandled_input(event):
 	# Mouse in viewport coordinates.
 	if selectedObject != null:
@@ -29,6 +30,7 @@ func _unhandled_input(event):
 				selectedObject.position = get_viewport().get_camera_2d()\
 					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
+				$"Bubble&DustEffect".EmitParticles()
 				selectedObject.onPlace()
 				selectedObject = null
 				InventoryManager.decrementItem(selectedObjectID)

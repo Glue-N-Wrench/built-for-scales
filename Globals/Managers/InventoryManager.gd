@@ -43,7 +43,6 @@ var inventory = {
 	0:3,
 	1:2,
 	2:1,
-	3:1,
 }
 
 func addItems(key, amount):
