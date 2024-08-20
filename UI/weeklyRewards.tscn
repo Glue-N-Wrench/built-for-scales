@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqm5wh2ht0h2h"]
+
+[ext_resource type="Script" path="res://UI/weeklyRewards.gd" id="1_lseds"]
+[ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ue2f4"]
+[ext_resource type="Theme" uid="uid://10uajxx7wms8" path="res://UI/buttonTheme.tres" id="2_m103k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_btmbc"]
+font_size = 75
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="WeeklyRewards" type="CanvasLayer"]
+process_mode = 2
+
+[node name="WeeklyRewardsUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lseds")
+
+[node name="Text Display" type="VBoxContainer" parent="WeeklyRewardsUI"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="WeeklyRewardsUI/Text Display"]
+layout_mode = 2
+text = "Choose A Reward!"
+label_settings = SubResource("LabelSettings_btmbc")
+horizontal_alignment = 1
+
+[node name="Reward Options Display" type="HBoxContainer" parent="WeeklyRewardsUI"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer Left" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
+custom_minimum_size = Vector2(216.5, 0)
+layout_mode = 2
+
+[node name="Option 1" type="Button" parent="WeeklyRewardsUI/Reward Options Display"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_m103k")
+text = "Option 1
+A small house for small fish"
+icon = ExtResource("1_ue2f4")
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Spacer 1-2" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
+custom_minimum_size = Vector2(282.5, 0)
+layout_mode = 2
+
+[node name="Option 2" type="Button" parent="WeeklyRewardsUI/Reward Options Display"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_m103k")
+text = "Option 1
+A small house for small fish"
+icon = ExtResource("1_ue2f4")
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Spacer 2-3" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
+custom_minimum_size = Vector2(282.5, 0)
+layout_mode = 2
+
+[node name="Option 3" type="Button" parent="WeeklyRewardsUI/Reward Options Display"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_m103k")
+text = "Option 1
+A small house for small fish"
+icon = ExtResource("1_ue2f4")
+text_overrun_behavior = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Spacer Right" type="HSeparator" parent="WeeklyRewardsUI/Reward Options Display"]
+custom_minimum_size = Vector2(216.5, 0)
+layout_mode = 2
+
+[connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 1" to="WeeklyRewardsUI" method="choseOption" binds= [0]]
+[connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 2" to="WeeklyRewardsUI" method="choseOption" binds= [1]]
+[connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 3" to="WeeklyRewardsUI" method="choseOption" binds= [2]]

@@ -1,14 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=31 format=3 uid="uid://b0krhlmapyjp3"]
 
-[ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
+[ext_resource type="PackedScene" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
-[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
+[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
 [ext_resource type="Texture2D" uid="uid://dr2ijn27p0b4e" path="res://assets/VisualAssets/barBubbles.png" id="7_dqa7x"]
 [ext_resource type="Script" path="res://UI/statsUI/gameOverDisplay.gd" id="7_smfhu"]
+[ext_resource type="Texture2D" uid="uid://bciwpbtvrkl44" path="res://assets/bomb.png" id="7_vdsd5"]
+[ext_resource type="Script" path="res://UI/BuldingMenu/BuildingTray.gd" id="8_r84q3"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="8_s3b0f"]
+[ext_resource type="Texture2D" uid="uid://b5vorj4yp26ok" path="res://assets/UI/More_UI_Stuff.png" id="11_nkv7f"]
+[ext_resource type="AudioStream" uid="uid://3qy7042o1prb" path="res://assets/audio/sfx/fog horn.wav" id="12_eqpne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -66,14 +70,113 @@ region = Rect2(418, 125, 26, 35)
 atlas = ExtResource("5_6uqes")
 region = Rect2(129, 0, 31, 30)
 
+[sub_resource type="ImageTexture" id="ImageTexture_b7gbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7pym"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr6ww"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cg76"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1alu"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikih3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_5eq63"]
+VScrollBar/icons/decrement = SubResource("ImageTexture_b7gbo")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_b7gbo")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_b7gbo")
+VScrollBar/icons/increment = SubResource("ImageTexture_b7gbo")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_b7gbo")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_b7gbo")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_k7pym")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jr6ww")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_2cg76")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_i1alu")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ikih3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oa2j"]
+atlas = ExtResource("11_nkv7f")
+region = Rect2(74, 64, 182, 274)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0uca"]
+atlas = ExtResource("11_nkv7f")
+region = Rect2(28, 176, 43, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na7g3"]
+atlas = ExtResource("11_nkv7f")
+region = Rect2(19, 0, 42, 32)
+
 [node name="MainUI" type="CanvasLayer"]
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
+anchors_preset = -1
+anchor_bottom = 0.589
 offset_left = 14.0
 offset_top = 12.0
 offset_right = 131.0
-offset_bottom = 84.0
+offset_bottom = -368.84
+grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 
 [node name="DayIndicator" type="TextureRect" parent="TopLeftContainer"]
@@ -179,21 +282,27 @@ offset_bottom = 18.0
 text = "0"
 label_settings = ExtResource("5_qkcwe")
 
+[node name="BOmb" type="HBoxContainer" parent="TopLeftContainer/Control/HomelessFish"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TopLeftContainer/Control/HomelessFish/BOmb"]
+layout_mode = 2
+icon = ExtResource("7_vdsd5")
+
 [node name="BottomContainer" type="HBoxContainer" parent="."]
 texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.283
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.718
 anchor_bottom = 1.0
-offset_left = -416.0
+offset_left = 0.639954
 offset_top = -70.0
-offset_right = 1.0
+offset_right = -417.56
 offset_bottom = -35.0
 grow_horizontal = 2
-grow_vertical = 0
 scale = Vector2(2, 2)
-size_flags_vertical = 8
 script = ExtResource("7_smfhu")
 
 [node name="TextureRect" type="TextureRect" parent="BottomContainer"]
@@ -249,38 +358,96 @@ texture = SubResource("AtlasTexture_y6ouy")
 
 [node name="TopRightContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
+anchor_bottom = 0.06
 offset_left = -64.0
 offset_right = -33.0
-offset_bottom = 30.0
-grow_horizontal = 0
+offset_bottom = -32.48
+grow_horizontal = 2
 scale = Vector2(2, 2)
 
 [node name="SettingsBtn" type="TextureButton" parent="TopRightContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_x20ui")
 
-[node name="BuldingMenu" type="VBoxContainer" parent="."]
-texture_filter = 1
-offset_left = 1078.0
-offset_top = 91.0
-offset_right = 1183.0
-offset_bottom = 372.0
-
-[node name="HouseCard" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-
-[node name="HouseCard2" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-houseNumb = 1
-
-[node name="HouseCard3" parent="BuldingMenu" instance=ExtResource("1_xtr25")]
-layout_mode = 2
-houseNumb = 2
-
 [node name="OptionsMenu" parent="." instance=ExtResource("8_s3b0f")]
 visible = false
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -162.0
+offset_bottom = 123.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BuildingTray" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5eq63")
+texture = SubResource("AtlasTexture_4oa2j")
+script = ExtResource("8_r84q3")
+
+[node name="ColorRect" type="ScrollContainer" parent="Control/BuildingTray"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BuldingMenu" type="VBoxContainer" parent="Control/BuildingTray/ColorRect"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HouseCard" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+
+[node name="HouseCard2" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+
+[node name="HouseCard3" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+layout_mode = 2
+
+[node name="TrayButton" type="TextureButton" parent="Control/BuildingTray"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -24.5
+offset_right = -1.0
+offset_bottom = 11.5
+grow_vertical = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_d0uca")
+texture_pressed = SubResource("AtlasTexture_na7g3")
+
+[node name="foghorn sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_eqpne")
+volume_db = -10.306
+bus = &"Gameplay"
+
+[connection signal="toggled" from="TopLeftContainer/Control/HomelessFish/BOmb/Button" to="TopLeftContainer/Control/HomelessFish/BOmb" method="_on_button_toggled"]
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]
+[connection signal="pressed" from="Control/BuildingTray/TrayButton" to="Control/BuildingTray" method="_on_tray_button_pressed"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkij0finue12o"]
+[gd_scene load_steps=16 format=3 uid="uid://bkij0finue12o"]
 
 [ext_resource type="Texture2D" uid="uid://b624syfuys1cu" path="res://Objects/Fish/fishanim_anchovy_strip8.png" id="1_ek2vy"]
 [ext_resource type="Script" path="res://Objects/Fish/Fish.gd" id="2_mf5g3"]
+[ext_resource type="AudioStream" uid="uid://dbjrkye6vnih2" path="res://assets/audio/sfx/bubble fish enter.wav" id="3_qq7dl"]
+[ext_resource type="AudioStream" uid="uid://c472aph05asaj" path="res://assets/audio/sfx/buba fish 2.wav" id="4_tinpe"]
+[ext_resource type="AudioStream" uid="uid://diggy8d3ioufo" path="res://assets/audio/sfx/buba fish 3.wav" id="5_6rsy2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7d5w"]
 atlas = ExtResource("1_ek2vy")
@@ -67,6 +70,15 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vk2mh"]
+streams_count = 3
+stream_0/stream = ExtResource("3_qq7dl")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_tinpe")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_6rsy2")
+stream_2/weight = 1.0
+
 [node name="Fish" type="AnimatedSprite2D"]
 z_index = 2
 texture_filter = 1
@@ -75,3 +87,7 @@ sprite_frames = SubResource("SpriteFrames_rv5dp")
 autoplay = "default"
 frame_progress = 0.815014
 script = ExtResource("2_mf5g3")
+
+[node name="fish enter sfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_vk2mh")
+bus = &"Gameplay"

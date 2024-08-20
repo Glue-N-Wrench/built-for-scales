@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccv23synovtw6"]
 
-[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/base_house.tscn" id="1_kud8j"]
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_kud8j"]
 [ext_resource type="Texture2D" uid="uid://bjqtcrfaw0ymf" path="res://Objects/Houses/rocktest.png" id="2_jgpmv"]
 
 [node name="BaseHouse2" instance=ExtResource("1_kud8j")]

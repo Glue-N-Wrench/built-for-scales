@@ -1,19 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvlsnxcaagq3r"]
+[gd_scene load_steps=4 format=3 uid="uid://bvlsnxcaagq3r"]
 
 [ext_resource type="Script" path="res://UI/BuldingMenu/buildHouseBtn.gd" id="2_7kis6"]
-[ext_resource type="Texture2D" uid="uid://dumvjuhjtl14i" path="res://Objects/Houses/Textures/house_2x2_a.png" id="2_in0fl"]
+[ext_resource type="Texture2D" uid="uid://bn28ioyvhqocl" path="res://assets/Houses/house_1x1_a.png" id="2_jb7up"]
+[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="2_s1gra"]
 
-[node name="HouseCard" type="VBoxContainer"]
-offset_right = 128.0
-offset_bottom = 153.0
+[node name="HouseCard" type="Button"]
+custom_minimum_size = Vector2(125, 100)
+offset_right = 125.0
+offset_bottom = 103.0
+flat = true
 script = ExtResource("2_7kis6")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 2
-texture_normal = ExtResource("2_in0fl")
+[node name="TextureButton" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+texture = ExtResource("2_jb7up")
+expand_mode = 2
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-text = "Small 3 Room"
+[node name="nameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.66
+anchor_right = 1.0
+anchor_bottom = 0.835
+offset_top = 0.0199966
+offset_bottom = -0.00500488
+text = "Small room
+"
+label_settings = ExtResource("2_s1gra")
+horizontal_alignment = 1
+autowrap_mode = 2
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="countLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "100"
+label_settings = ExtResource("2_s1gra")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

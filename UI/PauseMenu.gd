@@ -18,4 +18,3 @@ func _on_quit_btn_pressed():
 
 func _on_quit_window_confirmed():
 	get_tree().quit()
-

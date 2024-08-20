@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://biputencsb5vv"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_6g72y"]
+[ext_resource type="Texture2D" uid="uid://bafdk23n34wvu" path="res://assets/Houses/house_2x2_b.png" id="3_pn1ih"]
+
+[node name="House_B" instance=ExtResource("1_6g72y")]
+fish_capacity = 2
+max_fish_size = 1
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_pn1ih")

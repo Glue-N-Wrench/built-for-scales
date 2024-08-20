@@ -1,23 +1,21 @@
 extends Node2D
-class_name PlacementController 
 #this class manages the spawning and placement of all the blocks
 #keep an eye out for the staic variables to call from other places
 
-var selectedObject:House = null
+var selectedObject:Node2D = null
+var selectedObjectID:int = 0
 var validPlace:bool = false
+@onready var select_house_sfx = $"../select_house_sfx"
 
-static var Houses = {
-	0: preload("res://Objects/Houses/base_house.tscn"),
-	1: preload("res://Objects/Houses/house_b.tscn"),
-	2: preload("res://Objects/Houses/big_house_a.tscn"),
-	}
-
-# Called when the node enters the scene tree for the first time.
+# Called when a button is pressed
 func makeSelection(selection:int):
 	if selectedObject != null:
 			selectedObject.queue_free()
-	selectedObject = Houses[selection].instantiate()
+	selectedObjectID = selection
+	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
+	selectedObject.position = selectedObject.offset
 	add_child(selectedObject)
+	select_house_sfx.play()
 
 # This function handles placement of house
 func _unhandled_input(event):
@@ -29,12 +27,15 @@ func _unhandled_input(event):
 				get_tree().root.add_child(selectedObject)
 				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d()\
-					.get_global_mouse_position().snapped(ViewManager.gridSize)
+					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
-				FishManager.addHouse(selectedObject)
-				
-				#call particle effects then set to null
 				$"Bubble&DustEffect".EmitParticles()
+				selectedObject.onPlace()
+				selectedObject = null
+				InventoryManager.decrementItem(selectedObjectID)
+			elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+				#cancel placement
+				selectedObject.queue_free()
 				selectedObject = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,8 +52,10 @@ func _process(delta):
 			validPlace = false
 			return
 		# == prevent collision overlaps
-		var overlaps = selectedObject.get_node('Area2D').get_overlapping_areas()
-		if overlaps.size() == 0:
+		var overlaps = \
+			selectedObject.get_node('Area2D').has_overlapping_areas() or \
+			selectedObject.get_node('Area2D').has_overlapping_bodies()
+		if overlaps == false:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
 			validPlace = true
 		else:

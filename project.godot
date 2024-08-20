@@ -23,11 +23,18 @@ UnderwaterAmbienceAudio="*res://assets/audio/audio objects/underwater_ambience_a
 ViewManager="*res://Globals/Managers/ViewManager.gd"
 TurnManager="*res://Globals/Managers/TurnManager.gd"
 FishManager="*res://Globals/Managers/FishManager.gd"
+InventoryManager="*res://Globals/Managers/InventoryManager.gd"
 
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Gmtk 2024"
 
 [input]
 
