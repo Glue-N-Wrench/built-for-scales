@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dm5phgnfsckve"]
 
-[ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ofdq6"]
-[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
+[ext_resource type="Texture2D" uid="uid://bdl8nof16udup" path="res://assets/titleScreen.png" id="1_wmwri"]
+[ext_resource type="LabelSettings" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
 [ext_resource type="Script" path="res://UI/MainMenu/Start_Btn.gd" id="3_f3764"]
 [ext_resource type="Theme" uid="uid://10uajxx7wms8" path="res://UI/buttonTheme.tres" id="3_gio3r"]
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ofdq6")
+texture = ExtResource("1_wmwri")
 expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -34,10 +34,10 @@ anchor_left = 0.026
 anchor_top = 0.012
 anchor_right = 0.026
 anchor_bottom = 0.012
-offset_left = 0.0480003
-offset_top = -1.6
-offset_right = 739.048
-offset_bottom = 629.4
+offset_left = 7.4
+offset_top = 406.2
+offset_right = 746.4
+offset_bottom = 1037.2
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
@@ -49,7 +49,7 @@ horizontal_alignment = 1
 
 [node name="Start Btn" type="Button" parent="VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_gio3r")
@@ -57,7 +57,7 @@ text = "Start"
 script = ExtResource("3_f3764")
 
 [node name="Credits Btn" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_gio3r")
@@ -116,7 +116,7 @@ text = "back"
 script = ExtResource("4_2d5hg")
 
 [node name="OptionBtn" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_gio3r")
@@ -127,6 +127,7 @@ mode = 1
 visible = false
 
 [node name="QuitBtn" type="Button" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
