@@ -1,5 +1,5 @@
 extends Button
-@onready var open_panel_sfx = $"../../open panel sfx"
+@onready var open_panel_sfx = $"/root/MainAudio/open panel sfx"
 
 
 func _on_pressed():
