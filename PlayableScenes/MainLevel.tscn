@@ -1,23 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=27 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
-[ext_resource type="LabelSettings" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
+[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
 [ext_resource type="Script" path="res://PlayableScenes/GameOverScreen.gd" id="3_c5gyg"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_wnieg"]
 [ext_resource type="PackedScene" uid="uid://lmwhdldyoeea" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
-[ext_resource type="PackedScene" uid="uid://dqm5wh2ht0h2h" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
+[ext_resource type="PackedScene" uid="uid://0il5ctvsvq52" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
 [ext_resource type="Texture2D" uid="uid://fudqpquhkky1" path="res://assets/VisualAssets/Breakables2Finish.png" id="5_v5tm4"]
 [ext_resource type="PackedScene" uid="uid://jq4hlq5hqbv5" path="res://assets/VFX/bubble&dust_effect.tscn" id="6_ge7xt"]
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/VisualAssets/Breakables1.png" id="6_qrlcs"]
 [ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]
-[ext_resource type="Texture2D" path="res://assets/Layer 4.png" id="11_q1e6q"]
+[ext_resource type="Texture2D" uid="uid://da0eqmj1sdwpl" path="res://assets/Layer 4.png" id="11_q1e6q"]
 [ext_resource type="AudioStream" uid="uid://cyluvxqav1tcr" path="res://assets/audio/msuic/Fishy City V1.wav" id="11_spa5t"]
-[ext_resource type="Texture2D" path="res://assets/Layer 3.png" id="12_8ubqi"]
+[ext_resource type="Texture2D" uid="uid://dn0gmhaa1epwt" path="res://assets/Layer 3.png" id="12_8ubqi"]
 [ext_resource type="Script" path="res://PlayableScenes/MusicPlayer.gd" id="12_ds3jn"]
 [ext_resource type="AudioStream" uid="uid://dairujila7amb" path="res://assets/audio/sfx/house build/pick up house sfx.wav" id="12_fbao4"]
-[ext_resource type="Texture2D" path="res://assets/Layer 2.png" id="13_hxsvw"]
-[ext_resource type="Texture2D" path="res://assets/Layer 1.png" id="14_ni7ap"]
+[ext_resource type="Texture2D" uid="uid://xo3jolggyjv7" path="res://assets/Layer 2.png" id="13_hxsvw"]
+[ext_resource type="Texture2D" uid="uid://dr68bohbustyw" path="res://assets/Layer 1.png" id="14_ni7ap"]
+[ext_resource type="Texture2D" uid="uid://s3ik604kmujv" path="res://assets/VisualAssets/Fish.png" id="20_e4fkw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tti0c"]
 
@@ -1843,6 +1844,18 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_b4rtp")
 sources/2 = SubResource("TileSetAtlasSource_jp6by")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_emjlk"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 600, 1)
+direction = Vector3(-1, 0, 0)
+spread = 5.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
+
 [node name="MainLevel" type="Node2D"]
 texture_filter = 1
 
@@ -2000,6 +2013,18 @@ script = ExtResource("12_ds3jn")
 [node name="select_house_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fbao4")
 bus = &"UI"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+z_index = -2
+position = Vector2(1137, -48)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_emjlk")
+texture = ExtResource("20_e4fkw")
+lifetime = 30.0
+randomness = 0.3
+visibility_rect = Rect2(-2250, -800, 2500, 1500)
 
 [connection signal="pressed" from="Camera2D/GameOverScreen/QuitBtn" to="Camera2D/GameOverScreen" method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="Camera2D/GameOverScreen/ReturnBtn" to="Camera2D/GameOverScreen" method="_on_return_btn_pressed"]
