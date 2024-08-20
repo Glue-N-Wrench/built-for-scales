@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=26 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://fudqpquhkky1" path="res://assets/VisualAssets/Breakables2Finish.png" id="5_v5tm4"]
 [ext_resource type="PackedScene" uid="uid://jq4hlq5hqbv5" path="res://assets/VFX/bubble&dust_effect.tscn" id="6_ge7xt"]
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/VisualAssets/Breakables1.png" id="6_qrlcs"]
+[ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]
 [ext_resource type="Texture2D" uid="uid://da0eqmj1sdwpl" path="res://assets/Layer 4.png" id="11_q1e6q"]
 [ext_resource type="AudioStream" uid="uid://cyluvxqav1tcr" path="res://assets/audio/msuic/Fishy City V1.wav" id="11_spa5t"]
 [ext_resource type="Texture2D" uid="uid://dn0gmhaa1epwt" path="res://assets/Layer 3.png" id="12_8ubqi"]
@@ -2009,6 +2010,10 @@ script = ExtResource("12_ds3jn")
 [node name="select_house_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fbao4")
 bus = &"UI"
+
+[node name="Grid" type="Node2D" parent="."]
+z_index = -1
+script = ExtResource("8_227gk")
 
 [connection signal="pressed" from="Camera2D/GameOverScreen/QuitBtn" to="Camera2D/GameOverScreen" method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="Camera2D/GameOverScreen/ReturnBtn" to="Camera2D/GameOverScreen" method="_on_return_btn_pressed"]
