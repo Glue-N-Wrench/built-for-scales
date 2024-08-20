@@ -65,7 +65,6 @@ func makeNewFishBatch(points:int):
 			spawnFish(purchase-1)
 			points -= purchase
 	currentWaveHasCatfish
-	fishUpdated.emit()
 	CheckHouses()
 
 func spawnFish(type:int):
@@ -82,8 +81,18 @@ func spawnFish(type:int):
 	add_child(newFish)
 	homelessFish[type].push_front(newFish)
 
-func addHouse(house:Node2D):
+func addHouse(house:House):
 	activeHouses.append(house)
+	CheckHouses()
+
+func removeHouse(house:House):
+	activeHouses.erase(house)
+	for size in house.current_fish:
+		for fish in house.current_fish[size]:
+			fish.go_to_location(house.position)
+			fish.homeless=true
+		homelessFish[size].append_array(house.current_fish[size])
+	fishUpdated.emit()	
 	CheckHouses()
 
 func CheckHouses():
