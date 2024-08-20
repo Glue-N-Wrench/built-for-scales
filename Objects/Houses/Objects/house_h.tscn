@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://3fwvtjbh1idh"]
+[gd_scene load_steps=3 format=3 uid="uid://bonwnlylc27yy"]
 
 [ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_avmec"]
 [ext_resource type="Texture2D" uid="uid://4jv0jst50bq4" path="res://assets/Houses/house_1x2_b.png" id="2_8tkoj"]
 
 [node name="BaseHouse" instance=ExtResource("1_avmec")]
 offset = Vector2(32, 0)
+supportBase = Vector2(-1, 0)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_8tkoj")

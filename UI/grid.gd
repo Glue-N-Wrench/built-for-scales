@@ -2,8 +2,8 @@ extends Node2D
 
 #this can be drawn on any stationary world object
 
-const lineColor = Color(1,1,1,0.5)
-const borderColor = Color(0,1,1,0.7)
+const lineColor = Color(1,1,1,0.3)
+const borderColor = Color(0,1,1,0.4)
 
 var gridGrowSpeed = 0.3 #px/s
 

@@ -8,6 +8,7 @@
 fish_capacity = 1
 max_fish_size = 2
 offset = Vector2(32, 0)
+supportBase = Vector2(-2, 1)
 shape = ExtResource("2_ls76s")
 
 [node name="Sprite2D" parent="." index="1"]
