@@ -8,7 +8,11 @@ var offset:Vector2 = Vector2(32,32)
 var overlaps = []
 var houseOverlaps = []
 
+func _ready():
+	$BombAnimator.play("Selecting")
+
 func Explode():
+	$BombAnimator.stop()
 	$AffectedArea.visible = false
 	$BombAnimator.play("Explode")
 

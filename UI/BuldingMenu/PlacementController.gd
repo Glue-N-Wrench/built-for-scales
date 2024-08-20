@@ -42,6 +42,8 @@ func _unhandled_input(event):
 func _process(delta):
 	#position = get_viewport().get_mouse_position()+get_viewport().get_camera_2d().position
 	if selectedObject != null:
+		#shows the grid if you are placing something(aka selectedObject != null)
+		$"../Grid".showGrid = true
 		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
 		position = get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 		#== restrict placement to bounds ==
@@ -60,4 +62,6 @@ func _process(delta):
 		else:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
+	else: 
+		$"../Grid".showGrid = false
 

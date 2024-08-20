@@ -14,7 +14,7 @@ const weekTime = 2 #rounds in a 'week'
 signal updateGameOverTimer
 const gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
-signal gameStarted
+#signal gameStarted MOVED TO CAMERA2D
 
 var timespeed = 1
 var timeButton
@@ -31,8 +31,9 @@ func reset():
 	roundTimer = 0
 	dayCount = 0
 
-func _ready():
-	gameStarted.emit()
+#func _ready():
+	#only plays music for title screen working on fixing this
+		#gameStarted.emit()
 
 func _on_button_toggled(toggle):
 	if toggle:

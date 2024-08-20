@@ -136,7 +136,7 @@ var Buildings:Array[HouseInfo] = [
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x2_b.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_m.tscn"), #scene
-		1, #Amount
+		2, #Amount
 	),
 	HouseInfo.new(
 		"Alpha House B", #Name
