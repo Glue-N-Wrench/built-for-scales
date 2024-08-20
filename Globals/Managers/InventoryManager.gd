@@ -20,7 +20,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new( #2
 		"Beta House A",
-		"2x2 house for medium chads",
+		"2x2 house for medium scads",
 		4,
 		preload("res://assets/Houses/house_2x2_b.png"),
 		preload("res://Objects/Houses/Objects/house_b.tscn"),
@@ -44,7 +44,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 		HouseInfo.new( #5
 		"Beta House B", #Name
-		"2x2 house for medium chads", #Description
+		"2x2 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x2_b.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_b.tscn"), #scene
@@ -84,7 +84,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new( #10
 		"Golf House A", #Name
-		"1x2 house for medium chads", #Description
+		"1x2 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_1x2_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_g.tscn"), #scene
@@ -108,7 +108,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new(
 		"Hotel House B", #Name
-		"1x3 house for medium chads", #Description
+		"1x3 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_1x3_b.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_j.tscn"), #scene
@@ -124,7 +124,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new( #15
 		"India House B", #Name
-		"2x1 house for medium chads", #Description
+		"2x1 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x1_b.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_L.tscn"), #scene
@@ -132,7 +132,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 		HouseInfo.new(
 		"Beta House C", #Name
-		"2x2 house for medium chads", #Description
+		"2x2 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x2_b.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_m.tscn"), #scene
@@ -148,7 +148,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 		HouseInfo.new(
 		"Juliett House A", #Name
-		"1 + 2x1 house for medium chads", #Description
+		"1 + 2x1 house for medium scads", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x2_DL_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_o.tscn"), #scene
@@ -188,7 +188,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new(
 		"Mike House", #Name
-		"3x1 + 1 house for medium chads", #Description
+		"3x1 + 1 house for medium scads", #Description
 		5, #Chance Higher = more common
 		preload("res://assets/Houses/house_2x3T_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_t.tscn"), #scene
@@ -204,7 +204,7 @@ var Buildings:Array[HouseInfo] = [
 	),
 	HouseInfo.new(
 		"Oscar House", #Name
-		"1x2 + 2x1 house for medium chad", #Description
+		"1x2 + 2x1 house for medium scad", #Description
 		4, #Chance Higher = more common
 		preload("res://assets/Houses/house_3x2_DL_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_v.tscn"), #scene
