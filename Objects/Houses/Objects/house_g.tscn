@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw5vu72heu3ao"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_5oa53"]
+[ext_resource type="Texture2D" uid="uid://dreankh3kv3mp" path="res://assets/Houses/house_1x2_a.png" id="2_3su12"]
+
+[node name="BaseHouse" instance=ExtResource("1_5oa53")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_3su12")
+
+[node name="Area2D" parent="." index="2"]
+scale = Vector2(0.5, 1)
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-48, -56, -50, 60, 50, 58, 52, -58)

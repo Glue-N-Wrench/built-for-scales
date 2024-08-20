@@ -25,7 +25,6 @@ func onPlace():
 	house_placement_sfx.play()
 
 func _ready():
-	$Area2D/CollisionPolygon2D.polygon = shape.points
 	FishManager.fishUpdated.connect(_on_fish_updated)
 	$FishDetails.extraText = "max: "+str(fish_capacity)
 	for i in range(max_fish_size+1):
