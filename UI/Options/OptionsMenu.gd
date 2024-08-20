@@ -5,7 +5,7 @@ var selectedSoundOptions = OptionsMan.soundSettings.duplicate(true)
 const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
-@onready var open_panel_sfx = $"../../../open panel sfx"
+@onready var open_panel_sfx = $"/root/MainAudio/open panel sfx"
 
 @onready var open_panel_sfx____options = $"open panel sfx  - options"
 
