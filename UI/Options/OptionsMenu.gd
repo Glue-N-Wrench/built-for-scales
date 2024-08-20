@@ -60,7 +60,8 @@ func _on_close_but_pressed():
 func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
-	open_panel_sfx.play()
+	if open_panel_sfx:
+		open_panel_sfx.play()
 
 func _on_close_requested():
 	resetOptions()

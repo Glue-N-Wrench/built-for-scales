@@ -71,6 +71,8 @@ animations = [{
 }]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vk2mh"]
+random_pitch = 1.28
+random_volume_offset_db = 5.61
 streams_count = 3
 stream_0/stream = ExtResource("3_qq7dl")
 stream_0/weight = 1.0
@@ -90,4 +92,5 @@ script = ExtResource("2_mf5g3")
 
 [node name="fish enter sfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_vk2mh")
+volume_db = -10.306
 bus = &"Gameplay"
