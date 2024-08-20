@@ -1,23 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=25 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
 [ext_resource type="Script" path="res://PlayableScenes/GameOverScreen.gd" id="3_c5gyg"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_wnieg"]
+[ext_resource type="PackedScene" uid="uid://lmwhdldyoeea" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
+[ext_resource type="PackedScene" uid="uid://dqm5wh2ht0h2h" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
 [ext_resource type="Texture2D" uid="uid://fudqpquhkky1" path="res://assets/VisualAssets/Breakables2Finish.png" id="5_v5tm4"]
 [ext_resource type="PackedScene" uid="uid://jq4hlq5hqbv5" path="res://assets/VFX/bubble&dust_effect.tscn" id="6_ge7xt"]
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/VisualAssets/Breakables1.png" id="6_qrlcs"]
-[ext_resource type="Texture2D" uid="uid://da0eqmj1sdwpl" path="res://assets/Layer 4.png" id="7_giiqd"]
-[ext_resource type="Texture2D" uid="uid://dn0gmhaa1epwt" path="res://assets/Layer 3.png" id="8_8bs6l"]
-[ext_resource type="Texture2D" uid="uid://xo3jolggyjv7" path="res://assets/Layer 2.png" id="9_uchs7"]
-[ext_resource type="Texture2D" uid="uid://dr68bohbustyw" path="res://assets/Layer 1.png" id="10_pgygu"]
-[ext_resource type="PackedScene" uid="uid://lmwhdldyoeea" path="res://UI/pause_menu.tscn" id="4_8c5vk"]
-[ext_resource type="PackedScene" uid="uid://dqm5wh2ht0h2h" path="res://UI/weeklyRewards.tscn" id="5_4718g"]
 [ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]
+[ext_resource type="Texture2D" path="res://assets/Layer 4.png" id="11_q1e6q"]
 [ext_resource type="AudioStream" uid="uid://cyluvxqav1tcr" path="res://assets/audio/msuic/Fishy City V1.wav" id="11_spa5t"]
+[ext_resource type="Texture2D" path="res://assets/Layer 3.png" id="12_8ubqi"]
 [ext_resource type="Script" path="res://PlayableScenes/MusicPlayer.gd" id="12_ds3jn"]
 [ext_resource type="AudioStream" uid="uid://dairujila7amb" path="res://assets/audio/sfx/house build/pick up house sfx.wav" id="12_fbao4"]
+[ext_resource type="Texture2D" path="res://assets/Layer 2.png" id="13_hxsvw"]
+[ext_resource type="Texture2D" path="res://assets/Layer 1.png" id="14_ni7ap"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tti0c"]
 
@@ -1903,6 +1903,55 @@ text = "Restart"
 [node name="MainUI" parent="Camera2D" instance=ExtResource("3_wnieg")]
 
 [node name="WeeklyRewards" parent="Camera2D" instance=ExtResource("5_4718g")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+follow_viewport_enabled = true
+scroll_limit_end = Vector2(0, 100)
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+modulate = Color(0.771575, 0.786204, 0.79687, 1)
+texture_filter = 1
+position = Vector2(-348, 61)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1010, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("11_q1e6q")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+modulate = Color(0.771575, 0.786204, 0.79687, 1)
+texture_filter = 1
+position = Vector2(-348, 61)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1010, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("12_8ubqi")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+modulate = Color(0.771575, 0.786204, 0.79687, 1)
+texture_filter = 1
+position = Vector2(-348, 61)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1010, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("13_hxsvw")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+modulate = Color(0.771575, 0.786204, 0.79687, 1)
+texture_filter = 1
+position = Vector2(-348, 61)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1010, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("14_ni7ap")
 
 [node name="PlacementController" type="Node2D" parent="."]
 z_index = 1

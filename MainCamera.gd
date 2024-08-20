@@ -1,7 +1,7 @@
 extends Camera2D
 
 #var cameraZoomOutStep = 0.1//a safe testing value
-var cameraZoomOutStep = 0.001
+var cameraZoomOutStep = 0.05
 const cameraVerticalSpeed = 150
 
 func _process(delta):
