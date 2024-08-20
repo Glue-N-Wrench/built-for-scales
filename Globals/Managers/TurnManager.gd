@@ -7,7 +7,7 @@ extends Node
 
 var dayCount = 0
 signal updateDay # a signal for the UI
-const roundTime = 5#20 #seconds in a round
+const roundTime = 20 #seconds in a round
 var roundTimer = 0
 const weekTime = 2 #rounds in a 'week'
 
