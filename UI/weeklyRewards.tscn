@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqm5wh2ht0h2h"]
+[gd_scene load_steps=5 format=3 uid="uid://0il5ctvsvq52"]
 
 [ext_resource type="Script" path="res://UI/weeklyRewards.gd" id="1_lseds"]
 [ext_resource type="Texture2D" uid="uid://kw3rmhw0dm4c" path="res://icon.svg" id="1_ue2f4"]
-[ext_resource type="Theme" uid="uid://10uajxx7wms8" path="res://UI/buttonTheme.tres" id="2_m103k"]
+[ext_resource type="Theme" uid="uid://dwbhb4hfa0mvd" path="res://UI/buttonTheme.tres" id="2_m103k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_btmbc"]
 font_size = 75
@@ -106,6 +106,25 @@ vertical_icon_alignment = 0
 custom_minimum_size = Vector2(216.5, 0)
 layout_mode = 2
 
+[node name="RerollBtn" type="Button" parent="WeeklyRewardsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 191.0
+offset_right = 36.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_m103k")
+text = "Reroll
+"
+
 [connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 1" to="WeeklyRewardsUI" method="choseOption" binds= [0]]
 [connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 2" to="WeeklyRewardsUI" method="choseOption" binds= [1]]
 [connection signal="button_down" from="WeeklyRewardsUI/Reward Options Display/Option 3" to="WeeklyRewardsUI" method="choseOption" binds= [2]]
+[connection signal="pressed" from="WeeklyRewardsUI/RerollBtn" to="WeeklyRewardsUI" method="_on_reroll_btn_pressed"]
