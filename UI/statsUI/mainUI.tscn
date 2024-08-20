@@ -490,6 +490,7 @@ layout_mode = 2
 layout_mode = 2
 icon = ExtResource("7_vdsd5")
 
+[connection signal="pressed" from="TopLeftContainer/DayIndicator/Button" to="TopLeftContainer/DayIndicator" method="_on_button_pressed"]
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]
 [connection signal="pressed" from="BuildingContainer/BuildingTray/TrayButton" to="BuildingContainer/BuildingTray" method="_on_tray_button_pressed"]
 [connection signal="toggled" from="HomelessFishContainer/HomelessFish/BOmb/Button" to="HomelessFishContainer/HomelessFish/BOmb" method="_on_button_toggled"]

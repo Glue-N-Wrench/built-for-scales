@@ -17,6 +17,8 @@ var gameOverTimer = 10
 signal gameStarted
 
 var timespeed = 1
+var timeButton
+var forcedTimeSlow = false
 
 #==mange the week rewards==
 func weekCheck():
@@ -51,8 +53,11 @@ func _process(delta):
 		updateDay.emit()
 	#==manage the game over==
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
-		#Forces slow speed when homeless is bad
-		_on_button_toggled(false)
+		#Forces button to disable and forces timespeed 1
+		if timespeed == 3:
+			timespeed = 1
+			timeButton.disabled = true
+			forcedTimeSlow = true
 		
 		gameOverTimer -= delta * timespeed
 		updateGameOverTimer.emit()
@@ -62,3 +67,9 @@ func _process(delta):
 	elif gameOverTimer < gameOverCount:
 		gameOverTimer += delta * timespeed
 		updateGameOverTimer.emit()
+	
+	#Successfully escaped scenario
+	if forcedTimeSlow && FishManager.getTotalHomeless() <= FishManager.maxHomeless:
+		forcedTimeSlow = false
+		timeButton.disabled = false
+		timespeed = 3
