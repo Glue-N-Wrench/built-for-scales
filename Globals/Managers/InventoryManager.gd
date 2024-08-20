@@ -88,15 +88,15 @@ var Buildings:Array[HouseInfo] = [
 		2, #Chance Higher = more common
 		preload("res://assets/Houses/house_1x2_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_g.tscn"), #scene
-		0, #Amount
+		1, #Amount
 	),
 	#HouseInfo.new(
 		#"", #Name
 		#"", #Description
-		#0, #Chance Higher = more common
+		#1, #Chance Higher = more common
 		#preload(), #Picture
 		#preload(), #scene
-		#0, #Amount
+		#1, #Amount
 	#),
 ]
 

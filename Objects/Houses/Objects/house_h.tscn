@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4jv0jst50bq4" path="res://assets/Houses/house_1x2_b.png" id="2_8tkoj"]
 
 [node name="BaseHouse" instance=ExtResource("1_avmec")]
+offset = Vector2(32, 0)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_8tkoj")
