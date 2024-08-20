@@ -5,6 +5,8 @@ var bomb = preload("res://Objects/bomb.tscn")
 var distToGround:int = 64
 var offset:Vector2 = Vector2(32,32)
 @onready var bomb_sfx = $"bomb sfx"
+var overlaps = []
+
 
 func Explode():
 	$AffectedArea.visible = false
@@ -33,3 +35,11 @@ func _on_bomb_animator_frame_changed():
 		tilemap.set_cells_terrain_connect(1, destroyedCells, 0, -1, false)
 	if $BombAnimator.frame == 12:
 		queue_free()
+
+func colliderIn(body):
+	overlaps.append(body)
+
+func colliderOut(body):
+	overlaps.erase(body)
+
+

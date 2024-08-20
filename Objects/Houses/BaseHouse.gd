@@ -9,6 +9,7 @@ class_name House
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 @export var offset:Vector2 = Vector2(0,0) #in pixels
+var overlaps = []
 
 var current_fish = {
 	0:[]
@@ -43,3 +44,9 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	$FishDetails.visible = false
+
+func colliderIn(body):
+	overlaps.append(body)
+
+func colliderOut(body):
+	overlaps.erase(body)
