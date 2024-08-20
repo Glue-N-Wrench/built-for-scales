@@ -6,3 +6,6 @@ const floor = 335 # pos of floor in pixels
 var gridLimitTop = -100 # pos of vertical limit in pixels
 
 
+func reset():
+	gridLimitSides = 448
+	gridLimitTop = -100

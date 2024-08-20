@@ -26,6 +26,18 @@ const fixedFishWaves = [
 		[0,0,0,0,0],
 	]
 
+
+func reset():
+	#reset globals to their starting values
+	activeHouses = []
+	homelessFish = {
+		0:[],
+		1:[],
+		2:[],
+	}
+	for child in get_children():
+		child.queue_free()
+
 func _ready():
 	fishRNG.randomize()
 

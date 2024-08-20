@@ -12,13 +12,20 @@ var roundTimer = 0
 const weekTime = 2 #rounds in a 'week'
 
 signal updateGameOverTimer
-var gameOverCount = 10#seconds till game over
+const gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
 signal gameStarted
+
 #==mange the week rewards==
 func weekCheck():
 	if dayCount % weekTime == 0:
 		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
+
+func reset():
+	#reset globals to their starting values
+	gameOverTimer = 10
+	roundTimer = 0
+	dayCount = 0
 
 func _ready():
 	gameStarted.emit()
