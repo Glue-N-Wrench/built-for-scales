@@ -130,6 +130,7 @@ text = "Options"
 [node name="OptionsMenu" parent="VBoxContainer/OptionBtn" instance=ExtResource("6_00yg5")]
 mode = 1
 size = Vector2i(400, 400)
+visible = false
 
 [node name="QuitBtn" type="Button" parent="VBoxContainer"]
 visible = false
