@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4jv0jst50bq4" path="res://assets/Houses/house_1x2_b.png" id="2_8tkoj"]
 
 [node name="BaseHouse" instance=ExtResource("1_avmec")]
+fish_capacity = 2
 offset = Vector2(32, 0)
 supportBase = Vector2(-1, 0)
 

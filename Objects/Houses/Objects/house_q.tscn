@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btn3poqoha3qf" path="res://assets/Houses/house_2x2_UL_a.png" id="2_aw40r"]
 
 [node name="BaseHouse" instance=ExtResource("1_6mn1j")]
+fish_capacity = 2
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_aw40r")

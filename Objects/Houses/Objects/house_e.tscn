@@ -5,7 +5,7 @@
 
 [node name="BaseHouse" instance=ExtResource("1_y18if")]
 fish_capacity = 1
-max_fish_size = 1
+max_fish_size = 0
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
 

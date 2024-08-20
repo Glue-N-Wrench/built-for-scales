@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1i0yuwtwafrc" path="res://assets/Houses/house_2x1_a.png" id="2_x03et"]
 
 [node name="BaseHouse" instance=ExtResource("1_qajc6")]
+fish_capacity = 2
 offset = Vector2(0, 32)
 
 [node name="Sprite2D" parent="." index="1"]
