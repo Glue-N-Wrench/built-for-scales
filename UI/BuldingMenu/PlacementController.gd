@@ -13,6 +13,7 @@ func makeSelection(selection:int):
 			selectedObject.queue_free()
 	selectedObjectID = selection
 	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
+	selectedObject.position = selectedObject.offset
 	add_child(selectedObject)
 	select_house_sfx.play()
 

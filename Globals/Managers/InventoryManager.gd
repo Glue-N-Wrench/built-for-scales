@@ -30,7 +30,7 @@ var Buildings:Array[HouseInfo] = [
 		"3x2 Charley House",
 		"3x2 house for big catfish",
 		1,
-		preload("res://assets/Houses/house_3x1_b.png"),
+		preload("res://assets/Houses/house_3x2_a.png"),
 		preload("res://Objects/Houses/Objects/big_house_a.tscn"),
 		1,
 	),
@@ -43,6 +43,7 @@ var inventory = {
 	0:3,
 	1:2,
 	2:1,
+	3:1,
 }
 
 func addItems(key, amount):

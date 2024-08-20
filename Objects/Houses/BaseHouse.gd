@@ -9,7 +9,7 @@ class_name House
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 @export var offset:Vector2 = Vector2(0,0) #in pixels
-# ^ offset is to help prevent odd-width buildings takeing up half squares
+
 var current_fish = {
 	0:[]
 };
