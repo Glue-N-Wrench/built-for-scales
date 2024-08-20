@@ -33,7 +33,7 @@ func _process(delta):
 			wanderClock = wanderTime
 	var difference = target_location - position
 	if difference.length() < 10 and not homeless:
-		fish_enter_sfx.play()
+		#fish_enter_sfx.play()
 		visible = false
 		set_process(false);#pause fish when they're not thinking
 	position += difference.limit_length(speed * delta * $"/root/TurnManager".timespeed)

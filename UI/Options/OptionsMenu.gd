@@ -25,7 +25,8 @@ func _ready():
 		newControl.name = option
 		newControl.get_node('Label').text = option
 		print("loaded:",selectedControlOptions[option])
-		newControl.get_node('Key').text = selectedControlOptions[option].as_text_physical_keycode()
+		if selectedControlOptions[option]:
+			newControl.get_node('Key').text = selectedControlOptions[option].as_text_physical_keycode()
 
 
 func resetOptions():
