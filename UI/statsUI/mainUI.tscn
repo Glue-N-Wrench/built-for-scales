@@ -22,50 +22,6 @@ region = Rect2(0, 0, 113, 59)
 atlas = ExtResource("5_6uqes")
 region = Rect2(320, 26, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtyms"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(22, 71, 31, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlhna"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(20, 133, 28, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08qw7"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(64, 136, 352, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cmyw"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(64, 104, 352, 16)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d1dlp"]
-particles_animation = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5fkw"]
-lifetime_randomness = 0.8
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 7.0
-spread = 5.0
-initial_velocity_min = 103.23
-initial_velocity_max = 116.13
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
-radial_velocity_min = 5.0
-radial_velocity_max = 5.0
-gravity = Vector3(0, 0, 0)
-anim_speed_min = 1.0
-anim_speed_max = 1.0
-anim_offset_max = 1.0
-turbulence_noise_speed = Vector3(1, 0.1, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6ouy"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(418, 125, 26, 35)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_x20ui"]
 atlas = ExtResource("5_6uqes")
 region = Rect2(129, 0, 31, 30)
@@ -166,6 +122,50 @@ region = Rect2(28, 176, 43, 36)
 atlas = ExtResource("11_nkv7f")
 region = Rect2(19, 0, 42, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhna"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(20, 133, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08qw7"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(64, 136, 352, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cmyw"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(64, 104, 352, 16)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d1dlp"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5fkw"]
+lifetime_randomness = 0.8
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.0
+spread = 5.0
+initial_velocity_min = 103.23
+initial_velocity_max = 116.13
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+radial_velocity_min = 5.0
+radial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+turbulence_noise_speed = Vector3(1, 0.1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6ouy"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(418, 125, 26, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtyms"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(22, 71, 31, 20)
+
 [node name="MainUI" type="CanvasLayer"]
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="."]
@@ -215,148 +215,6 @@ text = "Day
 label_settings = ExtResource("5_qkcwe")
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="TopLeftContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="HomelessFish" type="VBoxContainer" parent="TopLeftContainer/Control"]
-layout_mode = 2
-offset_top = 4.0
-offset_right = 128.0
-offset_bottom = 64.0
-scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-script = ExtResource("2_g15dv")
-
-[node name="MainLabel" type="HBoxContainer" parent="TopLeftContainer/Control/HomelessFish"]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="TopLeftContainer/Control/HomelessFish/MainLabel"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_gtyms")
-
-[node name="Label" type="Label" parent="TopLeftContainer/Control/HomelessFish/MainLabel"]
-layout_mode = 2
-text = "1/2"
-label_settings = ExtResource("5_qkcwe")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="TopLeftContainer/Control/HomelessFish"]
-layout_mode = 2
-texture = ExtResource("6_v2m0y")
-
-[node name="FishNumbers" type="Control" parent="TopLeftContainer/Control/HomelessFish"]
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-
-[node name="fishLabel0" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
-layout_mode = 0
-offset_left = 13.6
-offset_right = 21.6
-offset_bottom = 18.0
-text = "0"
-label_settings = ExtResource("5_qkcwe")
-
-[node name="fishLabel1" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
-layout_mode = 0
-offset_left = 44.8
-offset_right = 52.8
-offset_bottom = 18.0
-text = "0"
-label_settings = ExtResource("5_qkcwe")
-
-[node name="fishLabel2" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
-layout_mode = 0
-offset_left = 74.4
-offset_right = 82.4
-offset_bottom = 18.0
-text = "0"
-label_settings = ExtResource("5_qkcwe")
-
-[node name="fishLabel3" type="Label" parent="TopLeftContainer/Control/HomelessFish/FishNumbers"]
-layout_mode = 0
-offset_left = 107.2
-offset_right = 115.2
-offset_bottom = 18.0
-text = "0"
-label_settings = ExtResource("5_qkcwe")
-
-[node name="BOmb" type="HBoxContainer" parent="TopLeftContainer/Control/HomelessFish"]
-visible = false
-layout_mode = 2
-
-[node name="Button" type="Button" parent="TopLeftContainer/Control/HomelessFish/BOmb"]
-layout_mode = 2
-icon = ExtResource("7_vdsd5")
-
-[node name="BottomContainer" type="HBoxContainer" parent="."]
-visible = false
-texture_filter = 1
-anchors_preset = -1
-anchor_left = 0.283
-anchor_top = 1.0
-anchor_right = 0.718
-anchor_bottom = 1.0
-offset_left = 0.639954
-offset_top = -70.0
-offset_right = -417.56
-offset_bottom = -35.0
-grow_horizontal = 2
-scale = Vector2(2, 2)
-script = ExtResource("7_smfhu")
-
-[node name="TextureRect" type="TextureRect" parent="BottomContainer"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_dlhna")
-stretch_mode = 3
-
-[node name="Control" type="Control" parent="BottomContainer"]
-custom_minimum_size = Vector2(355, 0)
-layout_mode = 2
-
-[node name="gameOverBar" type="TextureProgressBar" parent="BottomContainer/Control"]
-clip_children = 2
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -8.0
-offset_right = 352.0
-offset_bottom = 8.0
-grow_vertical = 2
-size_flags_horizontal = 4
-value = 100.0
-texture_over = SubResource("AtlasTexture_08qw7")
-texture_progress = SubResource("AtlasTexture_6cmyw")
-texture_progress_offset = Vector2(1, 0)
-
-[node name="Control" type="Control" parent="BottomContainer/Control/gameOverBar"]
-clip_contents = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 342.0
-offset_bottom = 14.0
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="BottomContainer/Control/gameOverBar/Control"]
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_d1dlp")
-position = Vector2(-5.5, 6)
-scale = Vector2(0.949345, 0.801313)
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_r5fkw")
-texture = ExtResource("7_dqa7x")
-lifetime = 2.5
-randomness = 1.0
-
-[node name="warningIcon" type="TextureRect" parent="BottomContainer"]
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_y6ouy")
-
 [node name="TopRightContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
 anchors_preset = -1
@@ -376,7 +234,7 @@ texture_normal = SubResource("AtlasTexture_x20ui")
 [node name="OptionsMenu" parent="." instance=ExtResource("8_s3b0f")]
 visible = false
 
-[node name="Control" type="Control" parent="."]
+[node name="BuildingContainer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -389,7 +247,7 @@ offset_bottom = 123.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="BuildingTray" type="TextureRect" parent="Control"]
+[node name="BuildingTray" type="TextureRect" parent="BuildingContainer"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -401,7 +259,7 @@ theme = SubResource("Theme_5eq63")
 texture = SubResource("AtlasTexture_4oa2j")
 script = ExtResource("8_r84q3")
 
-[node name="ColorRect" type="ScrollContainer" parent="Control/BuildingTray"]
+[node name="ColorRect" type="ScrollContainer" parent="BuildingContainer/BuildingTray"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -414,22 +272,22 @@ offset_bottom = -21.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="BuldingMenu" type="VBoxContainer" parent="Control/BuildingTray/ColorRect"]
+[node name="BuldingMenu" type="VBoxContainer" parent="BuildingContainer/BuildingTray/ColorRect"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="HouseCard" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+[node name="HouseCard" parent="BuildingContainer/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
 
-[node name="HouseCard2" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+[node name="HouseCard2" parent="BuildingContainer/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
 
-[node name="HouseCard3" parent="Control/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
+[node name="HouseCard3" parent="BuildingContainer/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2
 
-[node name="TrayButton" type="TextureButton" parent="Control/BuildingTray"]
+[node name="TrayButton" type="TextureButton" parent="BuildingContainer/BuildingTray"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
@@ -449,6 +307,161 @@ stream = ExtResource("12_eqpne")
 volume_db = -10.306
 bus = &"Gameplay"
 
-[connection signal="toggled" from="TopLeftContainer/Control/HomelessFish/BOmb/Button" to="TopLeftContainer/Control/HomelessFish/BOmb" method="_on_button_toggled"]
+[node name="DangerIndicator" type="HBoxContainer" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 564.0
+offset_top = 806.0
+offset_right = 981.0
+offset_bottom = 856.0
+scale = Vector2(2, 2)
+script = ExtResource("7_smfhu")
+
+[node name="TextureRect" type="TextureRect" parent="DangerIndicator"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dlhna")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="DangerIndicator"]
+custom_minimum_size = Vector2(355, 0)
+layout_mode = 2
+
+[node name="gameOverBar" type="TextureProgressBar" parent="DangerIndicator/Control"]
+clip_children = 2
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 352.0
+offset_bottom = 8.0
+grow_vertical = 2
+size_flags_horizontal = 4
+value = 100.0
+texture_over = SubResource("AtlasTexture_08qw7")
+texture_progress = SubResource("AtlasTexture_6cmyw")
+texture_progress_offset = Vector2(1, 0)
+
+[node name="Control" type="Control" parent="DangerIndicator/Control/gameOverBar"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 342.0
+offset_bottom = 14.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="DangerIndicator/Control/gameOverBar/Control"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_d1dlp")
+position = Vector2(-5.5, 6)
+scale = Vector2(0.949345, 0.801313)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_r5fkw")
+texture = ExtResource("7_dqa7x")
+lifetime = 2.5
+randomness = 1.0
+
+[node name="warningIcon" type="TextureRect" parent="DangerIndicator"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_y6ouy")
+stretch_mode = 3
+
+[node name="HomelessFishContainer" type="Control" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -311.0
+offset_top = -52.0
+offset_right = -261.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="HomelessFish" type="VBoxContainer" parent="HomelessFishContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -79.0
+offset_right = -113.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+script = ExtResource("2_g15dv")
+
+[node name="MainLabel" type="HBoxContainer" parent="HomelessFishContainer/HomelessFish"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HomelessFishContainer/HomelessFish/MainLabel"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_gtyms")
+
+[node name="Label" type="Label" parent="HomelessFishContainer/HomelessFish/MainLabel"]
+layout_mode = 2
+text = "1/2"
+label_settings = ExtResource("5_qkcwe")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HomelessFishContainer/HomelessFish"]
+layout_mode = 2
+texture = ExtResource("6_v2m0y")
+
+[node name="FishNumbers" type="Control" parent="HomelessFishContainer/HomelessFish"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="fishLabel0" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 13.6
+offset_right = 21.6
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel1" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 44.8
+offset_right = 52.8
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel2" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 74.4
+offset_right = 82.4
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="fishLabel3" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers"]
+layout_mode = 0
+offset_left = 107.2
+offset_right = 115.2
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="BOmb" type="HBoxContainer" parent="HomelessFishContainer/HomelessFish"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HomelessFishContainer/HomelessFish/BOmb"]
+layout_mode = 2
+icon = ExtResource("7_vdsd5")
+
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]
-[connection signal="pressed" from="Control/BuildingTray/TrayButton" to="Control/BuildingTray" method="_on_tray_button_pressed"]
+[connection signal="pressed" from="BuildingContainer/BuildingTray/TrayButton" to="BuildingContainer/BuildingTray" method="_on_tray_button_pressed"]
+[connection signal="toggled" from="HomelessFishContainer/HomelessFish/BOmb/Button" to="HomelessFishContainer/HomelessFish/BOmb" method="_on_button_toggled"]
