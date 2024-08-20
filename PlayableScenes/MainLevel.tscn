@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dairujila7amb" path="res://assets/audio/sfx/house build/pick up house sfx.wav" id="12_fbao4"]
 [ext_resource type="Texture2D" uid="uid://xo3jolggyjv7" path="res://assets/Layer 2.png" id="13_hxsvw"]
 [ext_resource type="Texture2D" uid="uid://dr68bohbustyw" path="res://assets/Layer 1.png" id="14_ni7ap"]
-[ext_resource type="Texture2D" path="res://assets/VisualAssets/Fish.png" id="20_e4fkw"]
+[ext_resource type="Texture2D" uid="uid://b64hxarlmefhx" path="res://assets/VisualAssets/Fish.png" id="20_e4fkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrsim"]
 texture = ExtResource("5_v5tm4")
