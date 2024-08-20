@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dn85x1ml7i48l" path="res://assets/Houses/house_2x2_a.png" id="4_r1yb7"]
 [ext_resource type="AudioStream" uid="uid://bnlsxusl4glbp" path="res://assets/audio/sfx/house build/place house sfx 2.wav" id="5_tvld0"]
 
-[node name="BaseHouse" type="Node2D"]
+[node name="BaseHouse2" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_kh4vs")
 fish_capacity = 3
@@ -31,6 +31,8 @@ polygon = PackedVector2Array(-60, -60, -60, 60, 60, 60, 60, -60)
 [node name="house_placement_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tvld0")
 
+[connection signal="area_entered" from="Area2D" to="." method="colliderIn"]
+[connection signal="area_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="body_entered" from="Area2D" to="." method="colliderIn"]
 [connection signal="body_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
