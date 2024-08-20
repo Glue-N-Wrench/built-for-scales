@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhddnj4qjfb8b"
+path="res://.godot/imported/hover sound .wav-b6d0d61387d2c46595d242ed4b9c4697.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ui sfx/hover sound .wav"
+dest_files=["res://.godot/imported/hover sound .wav-b6d0d61387d2c46595d242ed4b9c4697.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
