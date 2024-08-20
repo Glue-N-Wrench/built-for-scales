@@ -6,9 +6,7 @@ func _ready():
 
 func _on_timer_update():
 	if TurnManager.gameOverTimer < TurnManager.gameOverCount:
-		$warningIcon.visible = true
 		self.visible = true
 	else:
-		$warningIcon.visible = false
 		self.visible = false
 	$Control/gameOverBar.value = (TurnManager.gameOverTimer / TurnManager.gameOverCount) * 100
