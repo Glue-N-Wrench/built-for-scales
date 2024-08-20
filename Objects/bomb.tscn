@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqt6ih5d4bpgo"]
+[gd_scene load_steps=26 format=3 uid="uid://10rurbl4ph3l"]
 
 [ext_resource type="Script" path="res://UI/statsUI/bomb.gd" id="1_rshjt"]
 [ext_resource type="Texture2D" uid="uid://b1nylp3krxvdt" path="res://assets/bombSpriteSheet.png" id="1_w3odj"]

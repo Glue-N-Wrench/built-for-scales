@@ -3,7 +3,7 @@ extends Node2D
 var bomb = preload("res://Objects/bomb.tscn")
 @onready var tilemap: TileMap = $"/root/MainLevel/Tilemaps/Breakables"
 var distToGround:int = 64
-var offset:Vector2 = Vector2(0,0)
+var offset:Vector2 = Vector2(32,32)
 @onready var bomb_sfx = $"bomb sfx"
 
 func Explode():
