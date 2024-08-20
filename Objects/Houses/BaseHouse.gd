@@ -11,7 +11,7 @@ class_name House
 @export var offset:Vector2 = Vector2(0,0) #in pixels
 @export var supportBase:Vector2 = Vector2(-1,0) #grid values, from-to, inclusive
 var overlaps = []
-
+	
 var current_fish = {
 	0:[]
 };

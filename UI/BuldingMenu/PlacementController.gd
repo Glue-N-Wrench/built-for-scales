@@ -24,7 +24,7 @@ func _unhandled_input(event):
 		if event is InputEventMouseButton and validPlace == true:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				remove_child(selectedObject)
-				get_tree().root.add_child(selectedObject)
+				get_tree().get_current_scene().add_child(selectedObject)
 				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d()\
 					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
