@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm5phgnfsckve"]
+[gd_scene load_steps=10 format=3 uid="uid://dm5phgnfsckve"]
 
 [ext_resource type="Texture2D" uid="uid://bdl8nof16udup" path="res://assets/titleScreen.png" id="1_wmwri"]
-[ext_resource type="LabelSettings" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
+[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
 [ext_resource type="Script" path="res://UI/MainMenu/Start_Btn.gd" id="3_f3764"]
-[ext_resource type="Theme" uid="uid://vxh3u8n4aqg4" path="res://UI/buttonTheme.tres" id="3_gio3r"]
+[ext_resource type="Theme" uid="uid://dwbhb4hfa0mvd" path="res://UI/buttonTheme.tres" id="3_gio3r"]
 [ext_resource type="Script" path="res://UI/MainMenu/BackBtn.gd" id="4_2d5hg"]
 [ext_resource type="Script" path="res://UI/MainMenu/Credits Btn.gd" id="4_qiav6"]
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="6_00yg5"]
 [ext_resource type="Script" path="res://UI/MainMenu/QuitBtn.gd" id="7_w7uhq"]
+[ext_resource type="AudioStream" uid="uid://bsosg58f3ay5j" path="res://assets/audio/sfx/ui sfx/upgrade sfx.wav" id="9_weujb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -135,6 +136,10 @@ theme = ExtResource("3_gio3r")
 text = "Quit
 "
 script = ExtResource("7_w7uhq")
+
+[node name="open panel sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_weujb")
+bus = &"UI"
 
 [connection signal="pressed" from="VBoxContainer/Start Btn" to="VBoxContainer/Start Btn" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits Btn" to="VBoxContainer/Credits Btn" method="_on_pressed"]

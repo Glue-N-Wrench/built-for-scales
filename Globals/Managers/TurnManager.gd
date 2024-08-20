@@ -22,6 +22,7 @@ func weekCheck():
 
 func _ready():
 	gameStarted.emit()
+	
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':

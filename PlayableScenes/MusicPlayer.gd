@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	TurnManager.gameStarted.connect(on_game_started)
+	TurnManager.gameStarted.connect(_on_game_started)
 	pass # Replace with function body.
 
 
@@ -12,6 +12,5 @@ func _process(delta):
 	pass
 
 
-func on_game_started():
+func _on_game_started():
 	play()
-	print("we playing musica")
