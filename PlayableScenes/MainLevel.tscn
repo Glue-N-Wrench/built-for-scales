@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
-[ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
+[ext_resource type="LabelSettings" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
 [ext_resource type="Script" path="res://PlayableScenes/GameOverScreen.gd" id="3_c5gyg"]
 [ext_resource type="Script" path="res://UI/BuldingMenu/PlacementController.gd" id="3_c281c"]
 [ext_resource type="PackedScene" uid="uid://b0krhlmapyjp3" path="res://UI/statsUI/mainUI.tscn" id="3_wnieg"]

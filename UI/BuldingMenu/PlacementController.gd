@@ -7,6 +7,7 @@ var selectedObjectID:int = 0
 var validPlace:bool = false
 @onready var select_house_sfx = $"../select_house_sfx"
 
+
 # Called when a button is pressed
 func makeSelection(selection:int):
 	if selectedObject != null:
@@ -50,12 +51,13 @@ func _process(delta):
 			validPlace = false
 			return
 		# == prevent collision overlaps
-		var overlaps = \
-			selectedObject.get_node('Area2D').has_overlapping_areas() or \
-			selectedObject.get_node('Area2D').has_overlapping_bodies()
-		if overlaps == false:
+		#var overlaps = \
+			#selectedObject.get_node('Area2D').has_overlapping_areas() or \
+			#selectedObject.get_node('Area2D').has_overlapping_bodies()
+		if selectedObject.overlaps.size() == 0:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
 			validPlace = true
 		else:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
+
