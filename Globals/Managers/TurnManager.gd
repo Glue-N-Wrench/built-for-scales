@@ -51,6 +51,9 @@ func _process(delta):
 		updateDay.emit()
 	#==manage the game over==
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
+		#Forces slow speed when homeless is bad
+		_on_button_toggled(false)
+		
 		gameOverTimer -= delta * timespeed
 		updateGameOverTimer.emit()
 		if gameOverTimer < 0:
