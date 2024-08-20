@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://svlksdx1vej1"]
+
+[ext_resource type="Script" path="res://Objects/Houses/BaseHouse.gd" id="1_kh4vs"]
+[ext_resource type="Shape2D" uid="uid://bvaj2m4ho7oqo" path="res://Objects/Houses/shapes/2x2square.tres" id="2_04yey"]
+[ext_resource type="PackedScene" uid="uid://cj61i7mas8eas" path="res://UI/fish_details.tscn" id="2_eh5nu"]
+[ext_resource type="Texture2D" uid="uid://dn85x1ml7i48l" path="res://assets/Houses/house_2x2_a.png" id="4_r1yb7"]
+[ext_resource type="AudioStream" uid="uid://bnlsxusl4glbp" path="res://assets/audio/sfx/house build/place house sfx 2.wav" id="5_tvld0"]
+
+[node name="BaseHouse" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_kh4vs")
+fish_capacity = 3
+shape = ExtResource("2_04yey")
+
+[node name="FishDetails" parent="." instance=ExtResource("2_eh5nu")]
+visible = false
+z_index = 1
+offset_left = -76.0
+offset_right = -12.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("4_r1yb7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-60, -60, -60, 60, 60, 60, 60, -60)
+
+[node name="house_placement_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tvld0")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

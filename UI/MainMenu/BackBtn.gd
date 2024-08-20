@@ -1,5 +1,7 @@
 extends Button
+@onready var go_back_sfx = $"../../../../go back sfx"
 
 func _on_pressed():
 	get_parent().hide()
-	$"/root/MainAudio/ui2".play()
+	go_back_sfx.play()
+	

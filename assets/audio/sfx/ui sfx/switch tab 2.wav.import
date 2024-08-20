@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk7hwfawkwjjf"
+path="res://.godot/imported/switch tab 2.wav-9ece18284bcc87f2e4ec184eb6023c8d.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ui sfx/switch tab 2.wav"
+dest_files=["res://.godot/imported/switch tab 2.wav-9ece18284bcc87f2e4ec184eb6023c8d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
