@@ -68,15 +68,15 @@ func makeNewFishBatch(points:int):
 	CheckHouses()
 
 func spawnFish(type:int):
-	#create a new homeless fish of [type] off screen		
+	#create a new homeless fish of [type] off screen
 	var newFish = fishObjects[type].instantiate()
 	var direction = fishRNG.randi_range(0,1)
 	var offset = randf_range(-400,300)
 	match direction:
 		0:
-			newFish.position = Vector2(800, offset)
+			newFish.position = Vector2(ViewManager.gridLimitSides*2, offset)
 		1:
-			newFish.position = Vector2(-800, offset)
+			newFish.position = Vector2(-ViewManager.gridLimitSides*2, offset)
 	newFish.go_to_location(Vector2(0,0))
 	add_child(newFish)
 	homelessFish[type].push_front(newFish)

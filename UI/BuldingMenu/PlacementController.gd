@@ -45,8 +45,7 @@ func _process(delta):
 		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
 		position = get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 		#== restrict placement to bounds ==
-		if global_position.y+selectedObject.distToGround > ViewManager.floor \
-			or absf(global_position.x) > ViewManager.gridLimitSides \
+		if absf(global_position.x) > ViewManager.gridLimitSides \
 			or global_position.y < ViewManager.gridLimitTop:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false

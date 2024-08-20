@@ -56,7 +56,7 @@ var Buildings:Array[HouseInfo] = [
 		3, #Chance Higher = more common
 		preload("res://assets/Houses/house_1x1_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_c.tscn"), #scene
-		2, #Amount
+		3, #Amount
 	),
 		HouseInfo.new(
 		"Foxtrot House B", #Name
@@ -72,7 +72,7 @@ var Buildings:Array[HouseInfo] = [
 		3, #Chance Higher = more common
 		preload("res://assets/Houses/house_1x1_c.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_e.tscn"), #scene
-		2, #Amount
+		3, #Amount
 	),
 	HouseInfo.new(
 		"Foxtrot House D", #Name
