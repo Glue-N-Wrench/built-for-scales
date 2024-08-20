@@ -225,6 +225,38 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://assets/Houses/house_3x2_c_a.png"), #Picture
 		preload("res://Objects/Houses/Objects/house_x.tscn"), #scene
 		3, #Amount
+	),
+	HouseInfo.new(
+		"Romeo House", #Name
+		"3x3 Z shaped house for tiny anchovies", #Description
+		2, #Chance Higher = more common
+		preload("res://assets/Houses/house_3x3_Z_a.png"), #Picture
+		preload("res://Objects/Houses/Objects/house_Zshape.tscn"), #scene
+		4, #Amount
+	),
+	HouseInfo.new(
+		"Sierra House", #Name
+		"3x3 + shaped house for tiny anchovies", #Description
+		2, #Chance Higher = more common
+		preload("res://assets/Houses/house_3x3_cross_a.png"), #Picture
+		preload("res://Objects/Houses/Objects/house_Cross.tscn"), #scene
+		4, #Amount
+	),
+	HouseInfo.new(
+		"Tango House", #Name
+		"3x3 I shaped house for medium scads", #Description
+		2, #Chance Higher = more common
+		preload("res://assets/Houses/house_3x3_I_a.png"), #Picture
+		preload("res://Objects/Houses/Objects/house_IShape.tscn"), #scene
+		3, #Amount
+	),
+	HouseInfo.new(
+		"Uniform House", #Name
+		"4x2 castle shaped house for big catfish", #Description
+		2, #Chance Higher = more common
+		preload("res://assets/Houses/house_4x2_castle_a.png"), #Picture
+		preload("res://Objects/Houses/Objects/house_Castle.tscn"), #scene
+		2, #Amount
 	)
 ]
 
