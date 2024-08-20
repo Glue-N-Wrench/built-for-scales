@@ -31,6 +31,8 @@ polygon = PackedVector2Array(-60, -60, -60, 60, 60, 60, 60, -60)
 [node name="house_placement_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tvld0")
 
+[connection signal="area_entered" from="Area2D" to="." method="colliderIn"]
+[connection signal="area_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="body_entered" from="Area2D" to="." method="colliderIn"]
 [connection signal="body_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
