@@ -50,7 +50,9 @@ func destroy():
 	queue_free()
 
 func colliderIn(body):
+	print(body)
 	overlaps.append(body)
 
 func colliderOut(body):
+	print(body)
 	overlaps.erase(body)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmjd8jry0bqi5"]
+[gd_scene load_steps=7 format=3 uid="uid://bmjd8jry0bqi5"]
 
 [ext_resource type="Script" path="res://Objects/Houses/BaseHouse.gd" id="1_kh4vs"]
-[ext_resource type="Shape2D" uid="uid://bvaj2m4ho7oqo" path="res://Objects/Houses/shapes/2x2square.tres" id="2_04yey"]
 [ext_resource type="PackedScene" uid="uid://cj61i7mas8eas" path="res://UI/fish_details.tscn" id="2_eh5nu"]
 [ext_resource type="Texture2D" uid="uid://dn85x1ml7i48l" path="res://assets/Houses/house_2x2_a.png" id="4_r1yb7"]
 [ext_resource type="AudioStream" uid="uid://bnlsxusl4glbp" path="res://assets/audio/sfx/house build/place house sfx 2.wav" id="5_tvld0"]
-[ext_resource type="TileSet" path="res://Objects/Houses/house_support.tres" id="6_qs8cg"]
+[ext_resource type="TileSet" uid="uid://cskyj2n5h3now" path="res://Objects/Houses/house_support.tres" id="6_qs8cg"]
 [ext_resource type="Script" path="res://Objects/Houses/Support.gd" id="7_8lc3w"]
 
 [node name="BaseHouse" type="Node2D"]
@@ -13,7 +12,6 @@ texture_filter = 1
 script = ExtResource("1_kh4vs")
 fish_capacity = 3
 supportBase = Vector2(-1, 1)
-shape = ExtResource("2_04yey")
 
 [node name="FishDetails" parent="." instance=ExtResource("2_eh5nu")]
 visible = false
@@ -41,6 +39,8 @@ tile_set = ExtResource("6_qs8cg")
 format = 2
 script = ExtResource("7_8lc3w")
 
+[connection signal="area_entered" from="Area2D" to="." method="colliderIn"]
+[connection signal="area_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="body_entered" from="Area2D" to="." method="colliderIn"]
 [connection signal="body_exited" from="Area2D" to="." method="colliderOut"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
