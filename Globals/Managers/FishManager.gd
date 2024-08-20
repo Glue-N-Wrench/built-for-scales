@@ -80,6 +80,7 @@ func spawnFish(type:int):
 	newFish.go_to_location(Vector2(0,0))
 	add_child(newFish)
 	homelessFish[type].push_front(newFish)
+	fishUpdated.emit()
 
 func addHouse(house:House):
 	activeHouses.append(house)
