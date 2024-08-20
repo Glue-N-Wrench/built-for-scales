@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj8bbmkb7wdqc"
-path="res://.godot/imported/Breakables1.png-3b20c093da8a85ed989fa91d708de263.ctex"
+uid="uid://dr2ijn27p0b4e"
+path="res://.godot/imported/barBubbles.png-b34e2d912b4be85af508212c832c5251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Breakables1.png"
-dest_files=["res://.godot/imported/Breakables1.png-3b20c093da8a85ed989fa91d708de263.ctex"]
+source_file="res://assets/VisualAssets/barBubbles.png"
+dest_files=["res://.godot/imported/barBubbles.png-b34e2d912b4be85af508212c832c5251.ctex"]
 
 [params]
 

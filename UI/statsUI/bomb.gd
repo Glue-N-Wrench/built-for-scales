@@ -18,7 +18,10 @@ func onPlace():
 
 func _on_bomb_animator_frame_changed():
 	if $BombAnimator.frame == 6 and $BombAnimator.animation == "Explode":
+		#Effects
 		bomb_sfx.play()
+		$"Rock Particle Emitter".ActiveEmitter()
+		
 		var TL = tilemap.local_to_map(position - Vector2(80,80))
 		var BR = tilemap.local_to_map(position + Vector2(96,96))
 		var destroyedCells = []
