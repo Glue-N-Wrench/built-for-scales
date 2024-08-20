@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm5phgnfsckve"]
+[gd_scene load_steps=11 format=3 uid="uid://dm5phgnfsckve"]
 
 [ext_resource type="Texture2D" uid="uid://bdl8nof16udup" path="res://assets/titleScreen.png" id="1_wmwri"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="2_d8e3l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="6_00yg5"]
 [ext_resource type="Script" path="res://UI/MainMenu/QuitBtn.gd" id="7_w7uhq"]
 [ext_resource type="AudioStream" uid="uid://bsosg58f3ay5j" path="res://assets/audio/sfx/ui sfx/upgrade sfx.wav" id="9_weujb"]
+[ext_resource type="AudioStream" uid="uid://bk7hwfawkwjjf" path="res://assets/audio/sfx/ui sfx/switch tab 2.wav" id="10_mv0kt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -139,6 +140,10 @@ script = ExtResource("7_w7uhq")
 
 [node name="open panel sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_weujb")
+bus = &"UI"
+
+[node name="go back sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_mv0kt")
 bus = &"UI"
 
 [connection signal="pressed" from="VBoxContainer/Start Btn" to="VBoxContainer/Start Btn" method="_on_pressed"]
