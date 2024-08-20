@@ -36,5 +36,5 @@ func _process(delta):
 		fish_enter_sfx.play()
 		visible = false
 		set_process(false);#pause fish when they're not thinking
-	position += difference.limit_length(speed*delta)
+	position += difference.limit_length(speed * delta * $"/root/TurnManager".timespeed)
 	flip_h = difference.x < 0

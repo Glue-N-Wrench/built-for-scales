@@ -16,6 +16,8 @@ const gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
 signal gameStarted
 
+var timespeed = 1
+
 #==mange the week rewards==
 func weekCheck():
 	if dayCount % weekTime == 0:
@@ -29,13 +31,20 @@ func reset():
 
 func _ready():
 	gameStarted.emit()
-	
+	var button = $"/root/MainLevel/Camera2D/MainUI/TopLeftContainer/DayIndicator/Button"
+	button.toggled.connect(Callable(self, "_on_button_toggled"))
+
+func _on_button_toggled(toggle):
+	if toggle:
+		timespeed = 3
+	else:
+		timespeed = 1
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
 	#==manage the day==
-	roundTimer -= delta
+	roundTimer -= delta * timespeed
 	if roundTimer < 0:
 		roundTimer = roundTime
 		dayCount += 1
@@ -44,11 +53,11 @@ func _process(delta):
 		updateDay.emit()
 	#==manage the game over==
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
-		gameOverTimer -= delta
+		gameOverTimer -= delta * timespeed
 		updateGameOverTimer.emit()
 		if gameOverTimer < 0:
 			$"/root/MainLevel/Camera2D/GameOverScreen".visible=true
 			get_tree().paused = true
 	elif gameOverTimer < gameOverCount:
-		gameOverTimer += delta
+		gameOverTimer += delta * timespeed
 		updateGameOverTimer.emit()

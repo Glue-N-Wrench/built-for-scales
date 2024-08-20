@@ -1,9 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=38 format=3 uid="uid://b0krhlmapyjp3"]
 
-[ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
+[ext_resource type="PackedScene" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
-[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
+[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
 [ext_resource type="Texture2D" uid="uid://dr2ijn27p0b4e" path="res://assets/VisualAssets/barBubbles.png" id="7_dqa7x"]
@@ -21,6 +21,18 @@ region = Rect2(0, 0, 113, 59)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwgeq"]
 atlas = ExtResource("5_6uqes")
 region = Rect2(320, 26, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al5di"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(87, 68, 22, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtpjp"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(97, 68, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06icr"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(87, 68, 22, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x20ui"]
 atlas = ExtResource("5_6uqes")
@@ -166,6 +178,10 @@ region = Rect2(418, 125, 26, 35)
 atlas = ExtResource("5_6uqes")
 region = Rect2(22, 71, 31, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ouf1"]
+atlas = ExtResource("6_v2m0y")
+region = Rect2(0, 0, 95, 16)
+
 [node name="MainUI" type="CanvasLayer"]
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="."]
@@ -214,6 +230,17 @@ text = "Day
 1"
 label_settings = ExtResource("5_qkcwe")
 horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="TopLeftContainer/DayIndicator"]
+layout_mode = 0
+offset_left = 74.8
+offset_top = 37.2
+offset_right = 82.8
+offset_bottom = 45.2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_al5di")
+texture_pressed = SubResource("AtlasTexture_wtpjp")
+texture_hover = SubResource("AtlasTexture_06icr")
 
 [node name="TopRightContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -416,7 +443,8 @@ horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HomelessFishContainer/HomelessFish"]
 layout_mode = 2
-texture = ExtResource("6_v2m0y")
+texture = SubResource("AtlasTexture_2ouf1")
+stretch_mode = 2
 
 [node name="FishNumbers" type="Control" parent="HomelessFishContainer/HomelessFish"]
 custom_minimum_size = Vector2(0, 16)
@@ -447,6 +475,7 @@ text = "0"
 label_settings = ExtResource("5_qkcwe")
 
 [node name="fishLabel3" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers"]
+visible = false
 layout_mode = 0
 offset_left = 107.2
 offset_right = 115.2

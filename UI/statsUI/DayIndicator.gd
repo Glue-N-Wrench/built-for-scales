@@ -11,3 +11,6 @@ func _on_day_update():
 
 func _process(delta):
 	$Sun.rotation = -(TurnManager.roundTimer / TurnManager.roundTime) * TAU
+
+
+
