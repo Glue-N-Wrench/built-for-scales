@@ -31,8 +31,6 @@ func reset():
 
 func _ready():
 	gameStarted.emit()
-	var button = $"/root/MainLevel/Camera2D/MainUI/TopLeftContainer/DayIndicator/Button"
-	button.toggled.connect(Callable(self, "_on_button_toggled"))
 
 func _on_button_toggled(toggle):
 	if toggle:

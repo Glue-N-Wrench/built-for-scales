@@ -4,6 +4,7 @@ extends TextureRect
 
 func _ready():
 	TurnManager.updateDay.connect(_on_day_update)
+	$Button.toggled.connect(TurnManager._on_button_toggled)
 
 func _on_day_update():
 	$Label.text = "Day\n"+str(TurnManager.dayCount)
