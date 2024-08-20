@@ -45,6 +45,10 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	$FishDetails.visible = false
 
+func destroy():
+	FishManager.removeHouse(self)
+	queue_free()
+
 func colliderIn(body):
 	overlaps.append(body)
 

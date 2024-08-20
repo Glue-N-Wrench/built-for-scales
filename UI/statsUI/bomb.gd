@@ -6,7 +6,7 @@ var distToGround:int = 64
 var offset:Vector2 = Vector2(32,32)
 @onready var bomb_sfx = $"bomb sfx"
 var overlaps = []
-
+var houseOverlaps = []
 
 func Explode():
 	$AffectedArea.visible = false
@@ -14,6 +14,14 @@ func Explode():
 
 func onPlace():
 	Explode()
+
+func colliderIn(body):
+	houseOverlaps.append(body)
+	body.get_parent().modulate = Color.LIGHT_CORAL
+
+func colliderOut(body):
+	houseOverlaps.erase(body)
+	body.get_parent().modulate = Color.WHITE
 
 
 func _on_bomb_animator_frame_changed():
@@ -30,16 +38,11 @@ func _on_bomb_animator_frame_changed():
 				tilemap.erase_cell(0, Vector2(x,y))
 				tilemap.erase_cell(1, Vector2(x,y))
 				destroyedCells.append(Vector2(x,y))
-		
 		tilemap.set_cells_terrain_connect(0, destroyedCells, 0, -1, false)
 		tilemap.set_cells_terrain_connect(1, destroyedCells, 0, -1, false)
+		for house in houseOverlaps:
+			house.get_parent().destroy()
 	if $BombAnimator.frame == 12:
 		queue_free()
-
-func colliderIn(body):
-	overlaps.append(body)
-
-func colliderOut(body):
-	overlaps.erase(body)
 
 
