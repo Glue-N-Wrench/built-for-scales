@@ -280,6 +280,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -115.0
+offset_right = 15.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5eq63")
@@ -288,22 +292,21 @@ script = ExtResource("8_r84q3")
 
 [node name="ColorRect" type="ScrollContainer" parent="BuildingContainer/BuildingTray"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -145.0
-offset_top = 14.0
-offset_right = -20.0
-offset_bottom = -21.0
-grow_horizontal = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -250.5
+offset_right = 153.5
+offset_bottom = 251.5
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BuldingMenu" type="VBoxContainer" parent="BuildingContainer/BuildingTray/ColorRect"]
-texture_filter = 1
+[node name="BuldingMenu" type="GridContainer" parent="BuildingContainer/BuildingTray/ColorRect"]
 layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
+columns = 2
 
 [node name="HouseCard" parent="BuildingContainer/BuildingTray/ColorRect/BuldingMenu" instance=ExtResource("1_xtr25")]
 layout_mode = 2

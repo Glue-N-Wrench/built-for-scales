@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://deahulgfso6ad"]
+[gd_scene load_steps=3 format=3 uid="uid://bgxk71gv3stxb"]
 
 [ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_r8h2u"]
 [ext_resource type="Texture2D" uid="uid://22sjrynwmmf2" path="res://assets/Houses/house_1x1_b.png" id="2_e5ieh"]
 
 [node name="BaseHouse" instance=ExtResource("1_r8h2u")]
+fish_capacity = 1
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
 

@@ -8,13 +8,17 @@ func _ready():
 	InventoryManager.inventoryUpdated.connect(_on_inventory_update)
 	_on_inventory_update()
 
+func _input(event):
+	if Input.is_action_just_pressed("building_tray_open"):
+		open = !open
+
 func _process(delta):
 	if open:
-		if position.x>0:
-			position.x-=speed
+		if position.x>-190:
+			position.x -= speed
 	else:
 		if position.x<125:
-			position.x+=speed
+			position.x += speed
 
 func _on_tray_button_pressed():
 	if open:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://fb512aqitngw"]
+[gd_scene load_steps=3 format=3 uid="uid://clbc1nlqkpcc4"]
 
 [ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_om5mg"]
 [ext_resource type="Texture2D" uid="uid://hn6li585pyk7" path="res://assets/Houses/house_2x2_DL_a.png" id="2_vw5sn"]
