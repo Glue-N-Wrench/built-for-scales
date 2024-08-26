@@ -31,7 +31,7 @@ var Buildings:Array[HouseInfo] = [
 		"3x2 That Holds 1 Big Catfish",
 		10,
 		preload("res://assets/Houses/house_3x2_a.png"),
-		preload("res://Objects/Houses/Objects/Big_house_a.tscn"),
+		preload("res://Objects/Houses/Objects/big_house_a.tscn"),
 		3,
 	),
 	HouseInfo.new( #4
@@ -39,7 +39,7 @@ var Buildings:Array[HouseInfo] = [
 		"3x2 That Holds 1 Big Catfish", #Description
 		10, #Chance Higher = more common
 		preload("res://assets/Houses/house_3x2_b.png"), #Picture
-		preload("res://Objects/Houses/Objects/Big_house_b.tscn"), #scene
+		preload("res://Objects/Houses/Objects/big_house_b.tscn"), #scene
 		3, #Amount
 	),
 	HouseInfo.new(
