@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlh2po7gypt6v"]
+
+[ext_resource type="Script" path="res://UI/Debug/DebugConsole.gd" id="1_jsj5m"]
+
+[node name="DebugConsole" type="CanvasLayer"]
+process_mode = 3
+process_priority = 1
+offset = Vector2(10, 10)
+transform = Transform2D(1, 0, 0, 1, 10, 10)
+script = ExtResource("1_jsj5m")
+
+[node name="Base" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -752.0
+offset_bottom = -348.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.662745, 0.662745, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="Base"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -39.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = ">"
+
+[node name="TectBG" type="ColorRect" parent="Base"]
+custom_minimum_size = Vector2(396, 246)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="TextDisplay" type="RichTextLabel" parent="Base"]
+custom_minimum_size = Vector2(396, 257)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+scroll_following = true
+selection_enabled = true
+
+[node name="DebugText" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="lines_edited_from" from="Base/TextEdit" to="." method="_on_text_edit_lines_edited_from"]
