@@ -24,7 +24,7 @@ ViewManager="*res://Globals/Managers/ViewManager.gd"
 TurnManager="*res://Globals/Managers/TurnManager.gd"
 FishManager="*res://Globals/Managers/FishManager.gd"
 InventoryManager="*res://Globals/Managers/InventoryManager.gd"
-DebugConsole="*res://UI/Debug/debug_console.tscn"
+DebugConsole="*res://TestingTools/DebugUI/debug_console.tscn"
 
 [display]
 

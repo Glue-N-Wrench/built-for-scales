@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlh2po7gypt6v"]
+[gd_scene load_steps=2 format=3 uid="uid://3euqty1t5rv8"]
 
-[ext_resource type="Script" path="res://UI/Debug/DebugConsole.gd" id="1_jsj5m"]
+[ext_resource type="Script" path="res://TestingTools/DebugUI/DebugConsole.gd" id="1_ew2gl"]
 
 [node name="DebugConsole" type="CanvasLayer"]
 process_mode = 3
 process_priority = 1
 offset = Vector2(10, 10)
 transform = Transform2D(1, 0, 0, 1, 10, 10)
-script = ExtResource("1_jsj5m")
+script = ExtResource("1_ew2gl")
 
 [node name="Base" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -17,6 +17,7 @@ offset_right = -752.0
 offset_bottom = -348.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
 color = Color(0.662745, 0.662745, 0.662745, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -64,8 +65,28 @@ focus_mode = 2
 scroll_following = true
 selection_enabled = true
 
-[node name="DebugText" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="upperStr" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -188.0
+offset_bottom = 167.0
+grow_horizontal = 0
+text = "FPS"
+clip_text = true
+
+[node name="lowerStr" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "FPS"
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="lines_edited_from" from="Base/TextEdit" to="." method="_on_text_edit_lines_edited_from"]

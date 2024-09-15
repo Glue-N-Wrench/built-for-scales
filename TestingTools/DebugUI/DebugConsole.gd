@@ -26,7 +26,38 @@ func set_Zoom(zoomScale:String):
 		return "set"
 	else:
 		return "invalid argument " + zoomScale
-	
+
+const upperStrFmt = "
+fps: {fps}
+fpsAvg: {fpsAvg}
+turnTimer: {turnTimer}
+"
+const lowerStrFmt = "
+fishSeed: {fishSeed}
+"
+
+const fpsAvgCount = 5
+var fpsRecord = [0, 0, 0, 0, 0]
+var fpsCursor = 0
+func _process(delta): #manage the text UI
+	#--fps calulcation--
+	var fps = Engine.get_frames_per_second()
+	fpsRecord[fpsCursor] = fps
+	fpsCursor = (fpsCursor+1) %fpsAvgCount
+	print(fpsCursor)
+	var fpsAvg = fpsRecord.reduce(func(a,x): return a+x, 0) / fpsAvgCount
+	#--set text--
+	$upperStr.text = upperStrFmt.format({
+		"fps": fps,
+		"fpsAvg": fpsAvg,
+		"turnTimer": TurnManager.roundTimer
+		})
+	$lowerStr.text = lowerStrFmt.format({
+		"fishSeed": FishManager.fishRNG.seed,
+		})
+
+# === The bellow functions should be able to function no matter what the above debug stuff is ==
+
 #var command_history = []
 func _input(event):
 	if (event.is_echo() || !event.is_pressed()):

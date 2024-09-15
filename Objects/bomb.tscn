@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1nylp3krxvdt" path="res://assets/bombSpriteSheet.png" id="1_w3odj"]
 [ext_resource type="Texture2D" uid="uid://1sus830kuthk" path="res://assets/bomb_aoe.png" id="2_df243"]
 [ext_resource type="AudioStream" uid="uid://cqj3fu6chy6j2" path="res://assets/audio/sfx/bomb.wav" id="4_rnh0q"]
-[ext_resource type="PackedScene" path="res://Objects/rock_particle_emitter.tscn" id="5_j5myp"]
+[ext_resource type="PackedScene" uid="uid://duividj7aqoss" path="res://Objects/rock_particle_emitter.tscn" id="5_j5myp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gipkh"]
 
