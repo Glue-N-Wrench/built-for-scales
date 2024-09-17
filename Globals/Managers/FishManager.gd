@@ -20,10 +20,10 @@ var activeHouses:Array = [] #all the houses that get run when fish need to be ch
 const maxHomeless = 5
 
 const fixedFishWaves = [
-		[0,0,0],
-		[0,0,1,0],
-		[0,0,1,1],
-		[0,0,0,0,0],
+		[0,0,0],	# 3 anchovies
+		[0,0,0,1],	# 3 anchovies 1 scad
+		[0,0,1,1],	# 2 anchovies 2 scad
+		[0,0,0,0,0],# 5 anchovies
 	]
 
 

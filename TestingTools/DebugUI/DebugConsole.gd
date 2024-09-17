@@ -15,6 +15,7 @@ func give_item(item_id:String, amount="1"):
 	if !int(amount):
 		return "invalid argument " + amount
 	InventoryManager.addItems(int(item_id), int(amount))
+	return "gave " + amount + " items"
 
 func clear_level():
 	$/root/MainLevel/Tilemaps/Breakables.clear()
@@ -30,6 +31,7 @@ func set_Zoom(zoomScale:String):
 const upperStrFmt = "
 fps: {fps}
 fpsAvg: {fpsAvg}
+fpsMin: {fpsMin}
 turnTimer: {turnTimer}
 "
 const lowerStrFmt = "
@@ -37,11 +39,14 @@ fishSeed: {fishSeed}
 "
 
 const fpsAvgCount = 5
+var fpsMin = 10000
 var fpsRecord = [0, 0, 0, 0, 0]
 var fpsCursor = 0
 func _process(delta): #manage the text UI
 	#--fps calulcation--
 	var fps = Engine.get_frames_per_second()
+	if fps < fpsMin && fps != 1:
+		fpsMin = fps
 	fpsRecord[fpsCursor] = fps
 	fpsCursor = (fpsCursor+1) %fpsAvgCount
 	print(fpsCursor)
@@ -50,6 +55,7 @@ func _process(delta): #manage the text UI
 	$upperStr.text = upperStrFmt.format({
 		"fps": fps,
 		"fpsAvg": fpsAvg,
+		"fpsMin": fpsMin,
 		"turnTimer": TurnManager.roundTimer
 		})
 	$lowerStr.text = lowerStrFmt.format({
