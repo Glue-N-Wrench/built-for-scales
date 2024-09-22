@@ -17,7 +17,7 @@ var homelessFish:Dictionary = {
 	2:[],
 } #dict of homeless fish nodes sorted by type
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
-const maxHomeless = 5
+const maxHomeless = 10
 
 const fixedFishWaves = [
 		[0,0,0],	# 3 anchovies
