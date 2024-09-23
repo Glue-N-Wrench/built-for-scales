@@ -5,6 +5,7 @@ var firstTime = true
 
 func _ready():
 	TurnManager.updateDay.connect(_on_day_update)
+	TurnManager.timeButton = $SpeedButton
 
 func _on_day_update():
 	$Label.text = "Day\n"+str(TurnManager.dayCount)
@@ -14,7 +15,4 @@ func _process(delta):
 	$Sun.rotation = -(TurnManager.roundTimer / TurnManager.roundTime) * TAU
 
 func _on_button_pressed():
-	if firstTime:
-		firstTime = false
-		TurnManager.timeButton = $Button
-	TurnManager._on_button_toggled($Button.toggled)
+	TurnManager.set_fast_mode($SpeedButton.button_pressed)

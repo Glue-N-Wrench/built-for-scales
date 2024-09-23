@@ -17,7 +17,7 @@ var gameOverTimer = 10
 #signal gameStarted MOVED TO CAMERA2D
 
 var timespeed = 1
-var timeButton
+var timeButton:TextureButton
 var forcedTimeSlow = false
 
 #==mange the week rewards==
@@ -35,11 +35,21 @@ func reset():
 	#only plays music for title screen working on fixing this
 		#gameStarted.emit()
 
-func _on_button_toggled(toggle):
-	if toggle:
+func set_fast_mode(toggle):
+	if toggle == true:
 		timespeed = 3
 	else:
 		timespeed = 1
+func _unhandled_input(event):
+	if (event.is_echo() || !event.is_pressed()):
+		return
+	if event.is_action_pressed("set_speed_high"):
+		set_fast_mode(true)
+		timeButton.button_pressed = true
+	if event.is_action_pressed("set_speed_low"):
+		set_fast_mode(false)
+		timeButton.button_pressed = false
+	
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
