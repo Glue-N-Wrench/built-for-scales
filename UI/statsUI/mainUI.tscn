@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=40 format=3 uid="uid://b0krhlmapyjp3"]
 
 [ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
@@ -22,17 +22,25 @@ region = Rect2(0, 0, 113, 59)
 atlas = ExtResource("5_6uqes")
 region = Rect2(320, 26, 42, 42)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr56g"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(76, 69, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keqth"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(120, 69, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_setww"]
+atlas = ExtResource("5_6uqes")
+region = Rect2(110, 69, 7, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_al5di"]
 atlas = ExtResource("5_6uqes")
 region = Rect2(87, 68, 22, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtpjp"]
-atlas = ExtResource("5_6uqes")
-region = Rect2(97, 68, 12, 10)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_06icr"]
 atlas = ExtResource("5_6uqes")
-region = Rect2(87, 68, 22, 10)
+region = Rect2(97, 68, 11, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x20ui"]
 atlas = ExtResource("5_6uqes")
@@ -231,16 +239,28 @@ text = "Day
 label_settings = ExtResource("5_qkcwe")
 horizontal_alignment = 1
 
+[node name="PauseButton" type="TextureButton" parent="TopLeftContainer/DayIndicator"]
+offset_left = 70.4
+offset_top = 37.6
+offset_right = 78.4
+offset_bottom = 45.6
+focus_mode = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_fr56g")
+texture_pressed = SubResource("AtlasTexture_keqth")
+texture_hover = SubResource("AtlasTexture_setww")
+
 [node name="SpeedButton" type="TextureButton" parent="TopLeftContainer/DayIndicator"]
 layout_mode = 0
-offset_left = 74.8
+offset_left = 80.8
 offset_top = 37.2
-offset_right = 82.8
-offset_bottom = 45.2
+offset_right = 102.8
+offset_bottom = 47.2
+focus_mode = 0
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_al5di")
-texture_pressed = SubResource("AtlasTexture_wtpjp")
-texture_hover = SubResource("AtlasTexture_06icr")
+texture_pressed = SubResource("AtlasTexture_06icr")
+texture_hover = SubResource("AtlasTexture_al5di")
 
 [node name="TopRightContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -493,7 +513,9 @@ layout_mode = 2
 layout_mode = 2
 icon = ExtResource("7_vdsd5")
 
+[connection signal="toggled" from="TopLeftContainer/DayIndicator/PauseButton" to="TopLeftContainer/DayIndicator" method="_on_pause_button_toggled"]
 [connection signal="pressed" from="TopLeftContainer/DayIndicator/SpeedButton" to="TopLeftContainer/DayIndicator" method="_on_button_pressed"]
+[connection signal="toggled" from="TopLeftContainer/DayIndicator/SpeedButton" to="TopLeftContainer/DayIndicator" method="_on_speed_button_toggled"]
 [connection signal="pressed" from="TopRightContainer/SettingsBtn" to="OptionsMenu" method="_on_option_btn_pressed"]
 [connection signal="pressed" from="BuildingContainer/BuildingTray/TrayButton" to="BuildingContainer/BuildingTray" method="_on_tray_button_pressed"]
 [connection signal="toggled" from="HomelessFishContainer/HomelessFish/BOmb/Button" to="HomelessFishContainer/HomelessFish/BOmb" method="_on_button_toggled"]

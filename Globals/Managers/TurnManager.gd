@@ -17,8 +17,9 @@ var gameOverTimer = 10
 #signal gameStarted MOVED TO CAMERA2D
 
 var timespeed = 1
-var timeButton:TextureButton
 var forcedTimeSlow = false
+var timePaused = false #note: this is different than godot tree pausing
+var timeSpeedButton:TextureButton
 
 #==mange the week rewards==
 func weekCheck():
@@ -35,20 +36,18 @@ func reset():
 	#only plays music for title screen working on fixing this
 		#gameStarted.emit()
 
-func set_fast_mode(toggle):
+func set_fast_mode(toggle:bool):
 	if toggle == true:
 		timespeed = 3
 	else:
 		timespeed = 1
-func _unhandled_input(event):
-	if (event.is_echo() || !event.is_pressed()):
-		return
-	if event.is_action_pressed("set_speed_high"):
-		set_fast_mode(true)
-		timeButton.button_pressed = true
-	if event.is_action_pressed("set_speed_low"):
-		set_fast_mode(false)
-		timeButton.button_pressed = false
+
+func set_pause(toggle:bool):
+	#this is independant from godot's get_tree().paused
+	if toggle == true:
+		timespeed = 0
+	else:
+		timespeed = 1
 	
 
 func _process(delta):
@@ -67,7 +66,7 @@ func _process(delta):
 		#Forces button to disable and forces timespeed 1
 		if timespeed == 3:
 			timespeed = 1
-			timeButton.disabled = true
+			timeSpeedButton.disabled = true
 			forcedTimeSlow = true
 		
 		gameOverTimer -= delta * timespeed
@@ -82,5 +81,5 @@ func _process(delta):
 	#Successfully escaped scenario
 	if forcedTimeSlow && FishManager.getTotalHomeless() <= FishManager.maxHomeless:
 		forcedTimeSlow = false
-		timeButton.disabled = false
+		timeSpeedButton.disabled = false
 		timespeed = 3

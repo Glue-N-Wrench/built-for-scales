@@ -49,7 +49,6 @@ func _process(delta): #manage the text UI
 		fpsMin = fps
 	fpsRecord[fpsCursor] = fps
 	fpsCursor = (fpsCursor+1) %fpsAvgCount
-	print(fpsCursor)
 	var fpsAvg = fpsRecord.reduce(func(a,x): return a+x, 0) / fpsAvgCount
 	#--set text--
 	$upperStr.text = upperStrFmt.format({
@@ -69,7 +68,6 @@ func _input(event):
 	if (event.is_echo() || !event.is_pressed()):
 		return
 	if Input.is_action_just_pressed('debug'):
-		print(DebugConsole.visible)
 		DebugConsole.visible = !DebugConsole.visible
 
 #command handler
@@ -94,4 +92,4 @@ func _on_text_edit_lines_edited_from(from_line, to_line):
 		$Base/TextEdit.clear()
 		$Base/TextDisplay.text += (response)
 #		$Base/TextDisplay.scroll_to_line($Base/TextDisplay.get_line_count())
-		print($Base/TextDisplay.get_line_count())
+		#print($Base/TextDisplay.get_line_count())

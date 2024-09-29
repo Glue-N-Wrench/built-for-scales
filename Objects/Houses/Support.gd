@@ -11,9 +11,7 @@ func generate():
 		var gridArray = [Vector2i(posX, 0)]
 		while posY <= ViewManager.floor:
 			gridY += 1
-			print(posY)
 			gridArray.append(Vector2i(posX, gridY))
 			posY += tile_set.tile_size.y*2
-		print(gridArray)
 		set_cells_terrain_connect(0,gridArray,0,0)
 	
