@@ -7,6 +7,8 @@ extends CanvasLayer
 #every command in this map should return a string
 var commandMap = {
 	"setZoom" : set_Zoom, 
+	"setSpeed" : set_speed,
+	"endless" : set_endless,
 	"explode" : clear_level,
 	"giveItem" : give_item,
 }
@@ -20,6 +22,18 @@ func give_item(item_id:String, amount="1"):
 func clear_level():
 	$/root/MainLevel/Tilemaps/Breakables.clear()
 	return "set"
+
+var is_endless = false
+func set_endless():
+	is_endless = !is_endless
+	return "set endless mode" + str(is_endless)
+		
+func set_speed(speedScale:String):
+	if float(speedScale):
+		TurnManager.timespeed = float(speedScale)
+		return "set"
+	else:
+		return "invalid argument " + speedScale
 
 func set_Zoom(zoomScale:String):
 	if float(zoomScale):
@@ -43,6 +57,15 @@ var fpsMin = 10000
 var fpsRecord = [0, 0, 0, 0, 0]
 var fpsCursor = 0
 func _process(delta): #manage the text UI
+	#--endless mode--
+	if (is_endless):
+		#note: this will cause a lot off extra orphaned fish entities
+		# so this isn't fit for a real feature
+		FishManager.homelessFish = {
+			0:[],
+			1:[],
+			2:[],
+		}
 	#--fps calulcation--
 	var fps = Engine.get_frames_per_second()
 	if fps < fpsMin && fps != 1:

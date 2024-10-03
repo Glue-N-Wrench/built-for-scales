@@ -7,6 +7,7 @@ class_name Fish
 
 
 @export var speed:int = 200 #pixels per second
+@export var wanderZone = 0.5 #% of grid height
 var homeless:bool = true
 var wanderClock = 0#counts down between homeless fish wandering
 var wanderTime = 5;#seconds between wander for fish movement
@@ -25,11 +26,11 @@ func _process(delta):
 	#modulate = Color.BLUE #DEBUGGING
 	if homeless:
 		#modulate = Color.RED #DEBUGGING
-		wanderClock -= delta
+		wanderClock -= delta * TurnManager.timespeed
 		if wanderClock < 0:
-			#TODO: when map-range is determined change this \/ X to be the width of the map
-			#pollish idea: each size of fish can wander in a different Y range
-			target_location = Vector2(randi_range(-300,300), randi_range(100,200))
+			var wanderLimit = ViewManager.gridLimitSides * 0.8
+			var wanderHeight = ViewManager.floor + ((ViewManager.gridLimitTop - ViewManager.floor) * wanderZone)
+			target_location = Vector2(randi_range(-wanderLimit,wanderLimit), randi_range(wanderHeight-200,wanderHeight+200))
 			wanderClock = wanderTime
 	var difference = target_location - position
 	if difference.length() < 10 and not homeless:

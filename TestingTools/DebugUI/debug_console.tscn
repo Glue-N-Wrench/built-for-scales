@@ -5,6 +5,7 @@
 [node name="DebugConsole" type="CanvasLayer"]
 process_mode = 3
 process_priority = 1
+visible = false
 offset = Vector2(10, 10)
 transform = Transform2D(1, 0, 0, 1, 10, 10)
 script = ExtResource("1_ew2gl")
