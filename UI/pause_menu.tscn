@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://lmwhdldyoeea"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu.gd" id="1_kr6wj"]
-[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="2_pgcmc"]
-[ext_resource type="Theme" uid="uid://10uajxx7wms8" path="res://UI/buttonTheme.tres" id="3_fa5nv"]
+[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="2_pgcmc"]
+[ext_resource type="Theme" uid="uid://dwbhb4hfa0mvd" path="res://UI/buttonTheme.tres" id="3_fa5nv"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
