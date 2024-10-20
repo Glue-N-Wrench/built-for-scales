@@ -64,4 +64,3 @@ func _process(delta):
 			validPlace = false
 	else: 
 		$"../Grid".showGrid = false
-
