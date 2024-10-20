@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://blppr1fidlbv4"]
+[gd_scene load_steps=27 format=3 uid="uid://blppr1fidlbv4"]
 
 [ext_resource type="Script" path="res://UI/statsUI/bomb.gd" id="1_rshjt"]
 [ext_resource type="Texture2D" uid="uid://b1nylp3krxvdt" path="res://assets/bombSpriteSheet.png" id="1_w3odj"]
@@ -9,7 +9,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gipkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnllm"]
-size = Vector2(184, 184)
+size = Vector2(160, 161)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q0r4"]
 atlas = ExtResource("1_w3odj")
@@ -181,8 +181,6 @@ texture = ExtResource("2_df243")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_bnllm")
-disabled = true
-one_way_collision_margin = 0.0
 
 [node name="BombAnimator" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -199,9 +197,8 @@ offset_bottom = 40.0
 stream = ExtResource("4_rnh0q")
 bus = &"Gameplay"
 
+[node name="Rock Particle Emitter" parent="." instance=ExtResource("5_j5myp")]
+
 [connection signal="area_entered" from="Area2D" to="." method="colliderIn"]
 [connection signal="area_exited" from="Area2D" to="." method="colliderOut"]
-[connection signal="body_entered" from="Area2D" to="." method="colliderIn"]
-[connection signal="body_exited" from="Area2D" to="." method="colliderOut"]
-[node name="Rock Particle Emitter" parent="." instance=ExtResource("5_j5myp")]
 [connection signal="frame_changed" from="BombAnimator" to="." method="_on_bomb_animator_frame_changed"]

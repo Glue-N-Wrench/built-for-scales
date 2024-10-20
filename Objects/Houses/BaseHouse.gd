@@ -9,12 +9,12 @@ class_name House
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
 @export var offset:Vector2 = Vector2(0,0) #in pixels
+@export var supportBase:Vector2 = Vector2(-1,0) #grid values, from-to, inclusive
 var overlaps = []
-
+	
 var current_fish = {
 	0:[]
 };
-@export var shape:Shape2D
 
 @onready var house_placement_sfx = $house_placement_sfx
 
@@ -23,9 +23,9 @@ func onPlace():
 	#todo: trigger placement affects
 	FishManager.addHouse(self)
 	house_placement_sfx.play()
+	$Support.generate()
 
 func _ready():
-	$Area2D/CollisionPolygon2D.polygon = shape.points
 	FishManager.fishUpdated.connect(_on_fish_updated)
 	$FishDetails.extraText = "max: "+str(fish_capacity)
 	for i in range(max_fish_size+1):
@@ -45,8 +45,14 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	$FishDetails.visible = false
 
+func destroy():
+	FishManager.removeHouse(self)
+	queue_free()
+
 func colliderIn(body):
+	print(body)
 	overlaps.append(body)
 
 func colliderOut(body):
+	print(body)
 	overlaps.erase(body)

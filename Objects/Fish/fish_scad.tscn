@@ -71,3 +71,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_ipcy2")
 frame_progress = 0.361092
 speed = 150
+wanderZone = 0.7

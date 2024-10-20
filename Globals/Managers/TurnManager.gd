@@ -12,23 +12,49 @@ var roundTimer = 0
 const weekTime = 2 #rounds in a 'week'
 
 signal updateGameOverTimer
-var gameOverCount = 10#seconds till game over
+const gameOverCount = 10#seconds till game over
 var gameOverTimer = 10
-signal gameStarted
+#signal gameStarted MOVED TO CAMERA2D
+
+var timespeed = 1
+var forcedTimeSlow = false
+var timePaused = false #note: this is different than godot tree pausing
+var timeSpeedButton:TextureButton
+
 #==mange the week rewards==
 func weekCheck():
 	if dayCount % weekTime == 0:
 		$"/root/MainLevel/Camera2D/WeeklyRewards/WeeklyRewardsUI".displayWeeklyRewards()
 
-func _ready():
-	gameStarted.emit()
+func reset():
+	#reset globals to their starting values
+	gameOverTimer = 10
+	roundTimer = 0
+	dayCount = 0
+
+#func _ready():
+	#only plays music for title screen working on fixing this
+		#gameStarted.emit()
+
+func set_fast_mode(toggle:bool):
+	if toggle == true:
+		timespeed = 3
+	else:
+		timespeed = 1
+
+func set_pause(toggle:bool):
+	#this is independant from godot's get_tree().paused
+	if toggle == true:
+		timespeed = 0
+	else:
+		timespeed = 1
 	
 
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
 	#==manage the day==
-	roundTimer -= delta
+	roundTimer -= delta * timespeed
 	if roundTimer < 0:
 		roundTimer = roundTime
 		dayCount += 1
@@ -37,11 +63,23 @@ func _process(delta):
 		updateDay.emit()
 	#==manage the game over==
 	if FishManager.getTotalHomeless() > FishManager.maxHomeless:
-		gameOverTimer -= delta
+		#Forces button to disable and forces timespeed 1
+		if timespeed == 3:
+			timespeed = 1
+			timeSpeedButton.disabled = true
+			forcedTimeSlow = true
+		
+		gameOverTimer -= delta * timespeed
 		updateGameOverTimer.emit()
 		if gameOverTimer < 0:
 			$"/root/MainLevel/Camera2D/GameOverScreen".visible=true
 			get_tree().paused = true
 	elif gameOverTimer < gameOverCount:
-		gameOverTimer += delta
+		gameOverTimer += delta * timespeed
 		updateGameOverTimer.emit()
+	
+	#Successfully escaped scenario
+	if forcedTimeSlow && FishManager.getTotalHomeless() <= FishManager.maxHomeless:
+		forcedTimeSlow = false
+		timeSpeedButton.disabled = false
+		timespeed = 3

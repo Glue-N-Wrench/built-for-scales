@@ -16,7 +16,11 @@ var soundSettings = {
 	}
 
 var controlSettings = {
-		"menu_pause": InputMap.action_get_events("menu_pause")[0]
+		"menu_pause": InputMap.action_get_events("menu_pause")[0],
+		"building_tray_open": InputMap.action_get_events("building_tray_open")[0],
+		"set_speed_high": InputMap.action_get_events("set_speed_high")[0],
+		"set_speed_low": InputMap.action_get_events("set_speed_low")[0],
+		"time_pause": InputMap.action_get_events("time_pause")[0],
 	}
 
 func _ready():

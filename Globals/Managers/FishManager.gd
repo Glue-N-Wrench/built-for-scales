@@ -17,14 +17,26 @@ var homelessFish:Dictionary = {
 	2:[],
 } #dict of homeless fish nodes sorted by type
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
-const maxHomeless = 5
+const maxHomeless = 10
 
 const fixedFishWaves = [
-		[0,0,0],
-		[0,0,1,0],
-		[0,0,1,1],
-		[0,0,0,0,0],
+		[0,0,0],	# 3 anchovies
+		[0,0,0,1],	# 3 anchovies 1 scad
+		[0,0,1,1],	# 2 anchovies 2 scad
+		[0,0,0,0,0],# 5 anchovies
 	]
+
+
+func reset():
+	#reset globals to their starting values
+	activeHouses = []
+	homelessFish = {
+		0:[],
+		1:[],
+		2:[],
+	}
+	for child in get_children():
+		child.queue_free()
 
 func _ready():
 	fishRNG.randomize()
@@ -53,25 +65,35 @@ func makeNewFishBatch(points:int):
 			spawnFish(purchase-1)
 			points -= purchase
 	currentWaveHasCatfish
-	fishUpdated.emit()
 	CheckHouses()
 
 func spawnFish(type:int):
-	#create a new homeless fish of [type] off screen		
+	#create a new homeless fish of [type] off screen
 	var newFish = fishObjects[type].instantiate()
 	var direction = fishRNG.randi_range(0,1)
 	var offset = randf_range(-400,300)
 	match direction:
 		0:
-			newFish.position = Vector2(800, offset)
+			newFish.position = Vector2(ViewManager.gridLimitSides*2, offset)
 		1:
-			newFish.position = Vector2(-800, offset)
+			newFish.position = Vector2(-ViewManager.gridLimitSides*2, offset)
 	newFish.go_to_location(Vector2(0,0))
 	add_child(newFish)
 	homelessFish[type].push_front(newFish)
+	fishUpdated.emit()
 
-func addHouse(house:Node2D):
+func addHouse(house:House):
 	activeHouses.append(house)
+	CheckHouses()
+
+func removeHouse(house:House):
+	activeHouses.erase(house)
+	for size in house.current_fish:
+		for fish in house.current_fish[size]:
+			fish.go_to_location(house.position)
+			fish.homeless=true
+		homelessFish[size].append_array(house.current_fish[size])
+	fishUpdated.emit()	
 	CheckHouses()
 
 func CheckHouses():

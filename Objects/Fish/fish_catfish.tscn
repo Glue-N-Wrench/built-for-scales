@@ -73,3 +73,4 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.10324
 speed = 100
+wanderZone = 0.2

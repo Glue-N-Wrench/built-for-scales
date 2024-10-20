@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clbc1nlqkpcc4"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_om5mg"]
+[ext_resource type="Texture2D" uid="uid://hn6li585pyk7" path="res://assets/Houses/house_2x2_DL_a.png" id="2_vw5sn"]
+
+[node name="BaseHouse" instance=ExtResource("1_om5mg")]
+fish_capacity = 2
+max_fish_size = 1
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_vw5sn")
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-52, -60, -52, -2, 5, -1, 4, 60, 57, 61, 53, -59)
