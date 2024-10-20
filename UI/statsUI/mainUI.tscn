@@ -240,6 +240,7 @@ label_settings = ExtResource("5_qkcwe")
 horizontal_alignment = 1
 
 [node name="PauseButton" type="TextureButton" parent="TopLeftContainer/DayIndicator"]
+layout_mode = 0
 offset_left = 70.4
 offset_top = 37.6
 offset_right = 78.4
