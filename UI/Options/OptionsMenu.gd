@@ -6,6 +6,7 @@ const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
 @onready var open_panel_sfx = $"/root/MainAudio/open panel sfx"
+@onready var soundPreviewSFX = $"../../../SoundPreviewSFX"
 
 @onready var open_panel_sfx____options = $"open panel sfx  - options"
 
@@ -18,6 +19,7 @@ func _ready():
 		newControl.get_node('Label').text = option
 		newControl.get_node('MuteBtn').button_pressed = selectedSoundOptions[option]['mute']
 		newControl.get_node('Slider').value = selectedSoundOptions[option]['value']
+		newControl.get_node('Slider').changed.connect(_on_sound_slider_value_changed)
 	#== build control options == 
 	for option in selectedControlOptions:
 		var newControl = controlControl.instantiate()
@@ -27,7 +29,6 @@ func _ready():
 		print("loaded:",selectedControlOptions[option])
 		if selectedControlOptions[option]:
 			newControl.get_node('Key').text = selectedControlOptions[option].as_text_physical_keycode()
-
 
 func resetOptions():
 	#undo changes back to the global settings
@@ -66,3 +67,6 @@ func _on_option_btn_pressed():
 func _on_close_requested():
 	resetOptions()
 	hide()
+
+func _on_sound_slider_value_changed():
+	soundPreviewSFX.play()
