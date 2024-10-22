@@ -19,7 +19,7 @@ func _ready():
 		newControl.get_node('Label').text = option
 		newControl.get_node('MuteBtn').button_pressed = selectedSoundOptions[option]['mute']
 		newControl.get_node('Slider').value = selectedSoundOptions[option]['value']
-		newControl.get_node('Slider').changed.connect(_on_sound_slider_value_changed)
+		newControl.get_node('Slider').value_changed.connect(_on_sound_slider_value_changed)
 	#== build control options == 
 	for option in selectedControlOptions:
 		var newControl = controlControl.instantiate()
@@ -68,5 +68,5 @@ func _on_close_requested():
 	resetOptions()
 	hide()
 
-func _on_sound_slider_value_changed():
+func _on_sound_slider_value_changed(value: float):
 	soundPreviewSFX.play()

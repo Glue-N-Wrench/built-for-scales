@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gmtk 2024"
+config/name="BuildForScales"
 run/main_scene="res://PlayableScenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
