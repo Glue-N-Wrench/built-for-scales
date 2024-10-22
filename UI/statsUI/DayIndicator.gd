@@ -29,7 +29,7 @@ func _on_day_update():
 	$Label.text = "Day\n"+str(TurnManager.dayCount)
 	foghorn_sfx.play()
 
-func _process(delta):
+func _process(_delta):
 	$Sun.rotation = -(TurnManager.roundTimer / TurnManager.roundTime) * TAU
 
 func _on_speed_button_toggled(toggled_on):

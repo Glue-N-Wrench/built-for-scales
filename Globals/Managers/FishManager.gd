@@ -104,6 +104,7 @@ func CheckHouses():
 		fish_left += homelessFish[size].size()
 	for house:House in activeHouses:
 		#free rooms 
+		house.hasFish = false
 		for size in house.current_fish:
 			homelessFish[size].append_array(house.current_fish[size])
 			fish_left += house.current_fish[size].size()

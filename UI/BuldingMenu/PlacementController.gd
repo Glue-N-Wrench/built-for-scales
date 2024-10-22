@@ -29,7 +29,6 @@ func _unhandled_input(event):
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				remove_child(selectedObject)
 				get_tree().get_current_scene().add_child(selectedObject)
-				selectedObject.set_process(true)
 				selectedObject.position = get_viewport().get_camera_2d()\
 					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
@@ -39,7 +38,7 @@ func _unhandled_input(event):
 				InventoryManager.decrementItem(selectedObjectID)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#position = get_viewport().get_mouse_position()+get_viewport().get_camera_2d().position
 	if selectedObject != null:
 		#shows the grid if you are placing something(aka selectedObject != null)
@@ -64,4 +63,3 @@ func _process(delta):
 			validPlace = false
 	else: 
 		$"../Grid".showGrid = false
-

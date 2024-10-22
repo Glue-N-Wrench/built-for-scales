@@ -78,8 +78,8 @@ clip_text = true
 
 [node name="lowerStr" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 1.0
+anchor_left = 0.99125
+anchor_top = 0.984444
 anchor_right = 0.99125
 anchor_bottom = 0.984444
 offset_left = -257.0

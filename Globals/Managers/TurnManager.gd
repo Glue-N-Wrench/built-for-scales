@@ -50,11 +50,16 @@ func set_pause(toggle:bool):
 		timespeed = 1
 	
 
+const houseShader = preload("res://Objects/Houses/Shaders/base_house_material.tres")
+const houseEmptyShader = preload("res://Objects/Houses/Shaders/empty_house_material.tres")
+
 func _process(delta):
 	if get_tree().get_current_scene() and get_tree().get_current_scene().name != 'MainLevel':
 		return
 	#==manage the day==
 	roundTimer -= delta * timespeed
+	houseShader.set_shader_parameter("time", TurnManager.roundTimer/TurnManager.roundTime)
+	houseEmptyShader.set_shader_parameter("time", TurnManager.roundTimer/TurnManager.roundTime)
 	if roundTimer < 0:
 		roundTimer = roundTime
 		dayCount += 1
