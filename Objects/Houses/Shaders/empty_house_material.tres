@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bilydem5e1noh"]
+
+[ext_resource type="Shader" path="res://Objects/Houses/Shaders/houseEmptyShader.gdshader" id="1_u4w57"]
+
+[resource]
+shader = ExtResource("1_u4w57")
+shader_parameter/time = 0.0
+shader_parameter/scale = 1.0

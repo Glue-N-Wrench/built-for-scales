@@ -11,13 +11,16 @@ class_name House
 @export var offset:Vector2 = Vector2(0,0) #in pixels
 @export var supportBase:Vector2 = Vector2(-1,0) #grid values, from-to, inclusive
 var overlaps = []
-	
+
+var hasFish = false
+const emptyShaderMaterial = preload("res://Objects/Houses/Shaders/empty_house_material.tres")
+const normalShaderMaterial = preload("res://Objects/Houses/Shaders/base_house_material.tres")
+
 var current_fish = {
 	0:[]
 };
 
 @onready var house_placement_sfx = $house_placement_sfx
-
 
 func onPlace():
 	#todo: trigger placement affects
@@ -34,8 +37,15 @@ func _ready():
 
 func _on_fish_updated():
 	var newDict = {}
+	var fishCount = 0
 	for size in current_fish:
 		newDict[size] = current_fish[size].size()
+		fishCount += current_fish[size].size()
+	hasFish = ( fishCount > 0 )
+	if hasFish:
+		$Sprite2D.material = normalShaderMaterial
+	else:
+		$Sprite2D.material = emptyShaderMaterial
 	$FishDetails.fishData = newDict
 
 func _on_area_2d_mouse_entered():
@@ -50,9 +60,7 @@ func destroy():
 	queue_free()
 
 func colliderIn(body):
-	print(body)
 	overlaps.append(body)
 
 func colliderOut(body):
-	print(body)
 	overlaps.erase(body)

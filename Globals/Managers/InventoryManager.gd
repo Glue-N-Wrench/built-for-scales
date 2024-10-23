@@ -74,7 +74,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_f.tscn"), #scene
 		10, #Amount
 	),
-	HouseInfo.new( #10
+	HouseInfo.new(
 		"Golf House A", #Name
 		"1x2 That Holds 1 Medium Scad", #Description
 		4, #Chance Higher = more common
@@ -82,7 +82,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_g.tscn"), #scene
 		5, #Amount
 	),
-		HouseInfo.new(
+		HouseInfo.new( #10
 		"Golf House B", #Name
 		"1x2 That Holds 2 Tiny Anchovies", #Description
 		2, #Chance Higher = more common
@@ -114,7 +114,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_k.tscn"), #scene
 		5, #Amount
 	),
-	HouseInfo.new( #15
+	HouseInfo.new(
 		"India House B", #Name
 		"2x1 That Holds 1 Medium Scad", #Description
 		4, #Chance Higher = more common
@@ -122,7 +122,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_L.tscn"), #scene
 		5, #Amount
 	),
-		HouseInfo.new(
+		HouseInfo.new( #15
 		"Beta House C", #Name
 		"2x2 That Holds 2 Medium Scads", #Description
 		4, #Chance Higher = more common
@@ -154,7 +154,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_p.tscn"), #scene
 		5, #Amount
 	),
-	HouseInfo.new( #20
+	HouseInfo.new(
 		"Kilo House A", #Name
 		"2x1 + 1 That Holds 2 Tiny Anchovies", #Description
 		2, #Chance Higher = more common
@@ -162,7 +162,7 @@ var Buildings:Array[HouseInfo] = [
 		preload("res://Objects/Houses/Objects/house_q.tscn"), #scene
 		5, #Amount
 	),
-	HouseInfo.new(
+	HouseInfo.new( #20
 		"Lima House A", #Name
 		"3x1 That Holds 2 Tiny Anchovies", #Description
 		3, #Chance Higher = more common

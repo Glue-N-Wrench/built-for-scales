@@ -75,11 +75,8 @@ random_pitch = 1.8
 random_volume_offset_db = 1.52
 streams_count = 3
 stream_0/stream = ExtResource("3_qq7dl")
-stream_0/weight = 1.0
 stream_1/stream = ExtResource("4_tinpe")
-stream_1/weight = 1.0
 stream_2/stream = ExtResource("5_6rsy2")
-stream_2/weight = 1.0
 
 [node name="Fish" type="AnimatedSprite2D"]
 z_index = 2
