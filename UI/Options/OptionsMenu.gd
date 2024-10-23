@@ -5,9 +5,9 @@ var selectedSoundOptions = OptionsMan.soundSettings.duplicate(true)
 const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
-@onready var open_panel_sfx = $"/root/MainAudio/open panel sfx"
+@onready var ui_accept_sfx: AudioStreamPlayer = $"../../../MainMenuAudio/ui accept sfx"
+@onready var go_back_sfx: AudioStreamPlayer = $"../../../MainMenuAudio/go back sfx"
 
-@onready var open_panel_sfx____options = $"open panel sfx  - options"
 
 func _ready():
 	#==build sound options ==
@@ -52,18 +52,22 @@ func _on_apply_but_pressed():
 		var settingNode = $TabContainer/Controls.get_node(option)
 		OptionsMan.controlSettings[option] = settingNode.get_node('Key').key
 	OptionsMan.applySettings()
+	if ui_accept_sfx:
+		ui_accept_sfx.play()
 
 func _on_close_but_pressed():
 	resetOptions()
 	hide()
-	open_panel_sfx____options.play()
+	go_back_sfx.play()
+	
 
 func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
-	if open_panel_sfx:
-		open_panel_sfx.play()
+	if ui_accept_sfx:
+		ui_accept_sfx.play()
 
 func _on_close_requested():
 	resetOptions()
 	hide()
+	

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://sfsnkv77s25d"]
+[gd_scene load_steps=4 format=3 uid="uid://sfsnkv77s25d"]
 
 [ext_resource type="Script" path="res://UI/Options/OptionsMenu.gd" id="1"]
+[ext_resource type="Script" path="res://assets/audio/audio objects/tab_container_audio.gd" id="2_ju0tj"]
+[ext_resource type="AudioStream" uid="uid://yshl7rrfm68" path="res://assets/audio/sfx/ui sfx/switch tab sfx.wav" id="3_8ne5g"]
 
 [node name="OptionsMenu" type="Window"]
 title = "Options"
@@ -19,9 +21,11 @@ current_tab = 1
 [node name="Sound" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Controls" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="ApplyBut" type="Button" parent="."]
 anchors_preset = 3
@@ -46,6 +50,14 @@ text = "Cancel"
 
 [node name="open panel sfx  - options" type="AudioStreamPlayer" parent="."]
 
+[node name="TabContainerAudio" type="Node" parent="."]
+script = ExtResource("2_ju0tj")
+
+[node name="switch tab sfx" type="AudioStreamPlayer" parent="TabContainerAudio"]
+stream = ExtResource("3_8ne5g")
+bus = &"UI"
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="tab_changed" from="TabContainer" to="TabContainerAudio" method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="ApplyBut" to="." method="_on_apply_but_pressed"]
 [connection signal="pressed" from="CloseBut" to="." method="_on_close_but_pressed"]
