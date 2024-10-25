@@ -69,4 +69,8 @@ func _on_close_requested():
 	hide()
 
 func _on_sound_slider_value_changed(value: float):
-	soundPreviewSFX.play()
+	for option in selectedSoundOptions:
+		var settingNode = $TabContainer/Sound.get_node(option)
+		OptionsMan.soundSettings[option]['mute'] = settingNode.get_node('MuteBtn').button_pressed
+		OptionsMan.soundSettings[option]['value'] = settingNode.get_node('Slider').value
+	OptionsMan.applyAudioSettingsChanged()

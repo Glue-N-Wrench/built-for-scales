@@ -1,5 +1,9 @@
 extends Node
 
+const MUSIC_BUS_INDEX = 1
+const SFX_BUS_INDEX = 2
+const AMBIENCE_BUS_INDEX = 5
+
 var soundSettings = {
 	'Music': {
 		'mute':false,
@@ -29,15 +33,20 @@ func _ready():
 func applySettings():
 	print(soundSettings)
 	#==sounds==
-	AudioServer.set_bus_mute(1,soundSettings.Music.mute)
-	AudioServer.set_bus_volume_db(1,linear_to_db(soundSettings.Music.value))
-	AudioServer.set_bus_mute(2,soundSettings.SFX.mute)
-	AudioServer.set_bus_volume_db(2,linear_to_db(soundSettings.SFX.value))
-	AudioServer.set_bus_mute(5,soundSettings.Ambience.mute)
-	AudioServer.set_bus_volume_db(5,linear_to_db(soundSettings.Ambience.value))
+	applyAudioSettingsChanged()
+	applyMuteAudioSettings()
 	#==controls==
 	for setting in controlSettings:
 		InputMap.action_erase_events(setting)
 		InputMap.action_add_event(setting, controlSettings[setting])
 		print(setting,':',InputMap.action_get_events(setting))
+
+func applyAudioSettingsChanged():
+	AudioServer.set_bus_volume_db(MUSIC_BUS_INDEX,linear_to_db(soundSettings.Music.value))
+	AudioServer.set_bus_volume_db(SFX_BUS_INDEX,linear_to_db(soundSettings.SFX.value))
+	AudioServer.set_bus_volume_db(AMBIENCE_BUS_INDEX,linear_to_db(soundSettings.Ambience.value))
 	
+func applyMuteAudioSettings():
+	AudioServer.set_bus_mute(MUSIC_BUS_INDEX,soundSettings.Music.mute)
+	AudioServer.set_bus_mute(SFX_BUS_INDEX,soundSettings.SFX.mute)
+	AudioServer.set_bus_mute(AMBIENCE_BUS_INDEX,soundSettings.Ambience.mute)

@@ -48,5 +48,3 @@ func _on_bomb_animator_frame_changed():
 			house.get_parent().destroy()
 	if $BombAnimator.frame == 12:
 		queue_free()
-
-

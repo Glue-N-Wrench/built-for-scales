@@ -11,15 +11,10 @@
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ffsm"]
 streams_count = 5
 stream_0/stream = ExtResource("3_yq40x")
-stream_0/weight = 1.0
 stream_1/stream = ExtResource("4_6ncn3")
-stream_1/weight = 1.0
 stream_2/stream = ExtResource("5_islp7")
-stream_2/weight = 1.0
 stream_3/stream = ExtResource("6_stoj8")
-stream_3/weight = 1.0
 stream_4/stream = ExtResource("7_o4uxi")
-stream_4/weight = 1.0
 
 [node name="UnderwaterAmbienceAudio" type="Node2D"]
 script = ExtResource("1_5a6kf")
