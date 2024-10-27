@@ -33,6 +33,7 @@ polygon = PackedVector2Array(-60, -60, -60, 60, 60, 60, 60, -60)
 
 [node name="house_placement_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tvld0")
+bus = &"Gameplay"
 
 [node name="Support" type="TileMap" parent="."]
 z_index = -3

@@ -19,9 +19,11 @@ current_tab = 1
 [node name="Sound" type="HBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Controls" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="ApplyBut" type="Button" parent="."]
 anchors_preset = 3
