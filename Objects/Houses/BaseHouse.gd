@@ -43,9 +43,9 @@ func _on_fish_updated():
 		fishCount += current_fish[size].size()
 	hasFish = ( fishCount > 0 )
 	if hasFish:
-		$Sprite2D.material = normalShaderMaterial
+		material = normalShaderMaterial
 	else:
-		$Sprite2D.material = emptyShaderMaterial
+		material = emptyShaderMaterial
 	$FishDetails.fishData = newDict
 
 func _on_area_2d_mouse_entered():

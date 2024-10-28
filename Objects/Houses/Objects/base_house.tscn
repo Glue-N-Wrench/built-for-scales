@@ -10,6 +10,7 @@
 
 [node name="BaseHouse" type="Node2D"]
 texture_filter = 1
+material = ExtResource("3_8uv78")
 script = ExtResource("1_kh4vs")
 fish_capacity = 3
 supportBase = Vector2(-1, 1)
@@ -22,7 +23,7 @@ offset_right = -12.0
 mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("3_8uv78")
+use_parent_material = true
 scale = Vector2(2, 2)
 texture = ExtResource("4_r1yb7")
 

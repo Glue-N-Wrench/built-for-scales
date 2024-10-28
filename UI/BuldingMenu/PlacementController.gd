@@ -14,6 +14,7 @@ func makeSelection(selection:int):
 			selectedObject.queue_free()
 	selectedObjectID = selection
 	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
+	selectedObject.use_parent_material = true
 	add_child(selectedObject)
 	select_house_sfx.play()
 
@@ -32,6 +33,7 @@ func _unhandled_input(event):
 				selectedObject.position = get_viewport().get_camera_2d()\
 					.get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 				selectedObject.modulate = Color.WHITE
+				selectedObject.use_parent_material = false
 				$"Bubble&DustEffect".EmitParticles()
 				selectedObject.onPlace()
 				selectedObject = null
