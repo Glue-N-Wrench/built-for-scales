@@ -12,6 +12,11 @@ class_name House
 @export var supportBase:Vector2 = Vector2(-1,0) #grid values, from-to, inclusive
 var overlaps = []
 
+#Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size1Vacancies
+@onready var size1Vacancy = $'../../Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size1Vacancies'
+@onready var size2Vacancy = $Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size2Vacancies
+@onready var size3Vacancy = $Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size3Vacancies
+
 var hasFish = false
 const emptyShaderMaterial = preload("res://Objects/Houses/Shaders/empty_house_material.tres")
 const normalShaderMaterial = preload("res://Objects/Houses/Shaders/base_house_material.tres")
@@ -25,7 +30,15 @@ var current_fish = {
 func onPlace():
 	#todo: trigger placement affects
 	FishManager.addHouse(self)
+	
 	house_placement_sfx.play()
+	match(max_fish_size):
+		0: 
+			size1Vacancy.text = str( int(size1Vacancy.text)+ fish_capacity)
+		1:
+			size2Vacancy.text = str(int(size2Vacancy.text) + fish_capacity)
+		2:
+			size3Vacancy.text = str(int(size3Vacancy.text) + fish_capacity)
 	$Support.generate()
 
 func _ready():
@@ -34,6 +47,7 @@ func _ready():
 	for i in range(max_fish_size+1):
 		current_fish[i] = []
 	_on_fish_updated()
+	print(size1Vacancy)
 
 func _on_fish_updated():
 	var newDict = {}
@@ -57,6 +71,13 @@ func _on_area_2d_mouse_exited():
 
 func destroy():
 	FishManager.removeHouse(self)
+	match(max_fish_size):
+		0:
+			size1Vacancy.text = str(int(size1Vacancy.text) - fish_capacity)
+		1:
+			size2Vacancy.text = str(int(size2Vacancy.text) - fish_capacity)
+		2:
+			size3Vacancy.text = str(int(size3Vacancy.text) - fish_capacity)
 	queue_free()
 
 func colliderIn(body):

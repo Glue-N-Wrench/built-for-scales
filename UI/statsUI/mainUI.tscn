@@ -1,9 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://b0krhlmapyjp3"]
+[gd_scene load_steps=42 format=3 uid="uid://b0krhlmapyjp3"]
 
-[ext_resource type="PackedScene" uid="uid://bvlsnxcaagq3r" path="res://UI/house_card.tscn" id="1_xtr25"]
+[ext_resource type="PackedScene" path="res://UI/house_card.tscn" id="1_xtr25"]
 [ext_resource type="Script" path="res://UI/statsUI/StatsUi.gd" id="2_g15dv"]
 [ext_resource type="Texture2D" uid="uid://cihdmi2wqfamr" path="res://UI/statsUI/UI_SpriteSheet.png" id="5_6uqes"]
-[ext_resource type="LabelSettings" uid="uid://caqxmmeh7x3jl" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
+[ext_resource type="LabelSettings" path="res://UI/mainUILabelSettings.tres" id="5_qkcwe"]
 [ext_resource type="Script" path="res://UI/statsUI/DayIndicator.gd" id="6_fk8a3"]
 [ext_resource type="Texture2D" uid="uid://ck0v2xhou51mh" path="res://UI/statsUI/ui_housetooltip_fish_strip4.png" id="6_v2m0y"]
 [ext_resource type="Texture2D" uid="uid://dr2ijn27p0b4e" path="res://assets/VisualAssets/barBubbles.png" id="7_dqa7x"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://sfsnkv77s25d" path="res://UI/Options/OptionsMenu.tscn" id="8_s3b0f"]
 [ext_resource type="Texture2D" uid="uid://b5vorj4yp26ok" path="res://assets/UI/More_UI_Stuff.png" id="11_nkv7f"]
 [ext_resource type="AudioStream" uid="uid://3qy7042o1prb" path="res://assets/audio/sfx/fog horn.wav" id="12_eqpne"]
+[ext_resource type="Texture2D" uid="uid://dowadu5j6ayt1" path="res://assets/ui_housetooltip_fish_strip4.png" id="13_a5bhk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67823"]
 atlas = ExtResource("5_6uqes")
@@ -188,6 +189,10 @@ region = Rect2(22, 71, 31, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ouf1"]
 atlas = ExtResource("6_v2m0y")
+region = Rect2(0, 0, 95, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec7x8"]
+atlas = ExtResource("13_a5bhk")
 region = Rect2(0, 0, 95, 16)
 
 [node name="MainUI" type="CanvasLayer"]
@@ -440,10 +445,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -191.0
-offset_top = -79.0
-offset_right = -113.0
-offset_bottom = -69.0
+offset_left = -190.0
+offset_top = -152.0
+offset_right = -112.0
+offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -504,6 +509,47 @@ offset_left = 107.2
 offset_right = 115.2
 offset_bottom = 18.0
 text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="TextureRect2" type="TextureRect" parent="HomelessFishContainer/HomelessFish"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ec7x8")
+stretch_mode = 2
+
+[node name="FishNumbers2" type="Control" parent="HomelessFishContainer/HomelessFish"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="size1Vacancies" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers2"]
+layout_mode = 0
+offset_left = 13.6
+offset_right = 21.6
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="size2Vacancies" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers2"]
+layout_mode = 0
+offset_left = 44.8
+offset_right = 52.8
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="size3Vacancies" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers2"]
+layout_mode = 0
+offset_left = 74.4
+offset_right = 82.4
+offset_bottom = 18.0
+text = "0"
+label_settings = ExtResource("5_qkcwe")
+
+[node name="jellyfishVacancies" type="Label" parent="HomelessFishContainer/HomelessFish/FishNumbers2"]
+visible = false
+layout_mode = 0
+offset_left = 107.2
+offset_right = 115.2
+offset_bottom = 18.0
 label_settings = ExtResource("5_qkcwe")
 
 [node name="BOmb" type="HBoxContainer" parent="HomelessFishContainer/HomelessFish"]
