@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cx5718br2o68l" path="res://assets/Houses/house_3x2_b.png" id="2_mmac0"]
 
 [node name="BaseHouse2" instance=ExtResource("1_lt0ax")]
+displayName = "Delta House"
+description = "3x2 House that Holds 1 Big Catfish"
+chance = 10
 fish_capacity = 1
 max_fish_size = 2
 offset = Vector2(32, 0)

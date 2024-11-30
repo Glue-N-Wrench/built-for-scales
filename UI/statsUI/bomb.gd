@@ -1,6 +1,8 @@
 extends Node2D
 
-var bomb = preload("res://Objects/bomb.tscn")
+@export var displayName: String
+@export var description: String
+@export var chance:int = 10
 @onready var tilemap: Node = $"/root/MainLevel/Tilemaps/Breakables"
 var distToGround:int = 64
 var offset:Vector2 = Vector2(32,32)

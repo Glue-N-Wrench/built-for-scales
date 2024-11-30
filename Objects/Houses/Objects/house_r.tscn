@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://df0mtl2ebm23x" path="res://assets/Houses/house_3x1_a.png" id="2_4k7d1"]
 
 [node name="BaseHouse" instance=ExtResource("1_nm2dl")]
+displayName = "Lima House A"
+description = "3x1 That Holds 2 Tiny Anchovies"
 fish_capacity = 2
 offset = Vector2(32, 32)
 

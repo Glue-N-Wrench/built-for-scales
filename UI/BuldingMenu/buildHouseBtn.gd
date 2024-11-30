@@ -11,8 +11,9 @@ func _on_pressed():
 
 func _ready():
 	InventoryManager.inventoryCountUpdated.connect(_on_inventory_count_updated)
-	var target_house_sprite = InventoryManager.Buildings[houseNumb].texture
-	if target_house_sprite:
-		$TextureButton.texture = target_house_sprite
-	$nameLabel.text = InventoryManager.Buildings[houseNumb].name
+	var building_node = InventoryManager.Buildings[houseNumb]
+	$nameLabel.text = building_node.displayName
 	$countLabel.text = str(InventoryManager.inventory[houseNumb])
+	var building_sprite = building_node.get_node_or_null("Sprite2D") as Sprite2D
+	if building_sprite:
+		$TextureButton.texture = building_sprite.texture

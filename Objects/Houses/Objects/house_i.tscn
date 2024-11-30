@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b5dprv3luk4al" path="res://assets/Houses/house_1x3_a.png" id="2_1erfg"]
 
 [node name="BaseHouse" instance=ExtResource("1_7nxnh")]
+displayName = "Hotel House A"
+description = "1x3 That Holds 3 Tiny Anchovies"
+chance = 2
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
 

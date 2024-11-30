@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d0utkrhnd6c0u" path="res://assets/Houses/house_2x2_DR_a.png" id="2_823wu"]
 
 [node name="BaseHouse" instance=ExtResource("1_4hfxw")]
+displayName = "Juliett House B"
+description = "1 + 2x1 That Holds 2 Tiny Anchovies"
+chance = 4
 fish_capacity = 2
 
 [node name="Sprite2D" parent="." index="1"]

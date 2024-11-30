@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://byq5b68oy17ev" path="res://assets/Houses/house_3x3_a.png" id="2_mt75v"]
 
 [node name="BaseHouse2" instance=ExtResource("1_fp3pe")]
+displayName = "Papa House"
+description = "3x2 + 1 That Holds 2 Big Catfishes"
+chance = 5
 fish_capacity = 2
 max_fish_size = 2
 offset = Vector2(32, 32)

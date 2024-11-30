@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://csj81uxlnu7du" path="res://assets/Houses/house_3x3_Z_a.png" id="2_7rbqy"]
 
 [node name="BaseHouse2" instance=ExtResource("1_5vqgg")]
+displayName = "Romeo House"
+description = "3x3 'Z' Shaped House \\n That Holds 5 Tiny Anchovies"
 fish_capacity = 5
 distToGround = 128
 offset = Vector2(32, 32)

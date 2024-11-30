@@ -46,13 +46,17 @@ func generateWeeklyOptions():
 	for x in 3:
 		shownOptions[x] = rollItem()
 		var itemID = shownOptions[x]
-		optionNodes[x].text = str(InventoryManager.Buildings[itemID].rewardAmount) + 'x '\
-			+ InventoryManager.Buildings[itemID].name + '\n'\
+		optionNodes[x].text = '5' + '\n'\
+			+ InventoryManager.Buildings[itemID].displayName + '\n'\
 			+ InventoryManager.Buildings[itemID].description
-		optionNodes[x].icon = InventoryManager.Buildings[itemID].texture
+		var sprite = InventoryManager.Buildings[itemID].get_node_or_null("Sprite2D") as Sprite2D
+		if sprite:
+			optionNodes[x].icon = sprite.texture
+		else: 
+			optionNodes[x].icon = preload("res://assets/bomb.png")
 
 func giveReward(itemID):
-	InventoryManager.addItems(itemID, InventoryManager.Buildings[itemID].rewardAmount)
+	InventoryManager.addItems(itemID, 5)
 
 func choseOption(buttonNumber: int):
 	giveReward(shownOptions[buttonNumber])

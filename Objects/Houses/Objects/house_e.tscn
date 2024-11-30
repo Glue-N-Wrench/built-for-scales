@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://847xwt3lgpk2" path="res://assets/Houses/house_1x1_c.png" id="4_6r5o6"]
 
 [node name="BaseHouse" instance=ExtResource("1_y18if")]
+displayName = "Foxtrot House D"
+description = "1x1 That Holds 1 Tiny Anchovy"
 fish_capacity = 1
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
