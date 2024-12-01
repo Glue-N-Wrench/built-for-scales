@@ -11,8 +11,8 @@ var shownOptions = [-1,-1,-1] #the 3 reward cards to choose from
 func _ready():
 	rewardRng.randomize()
 	visible = false
-	for i in InventoryManager.Buildings.size():
-		maxChoice += InventoryManager.Buildings[i].chance
+	for i in BuildingData.Buildings.size():
+		maxChoice += BuildingData.Buildings[i].chance
 		houseOptions[maxChoice] = i
 
 func displayWeeklyRewards():
@@ -47,9 +47,9 @@ func generateWeeklyOptions():
 		shownOptions[x] = rollItem()
 		var itemID = shownOptions[x]
 		optionNodes[x].text = '5' + '\n'\
-			+ InventoryManager.Buildings[itemID].displayName + '\n'\
-			+ InventoryManager.Buildings[itemID].description
-		var sprite = InventoryManager.Buildings[itemID].get_node_or_null("Sprite2D") as Sprite2D
+			+ BuildingData.Buildings[itemID].displayName + '\n'\
+			+ BuildingData.Buildings[itemID].description
+		var sprite = BuildingData.Buildings[itemID].get_node_or_null("Sprite2D") as Sprite2D
 		if sprite:
 			optionNodes[x].icon = sprite.texture
 		else: 

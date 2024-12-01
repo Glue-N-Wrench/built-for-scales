@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+BuildingData="*res://Globals/buildingData.gd"
 OptionsMan="*res://Globals/Managers/OptionsManager.gd"
 MainAudio="*res://assets/audio/audio objects/MainAudio.tscn"
 UnderwaterAmbienceAudio="*res://assets/audio/audio objects/underwater_ambience_audio.tscn"
