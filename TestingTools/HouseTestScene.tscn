@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://j2ho0tcfrbx1"]
+
+[ext_resource type="Script" path="res://TestingTools/HouseTestScene.gd" id="1_faeaj"]
+[ext_resource type="Script" path="res://TestingTools/MovingCamera.gd" id="2_3sc3v"]
+
+[node name="HouseTestScene" type="Node2D"]
+script = ExtResource("1_faeaj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_3sc3v")

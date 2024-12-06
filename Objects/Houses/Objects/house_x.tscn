@@ -8,6 +8,7 @@ displayName = "Quebec House"
 description = "2x3 'C' Shaped House \\n That Holds 4 Tiny Anchovies"
 chance = 2
 fish_capacity = 4
+distToGround = 128
 offset = Vector2(0, 32)
 
 [node name="Sprite2D" parent="." index="1"]

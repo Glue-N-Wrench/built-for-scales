@@ -9,6 +9,7 @@ description = "1x3 That Holds 2 Medium Scads"
 chance = 4
 fish_capacity = 2
 max_fish_size = 1
+distToGround = 128
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
 

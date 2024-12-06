@@ -9,6 +9,7 @@ description = "1x2 + 2x1 That Holds 2 Medium Scads"
 chance = 4
 fish_capacity = 2
 max_fish_size = 1
+distToGround = 128
 offset = Vector2(0, 32)
 
 [node name="Sprite2D" parent="." index="1"]

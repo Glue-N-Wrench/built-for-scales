@@ -7,6 +7,7 @@
 displayName = "November House"
 description = "2x1 + 1x3 \\n That Holds 3 Tiny Anchovies"
 chance = 4
+distToGround = 128
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_3pcmp")

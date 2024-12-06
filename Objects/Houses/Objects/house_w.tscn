@@ -9,7 +9,9 @@ description = "3x2 + 1 That Holds 2 Big Catfishes"
 chance = 5
 fish_capacity = 2
 max_fish_size = 2
+distToGround = 128
 offset = Vector2(32, 32)
+supportBase = Vector2(-2, 1)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_mt75v")

@@ -7,6 +7,7 @@
 displayName = "Hotel House A"
 description = "1x3 That Holds 3 Tiny Anchovies"
 chance = 2
+distToGround = 128
 offset = Vector2(32, 32)
 supportBase = Vector2(-1, 0)
 

@@ -7,6 +7,7 @@
 displayName = "Lima House B"
 description = "3x1 That Holds 3 Tiny Anchovies"
 offset = Vector2(32, 32)
+supportBase = Vector2(-2, 1)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_dvvt7")
