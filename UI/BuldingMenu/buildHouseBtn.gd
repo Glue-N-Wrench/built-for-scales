@@ -1,6 +1,7 @@
 @tool
 extends Button
 var houseNumb:int = 0
+var secondaryHouseNumb:int = 0
 var count:int = 1
 
 func _on_inventory_count_updated():
