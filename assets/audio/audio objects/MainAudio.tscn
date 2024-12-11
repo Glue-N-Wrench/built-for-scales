@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh8xf72fdxpkr"]
+[gd_scene load_steps=6 format=3 uid="uid://dh8xf72fdxpkr"]
 
 [ext_resource type="AudioStream" uid="uid://cyluvxqav1tcr" path="res://assets/audio/msuic/Fishy City V1.wav" id="1_dmahg"]
+[ext_resource type="Script" path="res://assets/audio/audio objects/main_audio_system.gd" id="1_n24bq"]
 [ext_resource type="AudioStream" uid="uid://bc23wuacjlpf3" path="res://assets/audio/sfx/ui sfx/ui sound 1.wav" id="2_4rw8b"]
 [ext_resource type="AudioStream" uid="uid://cng6d5awgc47l" path="res://assets/audio/sfx/ui sfx/ui sound 2.wav" id="3_6w5wv"]
 [ext_resource type="AudioStream" uid="uid://bsosg58f3ay5j" path="res://assets/audio/sfx/ui sfx/upgrade sfx.wav" id="4_pmcnr"]
 
 [node name="Audio" type="Node"]
 process_mode = 3
+script = ExtResource("1_n24bq")
 
 [node name="main menu music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_dmahg")

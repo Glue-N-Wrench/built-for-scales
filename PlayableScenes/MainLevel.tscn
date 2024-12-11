@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://6ae31m7rrcxr"]
+[gd_scene load_steps=25 format=4 uid="uid://6ae31m7rrcxr"]
 
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_i6qqw"]
 [ext_resource type="LabelSettings" uid="uid://bijjr3jl61de4" path="res://UI/MainMenu/home_label_settings.tres" id="3_5jy7u"]
@@ -12,12 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bj8bbmkb7wdqc" path="res://assets/VisualAssets/Breakables1.png" id="6_qrlcs"]
 [ext_resource type="Script" path="res://UI/grid.gd" id="8_227gk"]
 [ext_resource type="Texture2D" uid="uid://da0eqmj1sdwpl" path="res://assets/Layer 4.png" id="11_q1e6q"]
-[ext_resource type="AudioStream" uid="uid://cyluvxqav1tcr" path="res://assets/audio/msuic/Fishy City V1.wav" id="11_spa5t"]
 [ext_resource type="Texture2D" uid="uid://dn0gmhaa1epwt" path="res://assets/Layer 3.png" id="12_8ubqi"]
-[ext_resource type="Script" path="res://PlayableScenes/MusicPlayer.gd" id="12_ds3jn"]
 [ext_resource type="AudioStream" uid="uid://dairujila7amb" path="res://assets/audio/sfx/house build/pick up house sfx.wav" id="12_fbao4"]
 [ext_resource type="Texture2D" uid="uid://xo3jolggyjv7" path="res://assets/Layer 2.png" id="13_hxsvw"]
 [ext_resource type="Texture2D" uid="uid://dr68bohbustyw" path="res://assets/Layer 1.png" id="14_ni7ap"]
+[ext_resource type="Script" path="res://assets/audio/audio objects/gameplay_music_system.gd" id="16_6ojgr"]
 [ext_resource type="Texture2D" uid="uid://b64hxarlmefhx" path="res://assets/VisualAssets/Fish.png" id="20_e4fkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrsim"]
@@ -1542,11 +1541,10 @@ lifetime = 30.0
 randomness = 0.3
 visibility_rect = Rect2(-2250, -800, 2500, 1500)
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GameplayMusicSystem" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("11_spa5t")
 bus = &"Music"
-script = ExtResource("12_ds3jn")
+script = ExtResource("16_6ojgr")
 
 [node name="select_house_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fbao4")
@@ -1557,6 +1555,6 @@ z_index = -1
 position = Vector2(128, 0)
 script = ExtResource("8_227gk")
 
-[connection signal="gameStarted" from="Camera2D" to="MusicPlayer" method="_on_game_started"]
+[connection signal="gameStarted" from="Camera2D" to="GameplayMusicSystem" method="_on_game_started"]
 [connection signal="pressed" from="Camera2D/GameOverScreen/QuitBtn" to="Camera2D/GameOverScreen" method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="Camera2D/GameOverScreen/ReturnBtn" to="Camera2D/GameOverScreen" method="_on_return_btn_pressed"]

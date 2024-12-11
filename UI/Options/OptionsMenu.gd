@@ -56,7 +56,10 @@ func _on_apply_but_pressed():
 	OptionsMan.applySettings()
 
 func _on_close_but_pressed():
-	ui_close_panel_sfx.play()
+	if ui_close_panel_sfx: #Pete TODO: turn this into a method to declutter code
+		ui_close_panel_sfx.play()
+	else:
+		print('the audio stream in OptionsMenu is null')
 	resetOptions()
 	hide()
 	
@@ -64,7 +67,10 @@ func _on_close_but_pressed():
 func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
-	ui_open_option_sfx.play()
+	if ui_open_option_sfx:
+		ui_open_option_sfx.play()
+	else:
+		print('the audio stream in OptionsMenu is null')
 
 func _on_close_requested():
 	resetOptions()
