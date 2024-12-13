@@ -29,3 +29,6 @@ bus = &"UI"
 [node name="open panel sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pmcnr")
 bus = &"UI"
+
+[node name="gameplay music" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
