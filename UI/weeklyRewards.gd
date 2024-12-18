@@ -99,7 +99,7 @@ func generateWeeklyOptions():
 		var secondaryBubble = optionNodes[x].get_node('SecondaryObj')
 		if (houseBundles[choiceID][OBJECTS].size()>1):
 			secondaryBubble.visible = true
-			secondaryBubble.get_node('Count').text = str(houseBundles[choiceID][OBJECTS][1][COUNT])
+			secondaryBubble.get_node('Count').text = '+'+str(houseBundles[choiceID][OBJECTS][1][COUNT])
 			var secondItemID = houseBundles[choiceID][OBJECTS][1][ID]
 			var secondSprite = BuildingData.Buildings[secondItemID].get_node_or_null("Sprite2D") as Sprite2D
 			if secondSprite:
