@@ -1,6 +1,5 @@
 extends Node
 
-
 signal inventoryUpdated # a new item, or an item was removed
 signal inventoryCountUpdated # a change in count without a change in inventory items
 var inventory = {
