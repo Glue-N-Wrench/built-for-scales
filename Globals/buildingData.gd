@@ -11,8 +11,8 @@ var Buildings = {
 	6: preload("res://Objects/Houses/Objects/house_Castle.tscn").instantiate(),
 	7: preload("res://Objects/Houses/Objects/house_Cross.tscn").instantiate(),
 	8: preload("res://Objects/Houses/Objects/house_d.tscn").instantiate(),
-	9: preload("res://Objects/Houses/Objects/house_e.tscn").instantiate(),
-	10: preload("res://Objects/Houses/Objects/house_f.tscn").instantiate(),
+	9: preload("res://Objects/Houses/Objects/house_e.tscn").instantiate(), #unused
+	10: preload("res://Objects/Houses/Objects/house_f.tscn").instantiate(),#unused
 	11: preload("res://Objects/Houses/Objects/house_g.tscn").instantiate(),
 	12: preload("res://Objects/Houses/Objects/house_h.tscn").instantiate(),
 	13: preload("res://Objects/Houses/Objects/house_i.tscn").instantiate(),
