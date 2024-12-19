@@ -2,9 +2,9 @@
 extends Node2D
 class_name House
 
-@export var junk:bool = false
-@export var cost:int = 1
-@export var refund:int = 1
+@export var displayName:String #display name in the cards
+@export var description: String #display info on expand
+@export var chance:int #chance of the house to show up as a reward
 @export var fish_capacity: int = 1;
 @export var max_fish_size: int = 0;
 @export var distToGround:int = 64 #in pixels #used for "in the floor" calculation
@@ -63,8 +63,7 @@ func _on_fish_updated():
 	$FishDetails.fishData = newDict
 
 func _on_area_2d_mouse_entered():
-	if !junk:
-		$FishDetails.visible = true
+	$FishDetails.visible = true
 
 func _on_area_2d_mouse_exited():
 	$FishDetails.visible = false

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://db6kikwpsfir6" path="res://assets/Houses/house_4x2_castle_a.png" id="2_7cyjg"]
 
 [node name="BaseHouse2" instance=ExtResource("1_hv25n")]
+displayName = "Uniform House"
+description = "4x2 Castle Shaped House \\n That Holds 2 Big Catfish"
+chance = 2
 fish_capacity = 2
 max_fish_size = 2
 supportBase = Vector2(-2, 2)

@@ -5,10 +5,11 @@ var selectedSoundOptions = OptionsMan.soundSettings.duplicate(true)
 const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
-@onready var open_panel_sfx = $"/root/MainAudio/open panel sfx"
+@onready var ui_open_option_sfx: AudioStreamPlayer2D = $"../../../UI Open Panel SFX"
+@onready var ui_close_panel_sfx: AudioStreamPlayer2D = $"../../../UI Close Panel SFX"
+
 @onready var soundPreviewSFX = $"../../../SoundPreviewSFX"
 
-@onready var open_panel_sfx____options = $"open panel sfx  - options"
 
 func _ready():
 	#==build sound options ==
@@ -55,14 +56,22 @@ func _on_apply_but_pressed():
 	OptionsMan.applySettings()
 
 func _on_close_but_pressed():
-	resetOptions()
+	play_close_sfx()
 	hide()
-	open_panel_sfx____options.play()
+	
+func play_close_sfx():
+	if ui_close_panel_sfx: 
+		ui_close_panel_sfx.play()
+	else:
+		print('the audio stream in OptionsMenu is null')
 
 func _on_option_btn_pressed():
 	#this needs to be connect to a signal from outside the menu
 	show()
-	open_panel_sfx.play()
+	if ui_open_option_sfx:
+		ui_open_option_sfx.play()
+	else:
+		print('the audio stream in OptionsMenu is null')
 
 func _on_close_requested():
 	resetOptions()

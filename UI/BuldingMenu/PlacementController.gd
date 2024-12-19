@@ -17,7 +17,7 @@ func makeSelection(selection:int):
 	if selectedObject != null:
 			selectedObject.queue_free()
 	selectedObjectID = selection
-	selectedObject = InventoryManager.Buildings[selection].packedScene.instantiate()
+	selectedObject = BuildingData.Buildings[selection].duplicate()
 	selectedObject.use_parent_material = true
 	add_child(selectedObject)
 	select_house_sfx.play()

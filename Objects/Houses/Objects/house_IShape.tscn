@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://givfh7gek20a" path="res://assets/Houses/house_3x3_I_a.png" id="2_d5cvg"]
 
 [node name="BaseHouse2" instance=ExtResource("1_pb1qn")]
+displayName = "Tango House"
+description = "3x3 'I' Shaped House \\n That Holds 3 Medium Scads"
+chance = 2
 max_fish_size = 1
 distToGround = 128
 offset = Vector2(32, 32)
-supportBase = Vector2(-2, 2)
+supportBase = Vector2(-2, 1)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_d5cvg")

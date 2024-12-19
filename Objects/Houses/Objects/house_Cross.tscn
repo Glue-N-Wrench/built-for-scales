@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bra3yjqjp5e51" path="res://assets/Houses/house_3x3_cross_a.png" id="2_n56me"]
 
 [node name="BaseHouse2" instance=ExtResource("1_0sevn")]
+displayName = "Sierra House"
+description = "3x3 '+' Shaped House \\n That Holds 5 Tiny Anchovies"
+chance = 2
 fish_capacity = 5
 distToGround = 128
 offset = Vector2(32, 32)

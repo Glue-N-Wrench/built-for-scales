@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bafdk23n34wvu" path="res://assets/Houses/house_2x2_b.png" id="2_e7qws"]
 
 [node name="BaseHouse" instance=ExtResource("1_phm0k")]
+displayName = "Beta House C"
+description = "2x2 That Holds 2 Medium Scads"
+chance = 4
 fish_capacity = 2
 max_fish_size = 1
 

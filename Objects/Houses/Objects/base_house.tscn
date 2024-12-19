@@ -12,6 +12,9 @@
 texture_filter = 1
 material = ExtResource("3_8uv78")
 script = ExtResource("1_kh4vs")
+displayName = "Alpha House A"
+description = "2x2 house that holds 3 Tiny Anchovies"
+chance = 3
 fish_capacity = 3
 supportBase = Vector2(-1, 1)
 

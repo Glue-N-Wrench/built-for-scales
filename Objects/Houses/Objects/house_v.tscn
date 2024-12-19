@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://xgm7hsiq3y6d" path="res://assets/Houses/house_3x2_DL_a.png" id="2_5al2l"]
 
 [node name="BaseHouse2" instance=ExtResource("1_7cbku")]
+displayName = "Oscar House"
+description = "1x2 + 2x1 That Holds 2 Medium Scads"
+chance = 4
 fish_capacity = 2
 max_fish_size = 1
+distToGround = 128
 offset = Vector2(0, 32)
 
 [node name="Sprite2D" parent="." index="1"]

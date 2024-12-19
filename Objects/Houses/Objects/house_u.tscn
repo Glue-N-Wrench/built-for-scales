@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cmg1m76lma3dt" path="res://assets/Houses/house_2x4_UL_a.png" id="2_3pcmp"]
 
 [node name="BaseHouse2" instance=ExtResource("1_kjv66")]
+displayName = "November House"
+description = "2x1 + 1x3 \\n That Holds 3 Tiny Anchovies"
+chance = 4
+distToGround = 128
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_3pcmp")
