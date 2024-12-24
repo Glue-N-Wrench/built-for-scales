@@ -1341,10 +1341,11 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = -20
 position = Vector2(128, 110)
+offset = Vector2(175, 0)
 zoom = Vector2(1.5, 1.5)
-limit_left = -1200
+limit_left = -1400
 limit_top = -890
-limit_right = 1440
+limit_right = 1640
 limit_bottom = 500
 limit_smoothed = true
 editor_draw_limits = true
@@ -1402,8 +1403,9 @@ text = "Restart"
 [node name="WeeklyRewards" parent="Camera2D" instance=ExtResource("5_4718g")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+offset = Vector2(500, 0)
+transform = Transform2D(1, 0, 0, 1, 500, 0)
 follow_viewport_enabled = true
-scroll_limit_end = Vector2(0, 100)
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
@@ -1552,7 +1554,7 @@ bus = &"UI"
 
 [node name="Grid" type="Node2D" parent="."]
 z_index = -1
-position = Vector2(128, 0)
+position = Vector2(192, 0)
 script = ExtResource("8_227gk")
 
 [connection signal="gameStarted" from="Camera2D" to="GameplayMusicSystem" method="_on_game_started"]

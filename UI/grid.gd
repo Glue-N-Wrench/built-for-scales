@@ -8,10 +8,13 @@ const borderColor = Color(0,1,1,0.4)
 var showGrid = false
 var gridGrowSpeed = 0.6 #px/s at normal speed
 
+func _ready():
+	position = ViewManager.gridPosition
+
 func _process(delta):
-	if ViewManager.gridLimitSides < ViewManager.maxGridLimit.x \
-		and ViewManager.gridLimitTop > ViewManager.maxGridLimit.y:
+	if ViewManager.gridLimitSides < ViewManager.maxGridLimit.x:
 		ViewManager.gridLimitSides += delta * gridGrowSpeed * $"/root/TurnManager".timespeed
+	if ViewManager.gridLimitTop > ViewManager.maxGridLimit.y:
 		ViewManager.gridLimitTop -= delta * gridGrowSpeed * $"/root/TurnManager".timespeed
 	queue_redraw()
 

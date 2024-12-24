@@ -48,15 +48,13 @@ func _process(_delta):
 		selectedObject.get_node("FishDetails").visible = false #this is really scrappy, find a way to not need this later
 		position = get_global_mouse_position().snapped(ViewManager.gridSize)+selectedObject.offset
 		#== restrict placement to bounds ==
-		if absf(global_position.x) > ViewManager.gridLimitSides \
-			or global_position.y < ViewManager.gridLimitTop:
+		# 20px offset to help prevent building when a grid tile is barely availible
+		if absf(global_position.x-ViewManager.gridPosition.x) > ViewManager.gridLimitSides-20 \
+			or global_position.y < ViewManager.gridLimitTop+ViewManager.gridPosition.y:
 			selectedObject.modulate = Color(1,0,0,0.5)#red
 			validPlace = false
 			return
 		# == prevent collision overlaps
-		#var overlaps = \
-			#selectedObject.get_node('Area2D').has_overlapping_areas() or \
-			#selectedObject.get_node('Area2D').has_overlapping_bodies()
 		if selectedObject.overlaps.size() == 0:
 			selectedObject.modulate = Color(0,1,0,0.5)#blue
 			validPlace = true
