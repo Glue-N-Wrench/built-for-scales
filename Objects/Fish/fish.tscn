@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkij0finue12o"]
+[gd_scene load_steps=21 format=3 uid="uid://bkij0finue12o"]
 
 [ext_resource type="Texture2D" uid="uid://b624syfuys1cu" path="res://Objects/Fish/fishanim_anchovy_strip8.png" id="1_ek2vy"]
 [ext_resource type="Script" path="res://Objects/Fish/Fish.gd" id="2_mf5g3"]
 [ext_resource type="AudioStream" uid="uid://dbjrkye6vnih2" path="res://assets/audio/sfx/bubble fish enter.wav" id="3_qq7dl"]
 [ext_resource type="AudioStream" uid="uid://c472aph05asaj" path="res://assets/audio/sfx/buba fish 2.wav" id="4_tinpe"]
 [ext_resource type="AudioStream" uid="uid://diggy8d3ioufo" path="res://assets/audio/sfx/buba fish 3.wav" id="5_6rsy2"]
+[ext_resource type="Texture2D" uid="uid://ca4so7p163coh" path="res://assets/VisualAssets/particles/static_bubble.png" id="6_ehft5"]
+[ext_resource type="Texture2D" uid="uid://hos04mv6qcol" path="res://assets/VisualAssets/particles/star_10px.png" id="6_hm8y6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7d5w"]
 atlas = ExtResource("1_ek2vy")
@@ -78,6 +80,27 @@ stream_0/stream = ExtResource("3_qq7dl")
 stream_1/stream = ExtResource("4_tinpe")
 stream_2/stream = ExtResource("5_6rsy2")
 
+[sub_resource type="Curve" id="Curve_lnwki"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_solv7"]
+width = 128
+curve = SubResource("Curve_lnwki")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e8v03"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_curve = SubResource("CurveTexture_solv7")
+alpha_curve = SubResource("CurveTexture_solv7")
+
 [node name="Fish" type="AnimatedSprite2D"]
 z_index = 2
 texture_filter = 1
@@ -90,3 +113,24 @@ script = ExtResource("2_mf5g3")
 [node name="fish enter sfx" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_vk2mh")
 bus = &"Gameplay"
+
+[node name="Bubbles" type="GPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_e8v03")
+texture = ExtResource("6_ehft5")
+lifetime = 3.0
+randomness = 0.2
+visibility_rect = Rect2(-50, -50, 100, 100)
+trail_sections = 4
+
+[node name="Sparkles" type="GPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_e8v03")
+texture = ExtResource("6_hm8y6")
+randomness = 0.2
+visibility_rect = Rect2(-50, -50, 100, 100)
+trail_sections = 4
