@@ -112,8 +112,7 @@ func CheckHouses():
 			fish_left += house.current_fish[size].size()
 			house.current_fish[size] = []
 			for fish:Fish in house.current_fish[size]:
-				fish.go_to_location(house.position)
-				fish.homeless=true
+				fish.become_homeless()
 		var free_rooms = house.fish_capacity
 		# put best fish in each room
 		for i in range(house.max_fish_size,-1,-1):#count down from biggest in house to smallest
@@ -122,8 +121,7 @@ func CheckHouses():
 				free_rooms -= homelessFish[i].size()
 				fish_left -= homelessFish[i].size()
 				for fish:Fish in homelessFish[i]:
-					fish.go_to_location(house.position)
-					fish.homeless = false
+					fish.go_to_house(house)
 				house.current_fish[i] = homelessFish[i]
 				homelessFish[i] = []
 				continue #next fish size
@@ -133,8 +131,7 @@ func CheckHouses():
 				fish_left -= free_rooms
 				var movedObjects = homelessFish[i].slice(-free_rooms)
 				for fish:Fish in movedObjects:
-					fish.go_to_location(house.position)
-					fish.homeless = false
+					fish.go_to_house(house)
 				#move [free_rooms] items from homelessfish to house
 				homelessFish[i] = homelessFish[i].slice(0,-free_rooms)
 				house.current_fish[i] = movedObjects

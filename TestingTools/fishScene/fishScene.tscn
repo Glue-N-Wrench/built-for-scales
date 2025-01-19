@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1c17t2o1hhd"]
+
+[ext_resource type="Script" path="res://TestingTools/fishScene/fish_scene.gd" id="1_cetxo"]
+[ext_resource type="Script" path="res://TestingTools/MovingCamera.gd" id="2_wh0vd"]
+
+[node name="FishScene" type="Node2D"]
+script = ExtResource("1_cetxo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_wh0vd")
+
+[node name="FishButtons" type="GridContainer" parent="Camera2D"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 609.0
+offset_top = -50.0
+offset_right = 796.0
+offset_bottom = 51.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Anchovi
+"
+
+[node name="Anchovi" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Spawn
+"
+
+[node name="AnchoviHouse" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "House
+"
+
+[node name="Label2" type="Label" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Scad
+"
+
+[node name="Scad" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Spawn
+"
+
+[node name="ScadHouse" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "House
+"
+
+[node name="Label3" type="Label" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Cat"
+
+[node name="Catfish" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "Spawn
+"
+
+[node name="CatfishHouse" type="Button" parent="Camera2D/FishButtons"]
+layout_mode = 2
+text = "House
+"
+
+[connection signal="pressed" from="Camera2D/FishButtons/Anchovi" to="." method="addFish" binds= [0]]
+[connection signal="pressed" from="Camera2D/FishButtons/AnchoviHouse" to="." method="addHouse" binds= [0]]
+[connection signal="pressed" from="Camera2D/FishButtons/Scad" to="." method="addFish" binds= [1]]
+[connection signal="pressed" from="Camera2D/FishButtons/ScadHouse" to="." method="addHouse" binds= [1]]
+[connection signal="pressed" from="Camera2D/FishButtons/Catfish" to="." method="addFish" binds= [2]]
+[connection signal="pressed" from="Camera2D/FishButtons/CatfishHouse" to="." method="addHouse" binds= [2]]

@@ -8,10 +8,28 @@ class_name Fish
 
 @export var speed:int = 200 #pixels per second
 @export var wanderZone = 0.5 #% of grid height
+#const colorNormal = Color(0.5, 0.5, 0.5)
+const colorNormal = Color(0.7, 0.7, 0.7)
+const colorBright = Color.WHITE
+
 var homeless:bool = true
 var wanderClock = 0#counts down between homeless fish wandering
 var wanderTime = 5;#seconds between wander for fish movement
 var target_location:Vector2 = Vector2(0,0)# where the fish will swim to
+
+func go_to_house(house:House):
+	go_to_location(house.position)
+	modulate = colorBright
+	$Sparkles.emitting = true
+	$Bubbles.emitting = true
+	homeless=false
+
+func become_homeless():
+	$Sparkles.emitting = false
+	$Bubbles.emitting = false
+	modulate = colorNormal
+	visible = true
+	homeless=true
 
 func go_to_location(position):
 	target_location = position
@@ -19,13 +37,12 @@ func go_to_location(position):
 	set_process(true);#fish pause when they're not thinking
 
 func _ready():
+	modulate = colorNormal
 	wanderClock = randi_range(0,wanderTime)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#modulate = Color.BLUE #DEBUGGING
 	if homeless:
-		#modulate = Color.RED #DEBUGGING
 		wanderClock -= delta * TurnManager.timespeed
 		if wanderClock < 0:
 			var wanderLimit = ViewManager.gridLimitSides * 0.8
@@ -36,6 +53,8 @@ func _process(delta):
 	if difference.length() < 10 and not homeless:
 		#fish_enter_sfx.play()
 		visible = false
+		$Sparkles.emitting = false
+		$Bubbles.emitting = false
 		set_process(false);#pause fish when they're not thinking
 	position += difference.limit_length(speed * delta * $"/root/TurnManager".timespeed)
 	flip_h = difference.x < 0
