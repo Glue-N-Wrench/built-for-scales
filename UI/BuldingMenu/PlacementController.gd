@@ -7,6 +7,10 @@ var selectedObjectID:int = 0
 var validPlace:bool = false
 @onready var select_house_sfx = $"../select_house_sfx"
 
+#Vacancy label signals
+signal house_placed(size,capacity)
+
+
 
 # Called when a button is pressed
 func makeSelection(selection:int):
