@@ -34,6 +34,7 @@ func _ready():
 	for i in range(max_fish_size+1):
 		current_fish[i] = []
 	_on_fish_updated()
+	
 
 func _on_fish_updated():
 	var newDict = {}
