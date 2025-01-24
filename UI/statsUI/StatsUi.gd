@@ -12,3 +12,6 @@ func _on_fish_updated():
 	$FishNumbers/fishLabel1.text = str(FishManager.homelessFish[1].size())
 	$FishNumbers/fishLabel2.text = str(FishManager.homelessFish[2].size())
 	#$FishNumbers/fishLabel3.text = str(FishManager.homelessFish[3].size())
+	$FishNumbers2/size1Vacancies.text = str(FishManager.vacancies[0])
+	$FishNumbers2/size2Vacancies.text = str(FishManager.vacancies[1])
+	$FishNumbers2/size3Vacancies.text = str(FishManager.vacancies[2])

@@ -4,6 +4,7 @@ static var fishRNG = RandomNumberGenerator.new()
 
 signal fishUpdated #should be signaled when homelessFish gets changed
 # ^ handles the fish/building allocation
+# ^ handles the homeless fish ui
 
 @onready var fishObjects = {
 	0: preload("res://Objects/Fish/fish.tscn"),
@@ -139,26 +140,19 @@ func CheckHouses():
 		if fish_left <= 0: #less than 0 shouldn't be possible but I dont want to get stuck
 			break # no fish left - done with houses
 	#go again if needed
-	CheckVancy()
+	CheckVacancy()
+	fishUpdated.emit()
 	if (startingHomelessFish != homelessFish):
-		fishUpdated.emit()
-		CheckVancy()
 		if fish_left > 0:
-			CheckVancy()
 			CheckHouses() #if there was any change AND there are fish left - recurse
 
 
-func CheckVancy():
-	var size1VacancyLabel: Label = $"../MainLevel/Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size1Vacancies"
-	var size2VacancyLabel: Label = $'../MainLevel/Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size2Vacancies'
-	var size3VacancyLabel: Label = $'../MainLevel/Camera2D/MainUI/HomelessFishContainer/HomelessFish/FishNumbers2/size3Vacancies'
-	var size1Vacancies = 0
-	var size2Vacancies = 0
-	var size3Vacancies = 0
-
+var vacancies = [0,0,0]
+func CheckVacancy():
 	#this is built to display the amount of extra spaces a player has at a given time, 
 	#so if a player has an emptu house that can hold two medium fish 
 	#it updates the Vacany UI of medium fish by adding 2 to it
+	vacancies = [0,0,0]
 	for selectedHouse:House in activeHouses:
 		var totalFishInHouse = 0
 		for size in selectedHouse.current_fish:
@@ -166,14 +160,11 @@ func CheckVancy():
 		print("DEBUGVCNCY: totalFishInSelectedHouse = {" + str(totalFishInHouse) + "}"  )
 		match (selectedHouse.max_fish_size):
 			0:
-				size1Vacancies += selectedHouse.fish_capacity - totalFishInHouse
+				vacancies[0] += selectedHouse.fish_capacity - totalFishInHouse
 				print("DEBUGVCNCY: size0housecap: {" + str(selectedHouse.fish_capacity) + "}")
-				size1VacancyLabel.text = str(size1Vacancies)
 			1:
-				size2Vacancies += selectedHouse.fish_capacity - totalFishInHouse
+				vacancies[1] += selectedHouse.fish_capacity - totalFishInHouse
 				print("DEBUGVCNCY: size1housecap: {" + str(selectedHouse.fish_capacity) + "}")
-				size2VacancyLabel.text = str(size2Vacancies)
 			2:
-				size3Vacancies += selectedHouse.fish_capacity - totalFishInHouse
+				vacancies[2] += selectedHouse.fish_capacity - totalFishInHouse
 				print("DEBUGVCNCY: size2housecap: {" + str(selectedHouse.fish_capacity) + "}")
-				size3VacancyLabel.text = str(size3Vacancies)
