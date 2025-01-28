@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy17nnl2j052u"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_1ufi6"]
+[ext_resource type="Script" path="res://Objects/Houses/Objects/toggle_houses/toggle_house.gd" id="2_j3swm"]
+[ext_resource type="Texture2D" uid="uid://cs27b2dfqve6" path="res://assets/Houses/toggle_house/toggle_house_A.png" id="3_slwhp"]
+[ext_resource type="Texture2D" uid="uid://bjt3obe65345v" path="res://assets/UI/toggle_left.png" id="3_sw0kd"]
+[ext_resource type="Texture2D" uid="uid://sbr67ibh06bi" path="res://assets/UI/toggle_right.png" id="4_di4ow"]
+[ext_resource type="Texture2D" uid="uid://d17xsiqa13w7y" path="res://assets/Houses/toggle_house/toggle_house_B.png" id="4_fhs5x"]
+[ext_resource type="PackedScene" uid="uid://jq4hlq5hqbv5" path="res://assets/VFX/bubble&dust_effect.tscn" id="7_4ewnj"]
+
+[node name="ToggleHouse" instance=ExtResource("1_1ufi6")]
+script = ExtResource("2_j3swm")
+Textures = Array[Texture2D]([ExtResource("3_slwhp"), ExtResource("4_fhs5x")])
+displayName = "Toggle House"
+description = "A house that can be changed for different fish"
+chance = 15
+fish_capacity = 1
+max_fish_size = 2
+
+[node name="FishDetails" parent="." index="0"]
+toggleTextures = Array[Texture2D]([ExtResource("3_sw0kd"), ExtResource("4_di4ow")])
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_slwhp")
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-59, -59, -59, 59, 59, 59, 59, -59)
+
+[node name="Bubble&DustEffect" parent="." index="5" instance=ExtResource("7_4ewnj")]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

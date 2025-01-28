@@ -15,6 +15,7 @@ anchors_preset = 0
 offset_top = -18.0
 offset_right = 64.0
 script = ExtResource("1_axflx")
+toggleTextures = null
 topTexture = ExtResource("2_0e1kg")
 BlankTexture = ExtResource("3_1l663")
 FishTextures = Array[Texture2D]([ExtResource("4_0kprx"), ExtResource("5_oku0c"), ExtResource("6_kgwjw"), ExtResource("7_187jh")])

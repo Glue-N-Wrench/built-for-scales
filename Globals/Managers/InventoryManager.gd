@@ -6,6 +6,7 @@ var inventory = {
 	#buildingID: count
 	0:3,
 	20:2,
+	31:2,
 	5:1,
 }
 

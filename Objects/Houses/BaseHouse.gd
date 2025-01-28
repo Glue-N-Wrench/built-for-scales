@@ -39,7 +39,7 @@ func _ready():
 func _on_fish_updated():
 	var newDict = {}
 	var fishCount = 0
-	for size in current_fish:
+	for size in range(max_fish_size+1):
 		newDict[size] = current_fish[size].size()
 		fishCount += current_fish[size].size()
 	hasFish = ( fishCount > 0 )

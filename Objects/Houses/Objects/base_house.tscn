@@ -24,6 +24,7 @@ z_index = 1
 offset_left = -76.0
 offset_right = -12.0
 mouse_filter = 2
+toggleTextures = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true

@@ -12,6 +12,9 @@ max_fish_size = 2
 offset = Vector2(32, 0)
 supportBase = Vector2(-2, 1)
 
+[node name="FishDetails" parent="." index="0"]
+toggleTextures = null
+
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_wnmwx")
 

@@ -30,6 +30,7 @@ func become_homeless():
 	modulate = colorNormal
 	visible = true
 	homeless=true
+	go_to_location(target_location+Vector2(randf_range(-100,100),0))
 
 func go_to_location(position):
 	target_location = position

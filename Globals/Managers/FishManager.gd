@@ -17,6 +17,11 @@ var homelessFish:Dictionary = {
 	1:[],
 	2:[],
 } #dict of homeless fish nodes sorted by type
+var overHousedFish:Dictionary = {
+	0:[],
+	1:[],
+	2:[],
+} #dict of homeless fish nodes sorted by type
 var activeHouses:Array = [] #all the houses that get run when fish need to be changed
 const maxHomeless = 10
 
@@ -85,15 +90,13 @@ func spawnFish(type:int):
 
 func addHouse(house:House):
 	activeHouses.append(house)
-
 	CheckHouses()
 
 func removeHouse(house:House):
 	activeHouses.erase(house)
 	for size in house.current_fish:
 		for fish in house.current_fish[size]:
-			fish.go_to_location(house.position)
-			fish.homeless=true
+			fish.become_homeless()
 		homelessFish[size].append_array(house.current_fish[size])
 	fishUpdated.emit()	
 	CheckHouses()
@@ -101,6 +104,7 @@ func removeHouse(house:House):
 
 func CheckHouses():
 	#when a house is built or destroyed, or new fish are created
+	#make sure the fish are in the best spots
 	var startingHomelessFish = homelessFish.duplicate(true)
 	var fish_left = 0 #fish left to allocate
 	for size in homelessFish:
