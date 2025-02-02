@@ -34,4 +34,5 @@ var Buildings = {
 	29: preload("res://Objects/Houses/Objects/house_x.tscn").instantiate(),
 	30: preload("res://Objects/Houses/Objects/house_Zshape.tscn").instantiate(),
 	31: preload("res://Objects/Houses/Objects/toggle_houses/toggle_house.tscn").instantiate(),
+	32: preload("res://Objects/Houses/Objects/merge_houses/merge_house_small.tscn").instantiate(),
 }

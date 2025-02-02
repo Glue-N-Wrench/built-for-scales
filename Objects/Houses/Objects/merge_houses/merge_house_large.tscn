@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yffr0llxaoo"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_ckemg"]
+[ext_resource type="Texture2D" uid="uid://c6hhv0xueldec" path="res://assets/Houses/merge_house/merge_2x2x2.png" id="2_ipvbv"]
+[ext_resource type="PackedScene" uid="uid://jq4hlq5hqbv5" path="res://assets/VFX/bubble&dust_effect.tscn" id="3_2mbns"]
+
+[node name="MergeHouse" instance=ExtResource("1_ckemg")]
+displayName = "Large mergehouse"
+description = "A house made of 2 houses"
+chance = 0
+fish_capacity = 6
+max_fish_size = 2
+supportBase = Vector2(-2, 2)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ipvbv")
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-121, -60, -121, 60, 121, 60, 121, -60)
+
+[node name="Bubble&DustEffect" parent="." index="5" instance=ExtResource("3_2mbns")]

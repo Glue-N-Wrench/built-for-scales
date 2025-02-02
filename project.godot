@@ -96,6 +96,7 @@ time_pause={
 [layer_names]
 
 2d_physics/layer_1="Building-Placement"
+2d_physics/layer_2="Merging-Houses"
 
 [rendering]
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c37o4a315wipo"]
+
+[ext_resource type="PackedScene" uid="uid://bmjd8jry0bqi5" path="res://Objects/Houses/Objects/base_house.tscn" id="1_dbs4d"]
+[ext_resource type="Script" path="res://Objects/Houses/Objects/merge_houses/merge_house.gd" id="2_7wuql"]
+[ext_resource type="Texture2D" uid="uid://bbh87x3lprgii" path="res://assets/Houses/merge_house/merge_2x2.png" id="3_0qs2b"]
+[ext_resource type="Texture2D" uid="uid://drnxlf8rr61jh" path="res://assets/Houses/merge_house/clock.png" id="4_ypb37"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1qeck"]
+a = Vector2(-80, 0)
+b = Vector2(80, 0)
+
+[node name="MergeHouse" instance=ExtResource("1_dbs4d")]
+script = ExtResource("2_7wuql")
+displayName = "Merge house"
+description = "2x2 house that can merge"
+fish_capacity = 2
+max_fish_size = 2
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_0qs2b")
+
+[node name="ClockSprite" type="Sprite2D" parent="." index="5"]
+visible = false
+top_level = true
+texture = ExtResource("4_ypb37")
+
+[node name="NeighborArea" type="Area2D" parent="." index="6"]
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NeighborArea" index="0"]
+shape = SubResource("SegmentShape2D_1qeck")
+disabled = true
+
+[connection signal="area_entered" from="NeighborArea" to="." method="_on_neighbor_area_area_entered"]

@@ -5,9 +5,10 @@ signal inventoryCountUpdated # a change in count without a change in inventory i
 var inventory = {
 	#buildingID: count
 	0:3,
-	20:2,
+	#20:2,
 	31:2,
-	5:1,
+	32:3,
+	#5:1,
 }
 
 func reset():
@@ -15,6 +16,8 @@ func reset():
 	inventory = {
 	0:3,
 	20:2,
+	31:2,
+	32:2,
 	5:1,
 	}
 
