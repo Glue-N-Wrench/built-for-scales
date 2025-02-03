@@ -1,0 +1,176 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr2sfpajsbp7s"]
+
+[ext_resource type="Texture2D" uid="uid://bboftyb55nl58" path="res://assets/Tutorial UI v2.png" id="1_n2dsy"]
+[ext_resource type="FontFile" uid="uid://2m0p4ie3u52l" path="res://assets/visitor1.ttf" id="2_1reyg"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -629.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_n2dsy")
+
+[node name="Title" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "1. Goal"
+
+[node name="Title2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "2. Grid space"
+
+[node name="Title3" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "3. Frustration"
+
+[node name="Title4" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "4. Rocks and Bombs
+"
+
+[node name="Title5" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "5. New housing"
+
+[node name="Title6" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 110.0
+offset_right = 756.0
+offset_bottom = 174.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 64
+text = "6. Census"
+
+[node name="Body" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 489.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "Your task as the architect of the village is to ensure that there is sufficient housing for the growing population of oncoming fish. As time goes on a variety of different fishes will come. Ensure that there is suitable housing to accommodate everyone.
+
+The construction company's fate is in your hands.
+"
+
+[node name="Body2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 489.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "In anticipation for the fish moving in we have pre-made modular building materials, to ensure quick and efficient construction.
+
+Due to this our houses are strictly a multiple of a single grid space.
+
+The grid space you see is the space we can currently build houses. As time goes on our scale and scope will advance and we can build in more spaces with more types of housing.
+"
+
+[node name="Body3" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 489.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "As fish move in they will be temporarily on hold. If there are any available houses they will be assigned to that house. If not they will stay in this state. Be warned though, if too many fish are in this hold state tensions will build and protests will occur due to the lack of housing.
+
+If things boil over, the government will replace us and it’s over.
+"
+
+[node name="Body4" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 489.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "The cave we are located in has an excess of loose rock. These rocks will impede the progress of construction as buildings cannot be built on top of spaces with loose rock. Our solution to this is bombs, one bomb can easily destroy a 3x3 grid space of loose rock.
+
+---- Classified information ----
+In cases of construction mistakes bombs can also be used to forcefully evict fish from their assigned housing and destroy the building they are in.
+"
+
+[node name="Body5" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 558.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "As time goes on the construction crew will assemble the necessary materials to create 3 different types of houses along with bringing new bombs.
+If the designs are unsatisfactory to your vision we can call the design team to redesign the houses though we can only push our design team so much before you have to make a choice. 
+
+Once you made your choice you can designate where to build the designs by dragging it from the inventory section. We will then proceed to build it.
+"
+
+[node name="Body6" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 173.0
+offset_right = 489.0
+offset_bottom = 645.0
+theme_override_fonts/normal_font = ExtResource("2_1reyg")
+theme_override_font_sizes/normal_font_size = 26
+text = "As time goes on we will keep a running census on the number and types of fish incoming so you can accurately decide what types of buildings we should build and how close we are to reaching a critical point in population dissatisfaction. 
+
+As a service we will also keep track of the number of days and the current time for you as well.
+"
