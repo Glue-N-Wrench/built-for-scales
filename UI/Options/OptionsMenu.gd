@@ -5,7 +5,7 @@ var selectedSoundOptions = OptionsMan.soundSettings.duplicate(true)
 const soundControl = preload("res://UI/Options/sound_control.tscn")
 var selectedControlOptions = OptionsMan.controlSettings.duplicate(true)
 const controlControl = preload("res://UI/Options/controls_control.tscn")
-@onready var ui_open_option_sfx: AudioStreamPlayer2D = $"../../../UI Open Panel SFX"
+@onready var ui_open_option_sfx: AudioStreamPlayer = $"open panel sfx  - options"
 @onready var ui_close_panel_sfx: AudioStreamPlayer2D = $"../../../UI Close Panel SFX"
 
 @onready var soundPreviewSFX = $"../../../SoundPreviewSFX"
@@ -54,10 +54,6 @@ func _on_apply_but_pressed():
 		var settingNode = $TabContainer/Controls.get_node(option)
 		OptionsMan.controlSettings[option] = settingNode.get_node('Key').key
 	OptionsMan.applySettings()
-
-func _on_close_but_pressed():
-	play_close_sfx()
-	hide()
 	
 func play_close_sfx():
 	if ui_close_panel_sfx: 
@@ -74,7 +70,6 @@ func _on_option_btn_pressed():
 		print('the audio stream in OptionsMenu is null')
 
 func _on_close_requested():
-	resetOptions()
 	hide()
 
 func _on_sound_slider_value_changed(value: float):
